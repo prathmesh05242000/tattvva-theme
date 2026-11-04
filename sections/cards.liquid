@@ -1,0 +1,12 @@
+<section class="sec bg-{{ section.settings.bg }}"><div class="w">
+{% if section.settings.heading != blank %}<h2>{{ section.settings.heading }}</h2>{% endif %}{% if section.settings.text != blank %}<p class="lead">{{ section.settings.text }}</p>{% endif %}
+<div class="g">{% for b in section.blocks %}{% if b.settings.link != blank %}<a class="c" href="{{ b.settings.link }}" {{ b.shopify_attributes }}>{% else %}<div class="c" {{ b.shopify_attributes }}>{% endif %}
+{% if b.settings.image %}<div class="im">{{ b.settings.image | image_url: width: 600 | image_tag: loading: 'lazy' }}</div>{% endif %}
+<h3>{{ b.settings.title }}</h3><p>{{ b.settings.text }}</p>
+{% if b.settings.link != blank %}</a>{% else %}</div>{% endif %}{% endfor %}</div></div></section>
+{% schema %}
+{"name":"Cards","settings":[{"type":"text","id":"heading","label":"Heading"},{"type":"textarea","id":"text","label":"Text"},
+{"type":"select","id":"bg","label":"Background","default":"light","options":[{"value":"light","label":"Cream"},{"value":"dark","label":"Plum"},{"value":"yellow","label":"Yellow"}]}],
+"blocks":[{"type":"card","name":"Card","settings":[{"type":"image_picker","id":"image","label":"Image"},{"type":"text","id":"title","label":"Title","default":"Title"},{"type":"textarea","id":"text","label":"Text"},{"type":"url","id":"link","label":"Link"}]}],
+"presets":[{"name":"Cards","blocks":[{"type":"card"},{"type":"card"},{"type":"card"}]}]}
+{% endschema %}

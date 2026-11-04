@@ -1,0 +1,349 @@
+﻿{% capture single_group %}
+  <div class="testi-marquee-group">
+    {% if section.blocks.size > 0 %}
+      {% for b in section.blocks %}
+        <div class="testi-card" {{ b.shopify_attributes }}>
+          <div class="testi-card-top">
+            <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <span class="testi-verified"><span class="v-tick">✓</span> Verified Buyer</span>
+          </div>
+          <div class="testi-quote-mark" aria-hidden="true">“</div>
+          <blockquote class="testi-quote">
+            {{ b.settings.quote | default: b.settings.text }}
+          </blockquote>
+          {% if b.settings.detail != blank %}
+            <p class="testi-detail">{{ b.settings.detail }}</p>
+          {% endif %}
+          <div class="testi-author">
+            <div class="testi-avatar av-{{ forloop.index | modulo: 4 | plus: 1 }}">
+              {{ b.settings.initials | default: 'TC' }}
+            </div>
+            <div class="testi-meta">
+              <div class="testi-name">{{ b.settings.author | default: 'Tattvva Customer' }}</div>
+              <div class="testi-role">{{ b.settings.location | default: 'Verified Family' }}{% if b.settings.product != blank %} &middot; {{ b.settings.product }}{% endif %}</div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <!-- 6 default cards -->
+      <div class="testi-card">
+        <div class="testi-card-top">
+          <div class="testi-stars">★★★★★</div>
+          <span class="testi-verified"><span class="v-tick">✓</span> Verified Buyer</span>
+        </div>
+        <div class="testi-quote-mark" aria-hidden="true">“</div>
+        <blockquote class="testi-quote">
+          "Excellent taste and premium quality."
+        </blockquote>
+        <p class="testi-detail">
+          Our kids and grandparents all love these laddus. Knowing there is zero refined sugar and authentic Desi ghee makes it a daily guilt-free staple.
+        </p>
+        <div class="testi-author">
+          <div class="testi-avatar av-1">PS</div>
+          <div class="testi-meta">
+            <div class="testi-name">Priya S.</div>
+            <div class="testi-role">Mumbai &middot; Signature Elite-21 Laddu</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-card-top">
+          <div class="testi-stars">★★★★★</div>
+          <span class="testi-verified"><span class="v-tick">✓</span> Verified Buyer</span>
+        </div>
+        <div class="testi-quote-mark" aria-hidden="true">“</div>
+        <blockquote class="testi-quote">
+          "Perfect combination of nutrition and flavour."
+        </blockquote>
+        <p class="testi-detail">
+          The natural sweetness of dates combined with 21 rich superfood nuts gives long-lasting energy throughout busy afternoons without any sugar spikes.
+        </p>
+        <div class="testi-author">
+          <div class="testi-avatar av-2">RM</div>
+          <div class="testi-meta">
+            <div class="testi-name">Rahul M.</div>
+            <div class="testi-role">Bengaluru &middot; Daily Nutrition Range</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-card-top">
+          <div class="testi-stars">★★★★★</div>
+          <span class="testi-verified"><span class="v-tick">✓</span> Verified Buyer</span>
+        </div>
+        <div class="testi-quote-mark" aria-hidden="true">“</div>
+        <blockquote class="testi-quote">
+          "Finally a brand that respects clean ingredients."
+        </blockquote>
+        <p class="testi-detail">
+          No palm oil, no vanaspati, and zero synthetic preservatives. The aroma of authentic slow-churned Desi ghee is pure nostalgia.
+        </p>
+        <div class="testi-author">
+          <div class="testi-avatar av-3">AK</div>
+          <div class="testi-meta">
+            <div class="testi-name">Ananya K.</div>
+            <div class="testi-role">New Delhi &middot; Signature Elite-21 Laddu</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-card-top">
+          <div class="testi-stars">★★★★★</div>
+          <span class="testi-verified"><span class="v-tick">✓</span> Verified Buyer</span>
+        </div>
+        <div class="testi-quote-mark" aria-hidden="true">“</div>
+        <blockquote class="testi-quote">
+          "The packaging and freshness exceeded all expectations."
+        </blockquote>
+        <p class="testi-detail">
+          Arrived in beautiful premium packaging. We gifted three premium packages for festive celebrations and everyone loved the authentic taste.
+        </p>
+        <div class="testi-author">
+          <div class="testi-avatar av-4">VN</div>
+          <div class="testi-meta">
+            <div class="testi-name">Vikram N.</div>
+            <div class="testi-role">Pune &middot; Premium Gift Packs</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-card-top">
+          <div class="testi-stars">★★★★★</div>
+          <span class="testi-verified"><span class="v-tick">✓</span> Verified Buyer</span>
+        </div>
+        <div class="testi-quote-mark" aria-hidden="true">“</div>
+        <blockquote class="testi-quote">
+          "Noticeable boost in everyday stamina."
+        </blockquote>
+        <p class="testi-detail">
+          Replaced my 4 PM biscuits with one Tattvva laddu. Feels light on digestion yet keeps hunger away till dinner.
+        </p>
+        <div class="testi-author">
+          <div class="testi-avatar av-1">MD</div>
+          <div class="testi-meta">
+            <div class="testi-name">Meera D.</div>
+            <div class="testi-role">Ahmedabad &middot; Signature Elite-21 Laddu</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-card-top">
+          <div class="testi-stars">★★★★★</div>
+          <span class="testi-verified"><span class="v-tick">✓</span> Verified Buyer</span>
+        </div>
+        <div class="testi-quote-mark" aria-hidden="true">“</div>
+        <blockquote class="testi-quote">
+          "Authentic festival flavor without the sugar guilt."
+        </blockquote>
+        <p class="testi-detail">
+          The slow-churned Desi ghee aroma reminds me of homemade sweets my grandmother used to make. Truly premium!
+        </p>
+        <div class="testi-author">
+          <div class="testi-avatar av-2">KT</div>
+          <div class="testi-meta">
+            <div class="testi-name">Kabir T.</div>
+            <div class="testi-role">Hyderabad &middot; Everyday Nutrition Range</div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endcapture %}
+
+<section class="sec testimonials-sec" id="testimonials">
+  <div class="w">
+    <!-- Header -->
+    <div class="testi-header">
+      <div class="testi-header-text">
+        <span class="testi-badge">{{ section.settings.kicker | default: 'Customer Stories' }}</span>
+        <h2 class="testi-heading">{{ section.settings.heading | default: 'Customer Testimonials' }}</h2>
+        <p class="testi-subheading">{{ section.settings.subheading | default: 'Honest reviews from families embracing clean, mindful nutrition every day.' }}</p>
+      </div>
+    </div>
+
+    <!-- Continuous Marquee Auto-scroller -->
+    <div class="testi-marquee-wrap" id="testiMarqueeWrap">
+      <div class="testi-marquee-track" id="testiTrack">
+        {{ single_group }}
+        {{ single_group }}
+      </div>
+    </div>
+
+    <!-- Autoscroller status indicator -->
+    <div class="testi-indicators">
+      <div class="testi-live-pill">
+        <span class="testi-pulse-dot" aria-hidden="true"></span>
+        <span class="testi-status-text">Continuous Auto-scroller &middot; Hover or Tap to pause</span>
+      </div>
+    </div>
+
+    <!-- Call to Action Banner -->
+    <div class="testi-cta-banner">
+      <div class="testi-cta-content">
+        <span class="testi-cta-tag">{{ section.settings.cta_kicker | default: 'Call to Action' }}</span>
+        <h3 class="testi-cta-title">{{ section.settings.cta_heading | default: 'Join thousands of customers choosing better nutrition with Tattvva.' }}</h3>
+        <p class="testi-cta-subtext">{{ section.settings.cta_subtext | default: 'Handcrafted with 21 pure superfoods, slow-churned Desi ghee, and zero refined sugar.' }}</p>
+        <div class="testi-social-proof">
+          <div class="testi-avatar-stack">
+            <span class="t-stk-av s1"></span>
+            <span class="t-stk-av s2"></span>
+            <span class="t-stk-av s3"></span>
+            <span class="t-stk-av s4"></span>
+          </div>
+          <span class="testi-proof-text">★ 4.9/5 Average Rating &middot; Over 10,000+ Happy Families</span>
+        </div>
+      </div>
+      <div class="testi-cta-action">
+        <a href="{{ section.settings.cta_btn_url | default: '#products' }}" class="btn testi-cta-btn">
+          {{ section.settings.cta_btn_text | default: 'Shop Now' }}
+        </a>
+        <span class="testi-cta-perk">⚡ Fast Dispatch &middot; 99.9% Quality Guarantee</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const sec = document.getElementById('testimonials');
+      if(!sec) return;
+      const wrap = sec.querySelector('#testiMarqueeWrap');
+      if(!wrap) return;
+
+      wrap.addEventListener('touchstart', function(){
+        wrap.classList.add('is-paused');
+      }, { passive: true });
+      wrap.addEventListener('touchend', function(){
+        wrap.classList.remove('is-paused');
+      }, { passive: true });
+    })();
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Customer Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Small Kicker",
+      "default": "Customer Stories"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Customer Testimonials"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Honest reviews from families embracing clean, mindful nutrition every day."
+    },
+    {
+      "type": "header",
+      "content": "Call to Action Banner"
+    },
+    {
+      "type": "text",
+      "id": "cta_kicker",
+      "label": "CTA Kicker",
+      "default": "Call to Action"
+    },
+    {
+      "type": "text",
+      "id": "cta_heading",
+      "label": "CTA Heading",
+      "default": "Join thousands of customers choosing better nutrition with Tattvva."
+    },
+    {
+      "type": "textarea",
+      "id": "cta_subtext",
+      "label": "CTA Subtext",
+      "default": "Handcrafted with 21 pure superfoods, slow-churned Desi ghee, and zero refined sugar."
+    },
+    {
+      "type": "text",
+      "id": "cta_btn_text",
+      "label": "CTA Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "cta_btn_url",
+      "label": "CTA Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "Excellent taste and premium quality."
+        },
+        {
+          "type": "textarea",
+          "id": "detail",
+          "label": "Supporting details"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Customer Name",
+          "default": "Priya S."
+        },
+        {
+          "type": "text",
+          "id": "location",
+          "label": "Location / Tag",
+          "default": "Mumbai"
+        },
+        {
+          "type": "text",
+          "id": "product",
+          "label": "Purchased Product",
+          "default": "Signature Elite-21 Laddu"
+        },
+        {
+          "type": "text",
+          "id": "initials",
+          "label": "Avatar Initials",
+          "default": "PS"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Customer Testimonials",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Excellent taste and premium quality.",
+            "author": "Priya S."
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Perfect combination of nutrition and flavour.",
+            "author": "Rahul M."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

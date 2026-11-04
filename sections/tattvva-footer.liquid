@@ -1,0 +1,210 @@
+<footer class="ft" id="contact"><div class="w">
+  <!-- Brand Top Bar -->
+  <div class="ft-brand-row">
+    <div class="ft-brand-left">
+      <a class="logo logo-img-wrap logo-footer" href="{{ routes.root_url }}" aria-label="Tattvva">
+        {% if section.settings.logo %}
+          {{ section.settings.logo | image_url: width: 280 | image_tag: alt: shop.name, class: 'tattvva-logo-img logo-img-footer' }}
+        {% else %}
+          <img src="{{ 'tattvva-logo.webp' | asset_url }}" alt="{{ shop.name | default: 'Tattvva - The Pure Essence of Nutrition' }}" width="138" height="54" class="tattvva-logo-img logo-img-footer">
+        {% endif %}
+      </a>
+      <p class="ft-tagline">{{ section.settings.tagline | default: 'Tattvva – The Pure Essence of Nutrition' }}</p>
+    </div>
+    <div class="ft-social-strip">
+      {% if section.settings.instagram != blank %}
+        <a href="{{ section.settings.instagram }}" target="_blank" rel="noopener" class="ft-social-btn" aria-label="Instagram">Instagram</a>
+      {% else %}
+        <a href="https://www.instagram.com" target="_blank" rel="noopener" class="ft-social-btn" aria-label="Instagram">Instagram</a>
+      {% endif %}
+      {% if section.settings.facebook != blank %}
+        <a href="{{ section.settings.facebook }}" target="_blank" rel="noopener" class="ft-social-btn" aria-label="Facebook">Facebook</a>
+      {% else %}
+        <a href="https://www.facebook.com" target="_blank" rel="noopener" class="ft-social-btn" aria-label="Facebook">Facebook</a>
+      {% endif %}
+      {% if section.settings.linkedin != blank %}
+        <a href="{{ section.settings.linkedin }}" target="_blank" rel="noopener" class="ft-social-btn" aria-label="LinkedIn">LinkedIn</a>
+      {% else %}
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="ft-social-btn" aria-label="LinkedIn">LinkedIn</a>
+      {% endif %}
+      {% if section.settings.youtube != blank %}
+        <a href="{{ section.settings.youtube }}" target="_blank" rel="noopener" class="ft-social-btn" aria-label="YouTube">YouTube</a>
+      {% else %}
+        <a href="https://www.youtube.com" target="_blank" rel="noopener" class="ft-social-btn" aria-label="YouTube">YouTube</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Primary 5-Column Navigation Grid -->
+  <div class="ft-nav-grid">
+    <!-- Col 1: Company -->
+    <div class="ft-nav-col">
+      <h3>Company</h3>
+      <ul>
+        <li><a href="{{ routes.root_url }}#about">About Us</a></li>
+        <li><a href="{{ routes.root_url }}#about">CSR Policy</a></li>
+        <li><a href="{{ routes.root_url }}#about">Leadership</a></li>
+        <li><a href="{{ routes.root_url }}#quality">Certifications</a></li>
+        <li><a href="{{ routes.root_url }}#quality">Quality &amp; Safety</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 2: Our Expertise -->
+    <div class="ft-nav-col">
+      <h3>Our Expertise</h3>
+      <ul>
+        <li><a href="{{ routes.root_url }}#distributors">Private Label</a></li>
+        <li><a href="{{ routes.root_url }}#distributors">Institutional</a></li>
+        <li><a href="{{ routes.root_url }}#distributors">Wholesale</a></li>
+        <li><a href="{{ routes.root_url }}#distributors">Modern Trade</a></li>
+        <li><a href="{{ routes.root_url }}#distributors">Retail</a></li>
+        <li><a href="{{ routes.root_url }}#products">E-Commerce</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 3: Quick Links -->
+    <div class="ft-nav-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="{{ routes.root_url }}#blogs">Blog</a></li>
+        <li><a href="{{ routes.root_url }}#products">Gifting</a></li>
+        <li><a href="{{ routes.root_url }}#distributors">Bulk Order</a></li>
+        <li><a href="{{ routes.root_url }}#distributors">Franchise With Us</a></li>
+        <li><a href="{{ routes.root_url }}#products">Tattvva Coupon Code</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 4: Our Regional Offices -->
+    <div class="ft-nav-col">
+      <h3>Our Regional Offices</h3>
+      <ul>
+        <li><a href="{{ routes.root_url }}#contact">Mumbai</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 5: Our Esteemed Partners -->
+    <div class="ft-nav-col">
+      <h3>Our Esteemed Partners</h3>
+      <ul>
+        <li><a href="https://www.amazon.in" target="_blank" rel="noopener">Amazon</a></li>
+        <li><a href="https://www.flipkart.com" target="_blank" rel="noopener">Flipkart</a></li>
+        <li><a href="https://blinkit.com" target="_blank" rel="noopener">BlinkIt</a></li>
+        <li><a href="https://www.bigbasket.com" target="_blank" rel="noopener">Bigbasket</a></li>
+        <li><a href="https://www.zeptonow.com" target="_blank" rel="noopener">Zepto</a></li>
+        <li><a href="https://www.swiggy.com/instamart" target="_blank" rel="noopener">Swiggy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Secondary Row Grid: Information, Customer Service, Registered Office & Manufacturing Facility -->
+  <div class="ft-secondary-grid">
+    <!-- Col 1: Information -->
+    <div class="ft-nav-col">
+      <h3>Information</h3>
+      <ul>
+        <li><a href="{{ routes.root_url }}#privacy">Privacy Policy</a></li>
+        <li><a href="{{ routes.root_url }}#refund">Return &amp; Refund Policy</a></li>
+        <li><a href="{{ routes.root_url }}#shipping">Shipping &amp; Delivery Policy</a></li>
+        <li><a href="{{ routes.root_url }}#terms">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 2: Customer Service -->
+    <div class="ft-nav-col">
+      <h3>Customer Service</h3>
+      <ul>
+        <li><a href="{{ routes.root_url }}#contact">Contact Us</a></li>
+        <li><a href="{{ routes.root_url }}#contact">Grievance with us</a></li>
+        <li><a href="#track-order">Tracker your Order</a></li>
+      </ul>
+    </div>
+
+    <!-- Col 3: Registered Office and Manufacturing Facility -->
+    <div class="ft-nav-col ft-office-col">
+      <h3>Registered Office and Manufacturing Facility</h3>
+      <div class="ft-office-card">
+        <p><strong>{{ section.settings.address | default: 'Nutrilife Foods & Products, 1502, Sarvoday Onyx, Kalyan-Sape Road, Kalyan 421301, Maharashtra' | newline_to_br }}</strong></p>
+        {% if section.settings.phone != blank %}
+          <p><strong>Phone:</strong> <a href="tel:{{ section.settings.phone | remove: ' ' }}">{{ section.settings.phone }}</a></p>
+        {% endif %}
+        {% if section.settings.email != blank %}
+          <p><strong>Email:</strong> <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a></p>
+        {% endif %}
+        <p style="font-size:12px;opacity:0.8;margin-top:4px;">Operational Hours: Mon–Sat, 9:00 AM – 6:00 PM IST</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Copyright & Statutory Notice -->
+  <div class="copy">
+    <div class="copy-main">
+      Copyright &copy; {{ 'now' | date: '%Y' }} Tattvva. All Rights Reserved.{% for p in shop.policies %} &middot; <a href="{{ p.url }}" style="display:inline">{{ p.title }}</a>{% endfor %}
+    </div>
+    <div class="copy-notice">
+      <strong>Important Notice:</strong> <a href="https://www.tattvva.in" target="_blank" rel="noopener">www.tattvva.in</a> is the official website of Tattvva. Please purchase only through our authorized channels and verified partners. Beware of unauthorized websites, sellers, or counterfeit products claiming association with Tattvva.
+    </div>
+  </div>
+</div></footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo (optional)"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "Tattvva – The Pure Essence of Nutrition"
+    },
+    {
+      "type": "textarea",
+      "id": "address",
+      "label": "Address",
+      "default": "Nutrilife Foods & Products, 1502, Sarvoday Onyx, Kalyan-Sape Road, Kalyan 421301, Maharashtra"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone",
+      "default": "+91 7666642112"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email",
+      "default": "info@tattvva.in"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Footer menu",
+      "default": "footer"
+    },
+    {
+      "type": "url",
+      "id": "instagram",
+      "label": "Instagram"
+    },
+    {
+      "type": "url",
+      "id": "facebook",
+      "label": "Facebook"
+    },
+    {
+      "type": "url",
+      "id": "linkedin",
+      "label": "LinkedIn"
+    },
+    {
+      "type": "url",
+      "id": "youtube",
+      "label": "YouTube"
+    }
+  ]
+}
+{% endschema %}

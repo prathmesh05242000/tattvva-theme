@@ -1,0 +1,2047 @@
+﻿﻿<section class="sec products-sec" id="products">
+  <div class="products-glow" aria-hidden="true"></div>
+  <div class="w">
+    
+    <!-- Section Header -->
+    <div class="products-header">
+      <span class="prod-badge">{{ section.settings.kicker | default: '✦ 99.9% Honest Nutrition &middot; Handcrafted Daily' }}</span>
+      <h2 class="prod-main-title">{{ section.settings.heading | default: 'Products' }}</h2>
+      <p class="prod-main-sub">{{ section.settings.subheading | default: 'Pure superfood creations crafted without preservatives, artificial binders, or refined sugar. Discover our flagship live creation and upcoming kitchen innovations.' }}</p>
+    </div>
+
+            <!-- Multi-Product Tab Selector -->
+    <div class="prod-selector-wrap">
+      <div class="prod-selector-tabs" role="tablist" aria-label="Select a Tattvva Creation">
+        <button type="button" class="prod-tab is-active" data-target="prod-laddu" role="tab" aria-selected="true">
+          <span class="prod-tab-icon">&#x1F330;</span>
+          <span class="prod-tab-text">
+            <b>TATTVVA ELITE 21</b>
+            <small>Signature Elite-21 &middot; 250g Jar</small>
+          </span>
+          <span class="prod-tab-badge">Flagship</span>
+        </button>
+        <button type="button" class="prod-tab" data-target="prod-dry-fruit-roasted" role="tab" aria-selected="false">
+          <span class="prod-tab-icon">&#x1F525;</span>
+          <span class="prod-tab-text">
+            <b>DRY FRUIT MIX - ROASTED</b>
+            <small>Roasted Goodness &middot; Premium Jar</small>
+          </span>
+          <span class="prod-tab-badge">Live</span>
+        </button>
+        <button type="button" class="prod-tab" data-target="prod-mix-dry-fruit-raw" role="tab" aria-selected="false">
+          <span class="prod-tab-icon">&#x1F95C;</span>
+          <span class="prod-tab-text">
+            <b>MIX DRY FRUIT - RAW</b>
+            <small>Power of Five &middot; Premium Jar</small>
+          </span>
+          <span class="prod-tab-badge">Live</span>
+        </button>
+        <button type="button" class="prod-tab" data-target="prod-dry-mix-unroasted" role="tab" aria-selected="false">
+          <span class="prod-tab-icon">&#x1F95D;</span>
+          <span class="prod-tab-text">
+            <b>DRY FRUIT MIX - WITHOUT ROASTED</b>
+            <small>Wholesome Nutrition &middot; Premium Jar</small>
+          </span>
+          <span class="prod-tab-badge">Live</span>
+        </button>
+        <button type="button" class="prod-tab" data-target="prod-super-seeds-raw" role="tab" aria-selected="false">
+          <span class="prod-tab-icon">&#x1F33B;</span>
+          <span class="prod-tab-text">
+            <b>SUPER SEEDS RAW</b>
+            <small>Power of Five &middot; Premium Jar</small>
+          </span>
+          <span class="prod-tab-badge">Live</span>
+        </button>
+        <button type="button" class="prod-tab" data-target="prod-super-grain-quinoa" role="tab" aria-selected="false">
+          <span class="prod-tab-icon">&#x1F33E;</span>
+          <span class="prod-tab-text">
+            <b>SUPER GRAIN QUINOA</b>
+            <small>Natural Nutrition &middot; Premium Jar</small>
+          </span>
+          <span class="prod-tab-badge">Live</span>
+        </button>
+        <button type="button" class="prod-tab" data-target="prod-black-salt" role="tab" aria-selected="false">
+          <span class="prod-tab-icon">&#x1F9C2;</span>
+          <span class="prod-tab-text">
+            <b>BLACK SALT</b>
+            <small>The Magic of a Perfect Pinch &middot; Premium Jar</small>
+          </span>
+          <span class="prod-tab-badge">Live</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Multi-Product Spotlights Container -->
+    <div class="spotlight-products-container">
+
+      <!-- 1. TATTVVA ELITE 21 -->
+      {% assign prod_handle = section.settings.product_handle | default: 'tattvva-elite-21' %}
+      {% assign elite_prod = all_products[prod_handle] %}
+      <article class="spotlight-card is-active" id="prod-laddu">
+        <!-- Left Media Showcase -->
+        <div class="spotlight-media-wrap">
+          <span class="spotlight-live-tag"><span class="pulse-dot"></span> Live in Store</span>
+          <span class="spotlight-edition-tag">★ Flagship Elite-21</span>
+
+          <!-- Interactive Product Slider Gallery -->
+          <div class="spotlight-gallery" id="eliteProductGallery" data-auto-play="true">
+            <div class="spotlight-slides-viewport">
+
+              {% if elite_prod != blank and elite_prod.images.size > 0 %}
+                {% for img in elite_prod.images %}
+                  <div class="spotlight-slide{% if forloop.first %} is-active{% endif %}" data-index="{{ forloop.index0 }}" data-caption="View {{ forloop.index }} of {{ elite_prod.images.size }}" data-full="{{ img | image_url: width: 1600 }}">
+                    <img src="{{ img | image_url: width: 800 }}" alt="{{ elite_prod.title }} - Shot {{ forloop.index }}" class="spotlight-slide-img" width="520" height="460"{% if forloop.first %} loading="eager"{% else %} loading="lazy"{% endif %}>
+                    <span class="spotlight-slide-caption">✦ View {{ forloop.index }} of {{ elite_prod.images.size }}</span>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div class="spotlight-slide is-active" data-index="0" data-caption="Signature Premium Packaging" data-full="{{ 'tattvva-elite-21-front.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-elite-21-front.webp' | asset_url }}" alt="TATTVVA ELITE 21 - Signature Premium Packaging" class="spotlight-slide-img" width="520" height="460" loading="eager">
+                  <span class="spotlight-slide-caption">✦ Signature Premium Packaging</span>
+                </div>
+                <div class="spotlight-slide" data-index="1" data-caption="Premium Nut & Dry Fruit Blend" data-full="{{ 'tattvva-elite-21-lifestyle.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-elite-21-lifestyle.webp' | asset_url }}" alt="TATTVVA ELITE 21 - Premium Nut & Dry Fruit Blend" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Premium Nut &amp; Dry Fruit Blend</span>
+                </div>
+                <div class="spotlight-slide" data-index="2" data-caption="Packaging & Nutrition Facts" data-full="{{ 'tattvva-elite-21-back.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-elite-21-back.webp' | asset_url }}" alt="TATTVVA ELITE 21 - Nutrition Facts & Jar Details" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Packaging &amp; Nutrition Facts</span>
+                </div>
+                <div class="spotlight-slide" data-index="3" data-caption="Certified NABL Nutritional Table" data-full="{{ 'tattvva-elite-21-nutrition.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-elite-21-nutrition.webp' | asset_url }}" alt="TATTVVA ELITE 21 - Certified Nutrition Chart" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Certified NABL Nutritional Table</span>
+                </div>
+                <div class="spotlight-slide" data-index="4" data-caption="Complete Product & Packaging Showcase" data-full="{{ 'tattvva-elite-21-showcase.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-elite-21-showcase.webp' | asset_url }}" alt="TATTVVA ELITE 21 - Complete Showcase" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Complete Product &amp; Packaging Showcase</span>
+                </div>
+              {% endif %}
+
+              <!-- Navigation Arrows -->
+              <button type="button" class="spotlight-nav-btn prev" aria-label="Previous shot">‹</button>
+              <button type="button" class="spotlight-nav-btn next" aria-label="Next shot">›</button>
+            </div>
+
+            <!-- Running Progress bar & Counter -->
+            <div class="spotlight-gallery-footer">
+              <div class="spotlight-progress-track">
+                <div class="spotlight-progress-fill" style="width: 20%;"></div>
+              </div>
+              <span class="spotlight-runner-pill"><span class="runner-dot"></span> <span class="runner-counter">Shot 1 of {% if elite_prod != blank and elite_prod.images.size > 0 %}{{ elite_prod.images.size }}{% else %}5{% endif %}</span></span>
+            </div>
+
+            <!-- Luxury Thumbnail Strip with Labels -->
+            <div class="spotlight-thumb-strip">
+              {% if elite_prod != blank and elite_prod.images.size > 0 %}
+                {% for img in elite_prod.images %}
+                  <div class="spotlight-thumb-item">
+                    <button type="button" class="spotlight-thumb{% if forloop.first %} is-active{% endif %}" data-slide="{{ forloop.index0 }}" aria-label="Shot {{ forloop.index }}"><img src="{{ img | image_url: width: 140 }}" width="60" height="60" alt="Thumbnail {{ forloop.index }}"></button>
+                    <span class="spotlight-thumb-label">Shot {{ forloop.index }}</span>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb is-active" data-slide="0" aria-label="Shot 1: Jar Front"><img src="{{ 'tattvva-elite-21-front.webp' | asset_url }}" width="60" height="60" alt="Jar Front"></button>
+                  <span class="spotlight-thumb-label">Front Jar</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="1" aria-label="Shot 2: Lifestyle"><img src="{{ 'tattvva-elite-21-lifestyle.webp' | asset_url }}" width="60" height="60" alt="Lifestyle"></button>
+                  <span class="spotlight-thumb-label">Lifestyle</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="2" aria-label="Shot 3: Jar Back"><img src="{{ 'tattvva-elite-21-back.webp' | asset_url }}" width="60" height="60" alt="Jar Back"></button>
+                  <span class="spotlight-thumb-label">Back Label</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="3" aria-label="Shot 4: Nutrition Table"><img src="{{ 'tattvva-elite-21-nutrition.webp' | asset_url }}" width="60" height="60" alt="Nutrition Table"></button>
+                  <span class="spotlight-thumb-label">Nutrition</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="4" aria-label="Shot 5: Showcase"><img src="{{ 'tattvva-elite-21-showcase.webp' | asset_url }}" width="60" height="60" alt="Showcase"></button>
+                  <span class="spotlight-thumb-label">Showcase</span>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- Micro Seals -->
+          <div class="spotlight-micro-seals">
+            <div class="micro-seal"><span class="micro-seal-icon">&#x1F330;</span><span>21 Whole Nuts &amp; Seeds</span></div>
+            <div class="micro-seal"><span class="micro-seal-icon">🍯</span><span>Pure Desi Ghee</span></div>
+            <div class="micro-seal"><span class="micro-seal-icon">🌿</span><span>0% Added Sugar or Jaggery</span></div>
+          </div>
+        </div>
+
+        <!-- Right Product Details -->
+        <div class="spotlight-details">
+          <div class="spotlight-rating-wrap">
+            <span class="spotlight-stars">★★★★★</span>
+            <span class="spotlight-verified">4.9 / 5.0</span>
+            <span>(500+ verified customer ratings)</span>
+          </div>
+
+          <h3 class="spotlight-title">TATTVVA ELITE 21</h3>
+          <span class="spotlight-sub-badge">Signature Elite-21 Edition &middot; Premium Packaging</span>
+
+          <p class="spotlight-lead-copy">“A rich combination of premium nuts, seeds, dates and selected natural ingredients, crafted for consumers who appreciate indulgent taste with thoughtfully selected ingredients.”</p>
+
+          <!-- Key Ingredients -->
+          <div class="spotlight-ingredients-wrap">
+            <div class="spotlight-ingredients-label">Key Ingredients</div>
+            <div class="spotlight-ingredients-pills">
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Almond</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Cashew</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Walnut</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Pistachio</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Pecan</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Macadamia</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Brazil Nut</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Dates</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Anjeer</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Seeds</span>
+            </div>
+          </div>
+
+          <div class="spotlight-highlights-label">Product Highlights</div>
+          <div class="spotlight-highlights-grid">
+            <div class="hl-card">
+              <div class="hl-card-icon">🧁</div>
+              <div class="hl-card-title">Rich taste</div>
+              <p class="hl-card-desc">Indulgent melt-in-mouth richness from Iranian pistachios, cashews, and Arabian dates. Zero bitter aftertaste.</p>
+            </div>
+            <div class="hl-card">
+              <div class="hl-card-icon">⚡</div>
+              <div class="hl-card-title">Thoughtfully crafted</div>
+              <p class="hl-card-desc">A rich combination of premium nuts, seeds, dates and natural ingredients for wholesome indulgence.</p>
+            </div>
+            <div class="hl-card">
+              <div class="hl-card-icon">🌿</div>
+              <div class="hl-card-title">Where Goodness Begins</div>
+              <p class="hl-card-desc">At Tattvva, we believe that great food begins with thoughtfully selected ingredients.</p>
+            </div>
+          </div>
+
+          <!-- Size / Weight Selection (100g, 250g, 500g) -->
+          <div class="product-variant-selector">
+            <div class="variant-selector-header">
+              <span class="variant-label">Select Net Weight:</span>
+              <span class="variant-active-display">250g (Selected)</span>
+            </div>
+            <div class="variant-pill-group" role="radiogroup" aria-label="Select Weight">
+              <button type="button" class="variant-pill" data-size="100g" data-price="249" data-mrp="299" data-discount="Save 17% OFF" data-pack="Net Wt: 100g (Trial / Snacking Size &middot; 3–4 Laddus) &middot; Freshness Sealed &middot; Incl. of all taxes" role="radio" aria-checked="false">
+                <span class="pill-weight">100g</span>
+                <span class="pill-badge">Trial Pack</span>
+                <span class="pill-price">₹249</span>
+              </button>
+              <button type="button" class="variant-pill is-active" data-size="250g" data-price="499" data-mrp="599" data-discount="Save 17% OFF" data-pack="Net Wt: 250g (8–10 Artisanal Laddus) &middot; Sealed Freshness Premium Packaging &middot; Incl. of all taxes" role="radio" aria-checked="true">
+                <span class="pill-weight">250g</span>
+                <span class="pill-badge best-seller">Most Popular</span>
+                <span class="pill-price">₹499</span>
+              </button>
+              <button type="button" class="variant-pill" data-size="500g" data-price="949" data-mrp="1199" data-discount="Save 21% OFF" data-pack="Net Wt: 500g (Family Value Pack &middot; 16–20 Laddus) &middot; Sealed Freshness &middot; Incl. of all taxes" role="radio" aria-checked="false">
+                <span class="pill-weight">500g</span>
+                <span class="pill-badge value-save">Save 21%</span>
+                <span class="pill-price">₹949</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="spotlight-price-box">
+            <span class="spotlight-current-price">{% if elite_prod.price %}{{ elite_prod.price | money }}{% else %}₹499{% endif %}</span>
+            <span class="spotlight-mrp">{% if elite_prod.compare_at_price %}{{ elite_prod.compare_at_price | money }}{% else %}₹599{% endif %}</span>
+            <span class="spotlight-discount-pill">Save 17% OFF</span>
+            <div class="spotlight-pack-info">Net Wt: 250g (8–10 Artisanal Laddus) &middot; Sealed Freshness Premium Packaging &middot; Inclusive of all taxes</div>
+          </div>
+
+          <!-- Quantity Stepper & Dynamic Total Subtotal -->
+          <div class="product-qty-row">
+            <div class="qty-control-wrapper">
+              <span class="qty-label">Quantity:</span>
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn btn-minus" aria-label="Decrease quantity">−</button>
+                <input type="number" class="qty-input" value="1" min="1" max="50" aria-label="Product quantity" readonly>
+                <button type="button" class="qty-btn btn-plus" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+
+            <div class="price-summary-dynamic">
+              <div class="total-price-line">
+                <span class="total-label">Subtotal:</span>
+                <span class="spotlight-dynamic-total">₹499</span>
+              </div>
+              <div class="total-unit-breakdown">
+                <span class="breakdown-text">₹499 × 1</span>
+                <span class="total-savings-text">Save ₹100</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="spotlight-action-row">
+            <a href="{{ elite_prod.url | default: '/products/premium-dry-fruit-laddu' }}" class="btn-spotlight-buy">Buy Now &middot; Elite-21 <span>→</span></a>
+            {% if elite_prod.selected_or_first_available_variant %}
+              <form method="post" action="{{ routes.cart_add_url }}" style="flex:1;">
+                <input type="hidden" name="id" value="{{ elite_prod.selected_or_first_available_variant.id }}">
+                <button type="submit" class="btn-spotlight-cart" style="width:100%;"><span>🛒</span> Add to Bag</button>
+              </form>
+            {% else %}
+              <a href="{{ elite_prod.url | default: '/products/premium-dry-fruit-laddu' }}" class="btn-spotlight-cart"><span>🛒</span> Add to Bag</a>
+            {% endif %}
+          </div>
+
+          <div class="spotlight-trust-list">
+            <span>✓ Free Pan-India Delivery</span>
+            <span>✓ Dispatched in 24h</span>
+            <span>✓ FSSAI Certified Sterile Kitchen</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. DRY FRUIT MIX - ROASTED -->
+      {% assign roasted_prod = all_products['dry-fruit-roasted'] %}
+      <article class="spotlight-card" id="prod-dry-fruit-roasted">
+        <!-- Left Media Showcase -->
+        <div class="spotlight-media-wrap">
+          <span class="spotlight-live-tag"><span class="pulse-dot"></span> Live in Store</span>
+          <span class="spotlight-edition-tag">★ Master Slow-Roasted</span>
+
+          <!-- Interactive Product Slider Gallery -->
+          <div class="spotlight-gallery" id="roastedProductGallery" data-auto-play="true">
+            <div class="spotlight-slides-viewport">
+              {% if roasted_prod != blank and roasted_prod.images.size > 0 %}
+                {% for img in roasted_prod.images %}
+                  <div class="spotlight-slide{% if forloop.first %} is-active{% endif %}" data-index="{{ forloop.index0 }}" data-caption="View {{ forloop.index }} of {{ roasted_prod.images.size }}" data-full="{{ img | image_url: width: 1600 }}">
+                    <img src="{{ img | image_url: width: 800 }}" alt="{{ roasted_prod.title }} - Shot {{ forloop.index }}" class="spotlight-slide-img" width="520" height="460"{% if forloop.first %} loading="eager"{% else %} loading="lazy"{% endif %}>
+                    <span class="spotlight-slide-caption">✦ View {{ forloop.index }} of {{ roasted_prod.images.size }}</span>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div class="spotlight-slide is-active" data-index="0" data-caption="Signature Premium Packaging" data-full="{{ 'tattvva-dry-fruit-roasted-front.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-dry-fruit-roasted-front.webp' | asset_url }}" alt="DRY FRUIT MIX - ROASTED - Signature Premium Packaging" class="spotlight-slide-img" width="520" height="460" loading="eager">
+                  <span class="spotlight-slide-caption">✦ Signature Premium Packaging</span>
+                </div>
+                <div class="spotlight-slide" data-index="1" data-caption="Roasted For A Crunchy Bite &middot; Lifestyle" data-full="{{ 'tattvva-dry-fruit-roasted-lifestyle.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-dry-fruit-roasted-lifestyle.webp' | asset_url }}" alt="DRY FRUIT MIX - ROASTED - Crunchy Lifestyle Snack" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Roasted For A Crunchy Bite &middot; Lifestyle</span>
+                </div>
+                <div class="spotlight-slide" data-index="2" data-caption="Packaging &amp; Label Details" data-full="{{ 'tattvva-dry-fruit-roasted-back.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-dry-fruit-roasted-back.webp' | asset_url }}" alt="DRY FRUIT MIX - ROASTED - Nutrition Facts &amp; Jar Details" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Packaging &amp; Label Details</span>
+                </div>
+                <div class="spotlight-slide" data-index="3" data-caption="Certified NABL Nutritional Table" data-full="{{ 'tattvva-dry-fruit-roasted-nutrition.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-dry-fruit-roasted-nutrition.webp' | asset_url }}" alt="DRY FRUIT MIX - ROASTED - Certified Nutritional Table" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Certified NABL Nutritional Table</span>
+                </div>
+                <div class="spotlight-slide" data-index="4" data-caption="Complete Product &amp; Packaging Showcase" data-full="{{ 'tattvva-dry-fruit-roasted-showcase.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-dry-fruit-roasted-showcase.webp' | asset_url }}" alt="DRY FRUIT MIX - ROASTED - Complete Showcase" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Complete Product &amp; Packaging Showcase</span>
+                </div>
+              {% endif %}
+
+              <!-- Navigation Arrows -->
+              <button type="button" class="spotlight-nav-btn prev" aria-label="Previous shot">‹</button>
+              <button type="button" class="spotlight-nav-btn next" aria-label="Next shot">›</button>
+            </div>
+
+            <!-- Running Progress bar & Counter -->
+            <div class="spotlight-gallery-footer">
+              <div class="spotlight-progress-track">
+                <div class="spotlight-progress-fill" style="width: 20%;"></div>
+              </div>
+              <span class="spotlight-runner-pill"><span class="runner-dot"></span> <span class="runner-counter">Shot 1 of {% if roasted_prod != blank and roasted_prod.images.size > 0 %}{{ roasted_prod.images.size }}{% else %}5{% endif %}</span></span>
+            </div>
+
+            <!-- Luxury Thumbnail Strip with Labels -->
+            <div class="spotlight-thumb-strip">
+              {% if roasted_prod != blank and roasted_prod.images.size > 0 %}
+                {% for img in roasted_prod.images %}
+                  <div class="spotlight-thumb-item">
+                    <button type="button" class="spotlight-thumb{% if forloop.first %} is-active{% endif %}" data-slide="{{ forloop.index0 }}" aria-label="Shot {{ forloop.index }}"><img src="{{ img | image_url: width: 140 }}" width="60" height="60" alt="Thumbnail {{ forloop.index }}"></button>
+                    <span class="spotlight-thumb-label">Shot {{ forloop.index }}</span>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb is-active" data-slide="0" aria-label="Shot 1: Jar Front"><img src="{{ 'tattvva-dry-fruit-roasted-front.webp' | asset_url }}" width="60" height="60" alt="Jar Front"></button>
+                  <span class="spotlight-thumb-label">Front Jar</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="1" aria-label="Shot 2: Lifestyle"><img src="{{ 'tattvva-dry-fruit-roasted-lifestyle.webp' | asset_url }}" width="60" height="60" alt="Lifestyle"></button>
+                  <span class="spotlight-thumb-label">Lifestyle</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="2" aria-label="Shot 3: Jar Back"><img src="{{ 'tattvva-dry-fruit-roasted-back.webp' | asset_url }}" width="60" height="60" alt="Jar Back"></button>
+                  <span class="spotlight-thumb-label">Back Label</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="3" aria-label="Shot 4: Nutrition"><img src="{{ 'tattvva-dry-fruit-roasted-nutrition.webp' | asset_url }}" width="60" height="60" alt="Nutrition Facts"></button>
+                  <span class="spotlight-thumb-label">Nutrition</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="4" aria-label="Shot 5: Showcase"><img src="{{ 'tattvva-dry-fruit-roasted-showcase.webp' | asset_url }}" width="60" height="60" alt="Showcase"></button>
+                  <span class="spotlight-thumb-label">Showcase</span>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- Micro Seals -->
+          <div class="spotlight-micro-seals">
+            <div class="micro-seal"><span class="micro-seal-icon">&#x1F525;</span><span>Oil-Free Slow Roasted</span></div>
+            <div class="micro-seal"><span class="micro-seal-icon">&#x1F95C;</span><span>Crispy Nuts &amp; Seeds</span></div>
+            <div class="micro-seal"><span class="micro-seal-icon">🍇</span><span>Tangy Dried Berries</span></div>
+          </div>
+        </div>
+
+        <!-- Right Product Details -->
+        <div class="spotlight-details">
+          <div class="spotlight-rating-wrap">
+            <span class="spotlight-stars">★★★★★</span>
+            <span class="spotlight-verified">5.0 / 5.0</span>
+            <span>(460+ verified customer ratings)</span>
+          </div>
+
+          <h3 class="spotlight-title">DRY FRUIT MIX - ROASTED</h3>
+          <span class="spotlight-sub-badge">Artisanal Roasted Goodness &middot; Premium Packaging</span>
+
+          <p class="spotlight-lead-copy">“A delicious assortment of premium roasted nuts, seeds and naturally dried fruits, carefully selected and blended to deliver rich flavour, satisfying crunch and wholesome goodness in every bite.”</p>
+
+          <!-- Key Ingredients -->
+          <div class="spotlight-ingredients-wrap">
+            <div class="spotlight-ingredients-label">Key Ingredients</div>
+            <div class="spotlight-ingredients-pills">
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Almond</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Pistachio</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Cashew</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Pumpkin Seeds</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Sunflower Seeds</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Dried Kiwi</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Dried Cranberry</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Black Raisins</span>
+            </div>
+          </div>
+
+          <div class="spotlight-highlights-label">Product Highlights</div>
+          <div class="spotlight-highlights-grid">
+            <div class="hl-card">
+              <div class="hl-card-icon">&#x1F525;</div>
+              <div class="hl-card-title">Roasted Goodness</div>
+              <p class="hl-card-desc">A flavourful mix of roasted nuts, nutritious seeds and dried fruits, offering a delightful combination of taste and texture along with healthy fats and protein.</p>
+            </div>
+            <div class="hl-card">
+              <div class="hl-card-icon">⚡</div>
+              <div class="hl-card-title">Satisfying Crunch</div>
+              <p class="hl-card-desc">Carefully selected and blended to deliver rich roasted flavour, crunch and wholesome goodness in every bite for clean energy.</p>
+            </div>
+            <div class="hl-card">
+              <div class="hl-card-icon">🌿</div>
+              <div class="hl-card-title">Where Taste Meets Nutrition</div>
+              <p class="hl-card-desc">At Tattvva, we bring together quality ingredients and the goodness of carefully selected dry fruits to create a delicious, nourishing snack for everyday enjoyment.</p>
+            </div>
+          </div>
+
+          <!-- Size / Weight Selection (100g, 250g, 500g) -->
+          <div class="product-variant-selector">
+            <div class="variant-selector-header">
+              <span class="variant-label">Select Net Weight:</span>
+              <span class="variant-active-display">250g (Selected)</span>
+            </div>
+            <div class="variant-pill-group" role="radiogroup" aria-label="Select Weight">
+              <button type="button" class="variant-pill" data-size="100g" data-price="259" data-mrp="290" data-discount="Save 11% OFF" data-pack="Net Wt: 100g &middot; Snacking Jar &middot; Freshness Sealed &middot; Incl. of all taxes" role="radio" aria-checked="false">
+                <span class="pill-weight">100g</span>
+                <span class="pill-badge">Trial Pack</span>
+                <span class="pill-price">₹259</span>
+              </button>
+              <button type="button" class="variant-pill is-active" data-size="250g" data-price="499" data-mrp="580" data-discount="Save 14% OFF" data-pack="Net Wt: 250g &middot; Freshness Sealed Jar &middot; Inclusive of all taxes" role="radio" aria-checked="true">
+                <span class="pill-weight">250g</span>
+                <span class="pill-badge best-seller">Most Popular</span>
+                <span class="pill-price">₹499</span>
+              </button>
+              <button type="button" class="variant-pill" data-size="500g" data-price="939" data-mrp="1160" data-discount="Save 19% OFF" data-pack="Net Wt: 500g &middot; Family Value Pack &middot; Freshness Sealed &middot; Incl. of all taxes" role="radio" aria-checked="false">
+                <span class="pill-weight">500g</span>
+                <span class="pill-badge value-save">Save 19%</span>
+                <span class="pill-price">₹939</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="spotlight-price-box">
+            <span class="spotlight-current-price">{% if roasted_prod.price %}{{ roasted_prod.price | money }}{% else %}₹499{% endif %}</span>
+            <span class="spotlight-mrp">{% if roasted_prod.compare_at_price %}{{ roasted_prod.compare_at_price | money }}{% else %}₹580{% endif %}</span>
+            <span class="spotlight-discount-pill">Save 14% OFF</span>
+            <div class="spotlight-pack-info">Net Wt: 250g &middot; Freshness Sealed Jar &middot; Inclusive of all taxes</div>
+          </div>
+
+          <!-- Quantity Stepper & Dynamic Total Subtotal -->
+          <div class="product-qty-row">
+            <div class="qty-control-wrapper">
+              <span class="qty-label">Quantity:</span>
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn btn-minus" aria-label="Decrease quantity">−</button>
+                <input type="number" class="qty-input" value="1" min="1" max="50" aria-label="Product quantity" readonly>
+                <button type="button" class="qty-btn btn-plus" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+
+            <div class="price-summary-dynamic">
+              <div class="total-price-line">
+                <span class="total-label">Subtotal:</span>
+                <span class="spotlight-dynamic-total">₹499</span>
+              </div>
+              <div class="total-unit-breakdown">
+                <span class="breakdown-text">₹499 × 1</span>
+                <span class="total-savings-text">Save ₹81</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="spotlight-action-row">
+            <a href="{{ roasted_prod.url | default: '/products/dry-fruit-roasted' }}" class="btn-spotlight-buy">Buy Now &middot; Roasted Mix <span>→</span></a>
+            {% if roasted_prod.selected_or_first_available_variant %}
+              <form method="post" action="{{ routes.cart_add_url }}" style="flex:1;">
+                <input type="hidden" name="id" value="{{ roasted_prod.selected_or_first_available_variant.id }}">
+                <button type="submit" class="btn-spotlight-cart" style="width:100%;"><span>🛒</span> Add to Bag</button>
+              </form>
+            {% else %}
+              <a href="{{ roasted_prod.url | default: '/products/dry-fruit-roasted' }}" class="btn-spotlight-cart"><span>🛒</span> Add to Bag</a>
+            {% endif %}
+          </div>
+
+          <div class="spotlight-trust-list">
+            <span>✓ Free Pan-India Delivery</span>
+            <span>✓ Dispatched in 24h</span>
+            <span>✓ FSSAI Certified Sterile Kitchen</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. MIX DRY FRUIT - RAW -->
+      {% assign raw_mix_prod = all_products['mix-dry-fruit-raw'] %}
+      <article class="spotlight-card" id="prod-mix-dry-fruit-raw">
+        <!-- Left Media Showcase -->
+        <div class="spotlight-media-wrap">
+          <span class="spotlight-live-tag"><span class="pulse-dot"></span> Live in Store</span>
+          <span class="spotlight-edition-tag">★ Power of Five Raw</span>
+
+          <!-- Interactive Product Slider Gallery -->
+          <div class="spotlight-gallery" id="rawMixProductGallery" data-auto-play="true">
+            <div class="spotlight-slides-viewport">
+              {% if raw_mix_prod != blank and raw_mix_prod.images.size > 0 %}
+                {% for img in raw_mix_prod.images %}
+                  <div class="spotlight-slide{% if forloop.first %} is-active{% endif %}" data-index="{{ forloop.index0 }}" data-caption="View {{ forloop.index }} of {{ raw_mix_prod.images.size }}" data-full="{{ img | image_url: width: 1600 }}">
+                    <img src="{{ img | image_url: width: 800 }}" alt="{{ raw_mix_prod.title }} - Shot {{ forloop.index }}" class="spotlight-slide-img" width="520" height="460"{% if forloop.first %} loading="eager"{% else %} loading="lazy"{% endif %}>
+                    <span class="spotlight-slide-caption">✦ View {{ forloop.index }} of {{ raw_mix_prod.images.size }}</span>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div class="spotlight-slide is-active" data-index="0" data-caption="Signature Premium Packaging" data-full="{{ 'tattvva-mix-dry-fruit-raw-front.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-mix-dry-fruit-raw-front.webp' | asset_url }}" alt="MIX DRY FRUIT - RAW - Signature Premium Packaging" class="spotlight-slide-img" width="520" height="460" loading="eager">
+                  <span class="spotlight-slide-caption">✦ Signature Premium Packaging</span>
+                </div>
+                <div class="spotlight-slide" data-index="1" data-caption="Rich In Protein &amp; Fibre &middot; Lifestyle" data-full="{{ 'tattvva-mix-dry-fruit-raw-lifestyle.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-mix-dry-fruit-raw-lifestyle.webp' | asset_url }}" alt="MIX DRY FRUIT - RAW - Wholesome Lifestyle Snack" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Rich In Protein &amp; Fibre &middot; Lifestyle</span>
+                </div>
+                <div class="spotlight-slide" data-index="2" data-caption="Packaging &amp; Label Details" data-full="{{ 'tattvva-mix-dry-fruit-raw-back.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-mix-dry-fruit-raw-back.webp' | asset_url }}" alt="MIX DRY FRUIT - RAW - Packaging Details & Jar Back" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Packaging &amp; Label Details</span>
+                </div>
+                <div class="spotlight-slide" data-index="3" data-caption="Certified NABL Nutritional Table" data-full="{{ 'tattvva-mix-dry-fruit-raw-nutrition.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-mix-dry-fruit-raw-nutrition.webp' | asset_url }}" alt="MIX DRY FRUIT - RAW - Certified Nutritional Facts" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Certified NABL Nutritional Table</span>
+                </div>
+                <div class="spotlight-slide" data-index="4" data-caption="Complete Product &amp; Packaging Showcase" data-full="{{ 'tattvva-mix-dry-fruit-raw-showcase.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-mix-dry-fruit-raw-showcase.webp' | asset_url }}" alt="MIX DRY FRUIT - RAW - Complete Product Showcase" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Complete Product &amp; Packaging Showcase</span>
+                </div>
+              {% endif %}
+
+              <!-- Navigation Arrows -->
+              <button type="button" class="spotlight-nav-btn prev" aria-label="Previous shot">‹</button>
+              <button type="button" class="spotlight-nav-btn next" aria-label="Next shot">›</button>
+            </div>
+
+            <!-- Running Progress bar & Counter -->
+            <div class="spotlight-gallery-footer">
+              <div class="spotlight-progress-track">
+                <div class="spotlight-progress-fill" style="width: 20%;"></div>
+              </div>
+              <span class="spotlight-runner-pill"><span class="runner-dot"></span> <span class="runner-counter">Shot 1 of {% if raw_mix_prod != blank and raw_mix_prod.images.size > 0 %}{{ raw_mix_prod.images.size }}{% else %}5{% endif %}</span></span>
+            </div>
+
+            <!-- Luxury Thumbnail Strip with Labels -->
+            <div class="spotlight-thumb-strip">
+              {% if raw_mix_prod != blank and raw_mix_prod.images.size > 0 %}
+                {% for img in raw_mix_prod.images %}
+                  <div class="spotlight-thumb-item">
+                    <button type="button" class="spotlight-thumb{% if forloop.first %} is-active{% endif %}" data-slide="{{ forloop.index0 }}" aria-label="Shot {{ forloop.index }}"><img src="{{ img | image_url: width: 140 }}" width="60" height="60" alt="Thumbnail {{ forloop.index }}"></button>
+                    <span class="spotlight-thumb-label">Shot {{ forloop.index }}</span>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb is-active" data-slide="0" aria-label="Shot 1: Jar Front"><img src="{{ 'tattvva-mix-dry-fruit-raw-front.webp' | asset_url }}" width="60" height="60" alt="Jar Front"></button>
+                  <span class="spotlight-thumb-label">Front Jar</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="1" aria-label="Shot 2: Lifestyle"><img src="{{ 'tattvva-mix-dry-fruit-raw-lifestyle.webp' | asset_url }}" width="60" height="60" alt="Lifestyle"></button>
+                  <span class="spotlight-thumb-label">Lifestyle</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="2" aria-label="Shot 3: Jar Back"><img src="{{ 'tattvva-mix-dry-fruit-raw-back.webp' | asset_url }}" width="60" height="60" alt="Jar Back"></button>
+                  <span class="spotlight-thumb-label">Back Label</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="3" aria-label="Shot 4: Nutrition"><img src="{{ 'tattvva-mix-dry-fruit-raw-nutrition.webp' | asset_url }}" width="60" height="60" alt="Nutrition"></button>
+                  <span class="spotlight-thumb-label">Nutrition</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="4" aria-label="Shot 5: Showcase"><img src="{{ 'tattvva-mix-dry-fruit-raw-showcase.webp' | asset_url }}" width="60" height="60" alt="Showcase"></button>
+                  <span class="spotlight-thumb-label">Showcase</span>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- Micro Seals -->
+          <div class="spotlight-micro-seals">
+            <div class="micro-seal"><span class="micro-seal-icon">&#x1F95C;</span><span>5 Powerhouse Dry Fruits</span></div>
+            <div class="micro-seal"><span class="micro-seal-icon">🌱</span><span>99.9% Raw &amp; Unroasted</span></div>
+            <div class="micro-seal"><span class="micro-seal-icon">⚡</span><span>Rich in Healthy Fats</span></div>
+          </div>
+        </div>
+
+        <!-- Right Product Details -->
+        <div class="spotlight-details">
+          <div class="spotlight-rating-wrap">
+            <span class="spotlight-stars">★★★★★</span>
+            <span class="spotlight-verified">4.9 / 5.0</span>
+            <span>(380+ verified customer ratings)</span>
+          </div>
+
+          <h3 class="spotlight-title">MIX DRY FRUIT - RAW</h3>
+          <span class="spotlight-sub-badge">Power of Five Edition &middot; Premium Packaging</span>
+
+          <p class="spotlight-lead-copy">“A wholesome combination of premium almonds, cashews, walnuts, raisins and pistachios, carefully selected to deliver natural goodness, rich taste and satisfying crunch in every handful.”</p>
+
+          <!-- Key Ingredients -->
+          <div class="spotlight-ingredients-wrap">
+            <div class="spotlight-ingredients-label">Key Ingredients</div>
+            <div class="spotlight-ingredients-pills">
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Almond</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Walnut</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Cashew</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Raisins</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Pistachio</span>
+            </div>
+          </div>
+
+          <div class="spotlight-highlights-label">Product Highlights</div>
+          <div class="spotlight-highlights-grid">
+            <div class="hl-card">
+              <div class="hl-card-icon">⚡</div>
+              <div class="hl-card-title">Power of Five</div>
+              <p class="hl-card-desc">A nourishing blend of carefully selected dry fruits, offering a natural source of healthy fats, protein, dietary fibre, vitamins and minerals.</p>
+            </div>
+            <div class="hl-card">
+              <div class="hl-card-icon">&#x1F95C;</div>
+              <div class="hl-card-title">Natural Goodness</div>
+              <p class="hl-card-desc">Carefully selected to deliver natural goodness, rich taste and satisfying crunch in every handful without any artificial processing.</p>
+            </div>
+            <div class="hl-card">
+              <div class="hl-card-icon">🌿</div>
+              <div class="hl-card-title">Where Goodness Begins</div>
+              <p class="hl-card-desc">At Tattvva, we believe that great nutrition begins with quality ingredients. Brings together nature's finest dry fruits for wholesome snacking.</p>
+            </div>
+          </div>
+
+          <!-- Size / Weight Selection (100g, 250g, 500g) -->
+          <div class="product-variant-selector">
+            <div class="variant-selector-header">
+              <span class="variant-label">Select Net Weight:</span>
+              <span class="variant-active-display">250g (Selected)</span>
+            </div>
+            <div class="variant-pill-group" role="radiogroup" aria-label="Select Weight">
+              <button type="button" class="variant-pill" data-size="100g" data-price="239" data-mrp="275" data-discount="Save 13% OFF" data-pack="Net Wt: 100g &middot; Snacking Jar &middot; Freshness Sealed &middot; Incl. of all taxes" role="radio" aria-checked="false">
+                <span class="pill-weight">100g</span>
+                <span class="pill-badge">Trial Pack</span>
+                <span class="pill-price">₹239</span>
+              </button>
+              <button type="button" class="variant-pill is-active" data-size="250g" data-price="479" data-mrp="550" data-discount="Save 13% OFF" data-pack="Net Wt: 250g &middot; Freshness Sealed Jar &middot; Inclusive of all taxes" role="radio" aria-checked="true">
+                <span class="pill-weight">250g</span>
+                <span class="pill-badge best-seller">Most Popular</span>
+                <span class="pill-price">₹479</span>
+              </button>
+              <button type="button" class="variant-pill" data-size="500g" data-price="899" data-mrp="1100" data-discount="Save 18% OFF" data-pack="Net Wt: 500g &middot; Family Value Pack &middot; Freshness Sealed &middot; Incl. of all taxes" role="radio" aria-checked="false">
+                <span class="pill-weight">500g</span>
+                <span class="pill-badge value-save">Save 18%</span>
+                <span class="pill-price">₹899</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="spotlight-price-box">
+            <span class="spotlight-current-price">{% if raw_mix_prod.price %}{{ raw_mix_prod.price | money }}{% else %}₹479{% endif %}</span>
+            <span class="spotlight-mrp">{% if raw_mix_prod.compare_at_price %}{{ raw_mix_prod.compare_at_price | money }}{% else %}₹550{% endif %}</span>
+            <span class="spotlight-discount-pill">Save 13% OFF</span>
+            <div class="spotlight-pack-info">Net Wt: 250g &middot; Freshness Sealed Jar &middot; Inclusive of all taxes</div>
+          </div>
+
+          <!-- Quantity Stepper & Dynamic Total Subtotal -->
+          <div class="product-qty-row">
+            <div class="qty-control-wrapper">
+              <span class="qty-label">Quantity:</span>
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn btn-minus" aria-label="Decrease quantity">−</button>
+                <input type="number" class="qty-input" value="1" min="1" max="50" aria-label="Product quantity" readonly>
+                <button type="button" class="qty-btn btn-plus" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+
+            <div class="price-summary-dynamic">
+              <div class="total-price-line">
+                <span class="total-label">Subtotal:</span>
+                <span class="spotlight-dynamic-total">₹479</span>
+              </div>
+              <div class="total-unit-breakdown">
+                <span class="breakdown-text">₹479 × 1</span>
+                <span class="total-savings-text">Save ₹71</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="spotlight-action-row">
+            <a href="{{ raw_mix_prod.url | default: '/products/mix-dry-fruit-raw' }}" class="btn-spotlight-buy">Buy Now &middot; Raw Mix <span>→</span></a>
+            {% if raw_mix_prod.selected_or_first_available_variant %}
+              <form method="post" action="{{ routes.cart_add_url }}" style="flex:1;">
+                <input type="hidden" name="id" value="{{ raw_mix_prod.selected_or_first_available_variant.id }}">
+                <button type="submit" class="btn-spotlight-cart" style="width:100%;"><span>🛒</span> Add to Bag</button>
+              </form>
+            {% else %}
+              <a href="{{ raw_mix_prod.url | default: '/products/mix-dry-fruit-raw' }}" class="btn-spotlight-cart"><span>🛒</span> Add to Bag</a>
+            {% endif %}
+          </div>
+
+          <div class="spotlight-trust-list">
+            <span>✓ Free Pan-India Delivery</span>
+            <span>✓ Dispatched in 24h</span>
+            <span>✓ FSSAI Certified Sterile Kitchen</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. DRY FRUIT MIX - WITHOUT ROASTED -->
+      {% assign unroasted_prod = all_products['dry-mix-without-roasted'] %}
+      <article class="spotlight-card" id="prod-dry-mix-unroasted">
+        <!-- Left Media Showcase -->
+        <div class="spotlight-media-wrap">
+          <span class="spotlight-live-tag"><span class="pulse-dot"></span> Live in Store</span>
+          <span class="spotlight-edition-tag">★ Natural Unroasted Medley</span>
+
+                    <!-- Interactive Product Slider Gallery -->
+          <div class="spotlight-gallery" id="unroastedProductGallery" data-auto-play="true">
+            <div class="spotlight-slides-viewport">
+              {% if unroasted_prod != blank and unroasted_prod.images.size > 0 %}
+                {% for img in unroasted_prod.images %}
+                  <div class="spotlight-slide{% if forloop.first %} is-active{% endif %}" data-index="{{ forloop.index0 }}" data-caption="View {{ forloop.index }} of {{ unroasted_prod.images.size }}" data-full="{{ img | image_url: width: 1600 }}">
+                    <img src="{{ img | image_url: width: 800 }}" alt="{{ unroasted_prod.title }} - Shot {{ forloop.index }}" class="spotlight-slide-img" width="520" height="460"{% if forloop.first %} loading="eager"{% else %} loading="lazy"{% endif %}>
+                    <span class="spotlight-slide-caption">✦ View {{ forloop.index }} of {{ unroasted_prod.images.size }}</span>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div class="spotlight-slide is-active" data-index="0" data-caption="Signature Premium Packaging" data-full="{{ 'tattvva-dry-mix-unroasted-front.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-dry-mix-unroasted-front.webp' | asset_url }}" alt="DRY FRUIT MIX - WITHOUT ROASTED - Signature Premium Packaging" class="spotlight-slide-img" width="520" height="460" loading="eager">
+                  <span class="spotlight-slide-caption">✦ Signature Premium Packaging</span>
+                </div>
+                <div class="spotlight-slide" data-index="1" data-caption="Nutrient-Rich Mix &middot; Lifestyle" data-full="{{ 'tattvva-dry-mix-unroasted-lifestyle.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-dry-mix-unroasted-lifestyle.webp' | asset_url }}" alt="DRY FRUIT MIX - WITHOUT ROASTED - Wholesome Lifestyle Snack" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Nutrient-Rich Mix &middot; Lifestyle</span>
+                </div>
+                <div class="spotlight-slide" data-index="2" data-caption="Packaging &amp; Label Details" data-full="{{ 'tattvva-dry-mix-unroasted-back.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-dry-mix-unroasted-back.webp' | asset_url }}" alt="DRY FRUIT MIX - WITHOUT ROASTED - Packaging Details &amp; Jar Back" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Packaging &amp; Label Details</span>
+                </div>
+                <div class="spotlight-slide" data-index="3" data-caption="Certified NABL Nutritional Table" data-full="{{ 'tattvva-dry-mix-unroasted-nutrition.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-dry-mix-unroasted-nutrition.webp' | asset_url }}" alt="DRY FRUIT MIX - WITHOUT ROASTED - Certified Nutritional Facts" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Certified NABL Nutritional Table</span>
+                </div>
+                <div class="spotlight-slide" data-index="4" data-caption="Complete Product &amp; Packaging Showcase" data-full="{{ 'tattvva-dry-mix-unroasted-showcase.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-dry-mix-unroasted-showcase.webp' | asset_url }}" alt="DRY FRUIT MIX - WITHOUT ROASTED - Complete Product Showcase" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Complete Product &amp; Packaging Showcase</span>
+                </div>
+              {% endif %}
+
+              <!-- Navigation Arrows -->
+              <button type="button" class="spotlight-nav-btn prev" aria-label="Previous shot">‹</button>
+              <button type="button" class="spotlight-nav-btn next" aria-label="Next shot">›</button>
+            </div>
+
+            <!-- Running Progress bar & Counter -->
+            <div class="spotlight-gallery-footer">
+              <div class="spotlight-progress-track">
+                <div class="spotlight-progress-fill" style="width: 20%;"></div>
+              </div>
+              <span class="spotlight-runner-pill"><span class="runner-dot"></span> <span class="runner-counter">Shot 1 of {% if unroasted_prod != blank and unroasted_prod.images.size > 0 %}{{ unroasted_prod.images.size }}{% else %}5{% endif %}</span></span>
+            </div>
+
+            <!-- Luxury Thumbnail Strip with Labels -->
+            <div class="spotlight-thumb-strip">
+              {% if unroasted_prod != blank and unroasted_prod.images.size > 0 %}
+                {% for img in unroasted_prod.images %}
+                  <div class="spotlight-thumb-item">
+                    <button type="button" class="spotlight-thumb{% if forloop.first %} is-active{% endif %}" data-slide="{{ forloop.index0 }}" aria-label="Shot {{ forloop.index }}"><img src="{{ img | image_url: width: 140 }}" width="60" height="60" alt="Thumbnail {{ forloop.index }}"></button>
+                    <span class="spotlight-thumb-label">Shot {{ forloop.index }}</span>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb is-active" data-slide="0" aria-label="Shot 1: Jar Front"><img src="{{ 'tattvva-dry-mix-unroasted-front.webp' | asset_url }}" width="60" height="60" alt="Jar Front"></button>
+                  <span class="spotlight-thumb-label">Front Jar</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="1" aria-label="Shot 2: Lifestyle"><img src="{{ 'tattvva-dry-mix-unroasted-lifestyle.webp' | asset_url }}" width="60" height="60" alt="Lifestyle"></button>
+                  <span class="spotlight-thumb-label">Lifestyle</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="2" aria-label="Shot 3: Jar Back"><img src="{{ 'tattvva-dry-mix-unroasted-back.webp' | asset_url }}" width="60" height="60" alt="Jar Back"></button>
+                  <span class="spotlight-thumb-label">Back Label</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="3" aria-label="Shot 4: Nutrition"><img src="{{ 'tattvva-dry-mix-unroasted-nutrition.webp' | asset_url }}" width="60" height="60" alt="Nutrition"></button>
+                  <span class="spotlight-thumb-label">Nutrition</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="4" aria-label="Shot 5: Showcase"><img src="{{ 'tattvva-dry-mix-unroasted-showcase.webp' | asset_url }}" width="60" height="60" alt="Showcase"></button>
+                  <span class="spotlight-thumb-label">Showcase</span>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- Micro Seals -->
+          <div class="spotlight-micro-seals">
+            <div class="micro-seal"><span class="micro-seal-icon">&#x1F95D;</span><span>Dried Kiwi &amp; Berries</span></div>
+            <div class="micro-seal"><span class="micro-seal-icon">&#x1F33B;</span><span>Pumpkin &amp; Sunflower Seeds</span></div>
+            <div class="micro-seal"><span class="micro-seal-icon">🌿</span><span>0% Added Oil or Syrups</span></div>
+          </div>
+        </div>
+
+        <!-- Right Product Details -->
+        <div class="spotlight-details">
+          <div class="spotlight-rating-wrap">
+            <span class="spotlight-stars">★★★★★</span>
+            <span class="spotlight-verified">4.9 / 5.0</span>
+            <span>(310+ verified customer ratings)</span>
+          </div>
+
+          <h3 class="spotlight-title">DRY FRUIT MIX - WITHOUT ROASTED</h3>
+          <span class="spotlight-sub-badge">Wholesome Natural Blend &middot; Premium Packaging</span>
+
+          <p class="spotlight-lead-copy">“A delightful blend of premium nuts, seeds and naturally dried fruits, thoughtfully combined to offer a wholesome snacking experience with rich flavours, varied textures and natural goodness.”</p>
+
+          <!-- Key Ingredients -->
+          <div class="spotlight-ingredients-wrap">
+            <div class="spotlight-ingredients-label">Key Ingredients</div>
+            <div class="spotlight-ingredients-pills">
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Almond</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Pistachio</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Cashew</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Pumpkin Seeds</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Sunflower Seeds</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Dried Kiwi</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Dried Cranberry</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Black Raisins</span>
+            </div>
+          </div>
+
+          <div class="spotlight-highlights-label">Product Highlights</div>
+          <div class="spotlight-highlights-grid">
+            <div class="hl-card">
+              <div class="hl-card-icon">⚡</div>
+              <div class="hl-card-title">Wholesome Nutrition</div>
+              <p class="hl-card-desc">A nourishing combination of nuts, seeds and dried fruits that provides healthy fats, protein, dietary fibre, vitamins and minerals for a satisfying everyday snack.</p>
+            </div>
+            <div class="hl-card">
+              <div class="hl-card-icon">&#x1F95D;</div>
+              <div class="hl-card-title">Varied Textures</div>
+              <p class="hl-card-desc">Rich flavours and delightful crunch celebrating almonds, cashews, pumpkin seeds, vibrant dried kiwi and sun-dried cranberries.</p>
+            </div>
+            <div class="hl-card">
+              <div class="hl-card-icon">🌿</div>
+              <div class="hl-card-title">Where Goodness Begins</div>
+              <p class="hl-card-desc">At Tattvva, we bring together carefully selected ingredients in their unroasted form, celebrating natural taste, delightful crunch and quality in every handful.</p>
+            </div>
+          </div>
+
+          <!-- Size / Weight Selection (100g, 250g, 500g) -->
+          <div class="product-variant-selector">
+            <div class="variant-selector-header">
+              <span class="variant-label">Select Net Weight:</span>
+              <span class="variant-active-display">250g (Selected)</span>
+            </div>
+            <div class="variant-pill-group" role="radiogroup" aria-label="Select Weight">
+              <button type="button" class="variant-pill" data-size="100g" data-price="249" data-mrp="280" data-discount="Save 11% OFF" data-pack="Net Wt: 100g &middot; Snacking Jar &middot; Freshness Sealed &middot; Incl. of all taxes" role="radio" aria-checked="false">
+                <span class="pill-weight">100g</span>
+                <span class="pill-badge">Trial Pack</span>
+                <span class="pill-price">₹249</span>
+              </button>
+              <button type="button" class="variant-pill is-active" data-size="250g" data-price="489" data-mrp="560" data-discount="Save 13% OFF" data-pack="Net Wt: 250g &middot; Freshness Sealed Jar &middot; Inclusive of all taxes" role="radio" aria-checked="true">
+                <span class="pill-weight">250g</span>
+                <span class="pill-badge best-seller">Most Popular</span>
+                <span class="pill-price">₹489</span>
+              </button>
+              <button type="button" class="variant-pill" data-size="500g" data-price="919" data-mrp="1120" data-discount="Save 18% OFF" data-pack="Net Wt: 500g &middot; Family Value Pack &middot; Freshness Sealed &middot; Incl. of all taxes" role="radio" aria-checked="false">
+                <span class="pill-weight">500g</span>
+                <span class="pill-badge value-save">Save 18%</span>
+                <span class="pill-price">₹919</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="spotlight-price-box">
+            <span class="spotlight-current-price">{% if unroasted_prod.price %}{{ unroasted_prod.price | money }}{% else %}₹489{% endif %}</span>
+            <span class="spotlight-mrp">{% if unroasted_prod.compare_at_price %}{{ unroasted_prod.compare_at_price | money }}{% else %}₹560{% endif %}</span>
+            <span class="spotlight-discount-pill">Save 13% OFF</span>
+            <div class="spotlight-pack-info">Net Wt: 250g &middot; Freshness Sealed Jar &middot; Inclusive of all taxes</div>
+          </div>
+
+          <!-- Quantity Stepper & Dynamic Total Subtotal -->
+          <div class="product-qty-row">
+            <div class="qty-control-wrapper">
+              <span class="qty-label">Quantity:</span>
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn btn-minus" aria-label="Decrease quantity">−</button>
+                <input type="number" class="qty-input" value="1" min="1" max="50" aria-label="Product quantity" readonly>
+                <button type="button" class="qty-btn btn-plus" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+
+            <div class="price-summary-dynamic">
+              <div class="total-price-line">
+                <span class="total-label">Subtotal:</span>
+                <span class="spotlight-dynamic-total">₹489</span>
+              </div>
+              <div class="total-unit-breakdown">
+                <span class="breakdown-text">₹489 × 1</span>
+                <span class="total-savings-text">Save ₹71</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="spotlight-action-row">
+            <a href="{{ unroasted_prod.url | default: '/products/dry-mix-without-roasted' }}" class="btn-spotlight-buy">Buy Now &middot; Dry Fruit Mix <span>→</span></a>
+            {% if unroasted_prod.selected_or_first_available_variant %}
+              <form method="post" action="{{ routes.cart_add_url }}" style="flex:1;">
+                <input type="hidden" name="id" value="{{ unroasted_prod.selected_or_first_available_variant.id }}">
+                <button type="submit" class="btn-spotlight-cart" style="width:100%;"><span>🛒</span> Add to Bag</button>
+              </form>
+            {% else %}
+              <a href="{{ unroasted_prod.url | default: '/products/dry-mix-without-roasted' }}" class="btn-spotlight-cart"><span>🛒</span> Add to Bag</a>
+            {% endif %}
+          </div>
+
+          <div class="spotlight-trust-list">
+            <span>✓ Free Pan-India Delivery</span>
+            <span>✓ Dispatched in 24h</span>
+            <span>✓ FSSAI Certified Sterile Kitchen</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. SUPER SEEDS RAW -->
+      {% assign seeds_prod = all_products['super-seeds-raw'] %}
+      <article class="spotlight-card" id="prod-super-seeds-raw">
+        <!-- Left Media Showcase -->
+        <div class="spotlight-media-wrap">
+          <span class="spotlight-live-tag"><span class="pulse-dot"></span> Live in Store</span>
+          <span class="spotlight-edition-tag">★ Power of Five Raw Seeds</span>
+
+                    <!-- Interactive Product Slider Gallery -->
+          <div class="spotlight-gallery" id="seedsProductGallery" data-auto-play="true">
+            <div class="spotlight-slides-viewport">
+              {% if seeds_prod != blank and seeds_prod.images.size > 0 %}
+                {% for img in seeds_prod.images %}
+                  <div class="spotlight-slide{% if forloop.first %} is-active{% endif %}" data-index="{{ forloop.index0 }}" data-caption="View {{ forloop.index }} of {{ seeds_prod.images.size }}" data-full="{{ img | image_url: width: 1600 }}">
+                    <img src="{{ img | image_url: width: 800 }}" alt="{{ seeds_prod.title }} - Shot {{ forloop.index }}" class="spotlight-slide-img" width="520" height="460"{% if forloop.first %} loading="eager"{% else %} loading="lazy"{% endif %}>
+                    <span class="spotlight-slide-caption">✦ View {{ forloop.index }} of {{ seeds_prod.images.size }}</span>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div class="spotlight-slide is-active" data-index="0" data-caption="Signature Premium Packaging" data-full="{{ 'tattvva-super-seeds-raw-front.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-super-seeds-raw-front.webp' | asset_url }}" alt="SUPER SEEDS RAW - Signature Premium Packaging" class="spotlight-slide-img" width="520" height="460" loading="eager">
+                  <span class="spotlight-slide-caption">✦ Signature Premium Packaging</span>
+                </div>
+                <div class="spotlight-slide" data-index="1" data-caption="Plant Protein &amp; Minerals &middot; Lifestyle" data-full="{{ 'tattvva-super-seeds-raw-lifestyle.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-super-seeds-raw-lifestyle.webp' | asset_url }}" alt="SUPER SEEDS RAW - Wholesome Lifestyle Presentation" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Plant Protein &amp; Minerals &middot; Lifestyle</span>
+                </div>
+                <div class="spotlight-slide" data-index="2" data-caption="Packaging &amp; Label Details" data-full="{{ 'tattvva-super-seeds-raw-back.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-super-seeds-raw-back.webp' | asset_url }}" alt="SUPER SEEDS RAW - Packaging Details &amp; Jar Back" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Packaging &amp; Label Details</span>
+                </div>
+                <div class="spotlight-slide" data-index="3" data-caption="Certified NABL Nutritional Table" data-full="{{ 'tattvva-super-seeds-raw-nutrition.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-super-seeds-raw-nutrition.webp' | asset_url }}" alt="SUPER SEEDS RAW - Certified Nutritional Facts" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Certified NABL Nutritional Table</span>
+                </div>
+                <div class="spotlight-slide" data-index="4" data-caption="Complete Product &amp; Packaging Showcase" data-full="{{ 'tattvva-super-seeds-raw-showcase.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-super-seeds-raw-showcase.webp' | asset_url }}" alt="SUPER SEEDS RAW - Complete Product Showcase" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Complete Product &amp; Packaging Showcase</span>
+                </div>
+              {% endif %}
+
+              <!-- Navigation Arrows -->
+              <button type="button" class="spotlight-nav-btn prev" aria-label="Previous shot">‹</button>
+              <button type="button" class="spotlight-nav-btn next" aria-label="Next shot">›</button>
+            </div>
+
+            <!-- Running Progress bar & Counter -->
+            <div class="spotlight-gallery-footer">
+              <div class="spotlight-progress-track">
+                <div class="spotlight-progress-fill" style="width: 20%;"></div>
+              </div>
+              <span class="spotlight-runner-pill"><span class="runner-dot"></span> <span class="runner-counter">Shot 1 of {% if seeds_prod != blank and seeds_prod.images.size > 0 %}{{ seeds_prod.images.size }}{% else %}5{% endif %}</span></span>
+            </div>
+
+            <!-- Luxury Thumbnail Strip with Labels -->
+            <div class="spotlight-thumb-strip">
+              {% if seeds_prod != blank and seeds_prod.images.size > 0 %}
+                {% for img in seeds_prod.images %}
+                  <div class="spotlight-thumb-item">
+                    <button type="button" class="spotlight-thumb{% if forloop.first %} is-active{% endif %}" data-slide="{{ forloop.index0 }}" aria-label="Shot {{ forloop.index }}"><img src="{{ img | image_url: width: 140 }}" width="60" height="60" alt="Thumbnail {{ forloop.index }}"></button>
+                    <span class="spotlight-thumb-label">Shot {{ forloop.index }}</span>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb is-active" data-slide="0" aria-label="Shot 1: Jar Front"><img src="{{ 'tattvva-super-seeds-raw-front.webp' | asset_url }}" width="60" height="60" alt="Jar Front"></button>
+                  <span class="spotlight-thumb-label">Front Jar</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="1" aria-label="Shot 2: Lifestyle"><img src="{{ 'tattvva-super-seeds-raw-lifestyle.webp' | asset_url }}" width="60" height="60" alt="Lifestyle"></button>
+                  <span class="spotlight-thumb-label">Lifestyle</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="2" aria-label="Shot 3: Jar Back"><img src="{{ 'tattvva-super-seeds-raw-back.webp' | asset_url }}" width="60" height="60" alt="Jar Back"></button>
+                  <span class="spotlight-thumb-label">Back Label</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="3" aria-label="Shot 4: Nutrition"><img src="{{ 'tattvva-super-seeds-raw-nutrition.webp' | asset_url }}" width="60" height="60" alt="Nutrition"></button>
+                  <span class="spotlight-thumb-label">Nutrition</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="4" aria-label="Shot 5: Showcase"><img src="{{ 'tattvva-super-seeds-raw-showcase.webp' | asset_url }}" width="60" height="60" alt="Showcase"></button>
+                  <span class="spotlight-thumb-label">Showcase</span>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- Micro Seals -->
+          <div class="spotlight-micro-seals">
+            <div class="micro-seal"><span class="micro-seal-icon">&#x1F33B;</span><span>5 Nutrient-Rich Seeds</span></div>
+            <div class="micro-seal"><span class="micro-seal-icon">⚡</span><span>Plant Protein &amp; Zinc</span></div>
+            <div class="micro-seal"><span class="micro-seal-icon">🌱</span><span>99.9% Raw &amp; Unprocessed</span></div>
+          </div>
+        </div>
+
+        <!-- Right Product Details -->
+        <div class="spotlight-details">
+          <div class="spotlight-rating-wrap">
+            <span class="spotlight-stars">★★★★★</span>
+            <span class="spotlight-verified">4.9 / 5.0</span>
+            <span>(290+ verified customer ratings)</span>
+          </div>
+
+          <h3 class="spotlight-title">SUPER SEEDS RAW</h3>
+          <span class="spotlight-sub-badge">Power of Five Seed Blend &middot; Premium Packaging</span>
+
+          <p class="spotlight-lead-copy">“A wholesome blend of five carefully selected seeds, bringing together nature's goodness, nutritional richness and delightful texture. Crafted for health-conscious consumers who appreciate simple, natural ingredients and everyday nourishment.”</p>
+
+          <!-- Key Ingredients -->
+          <div class="spotlight-ingredients-wrap">
+            <div class="spotlight-ingredients-label">Key Ingredients</div>
+            <div class="spotlight-ingredients-pills">
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Pumpkin Seeds</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Watermelon Seeds</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Sunflower Seeds</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Flaxseeds</span>
+              <span class="ing-pill"><span class="ing-pill-dot"></span>White Sesame Seeds</span>
+            </div>
+          </div>
+
+          <div class="spotlight-highlights-label">Product Highlights</div>
+          <div class="spotlight-highlights-grid">
+            <div class="hl-card">
+              <div class="hl-card-icon">⚡</div>
+              <div class="hl-card-title">Power of Five</div>
+              <p class="hl-card-desc">A nourishing combination of five nutrient-rich seeds, offering plant-based protein, healthy fats, dietary fibre, vitamins and minerals.</p>
+            </div>
+            <div class="hl-card">
+              <div class="hl-card-icon">&#x1F33B;</div>
+              <div class="hl-card-title">99.9% Pure Raw</div>
+              <p class="hl-card-desc">Enjoy them raw to experience their natural nutty flavour, delicate crunch and wholesome goodness for everyday snacking.</p>
+            </div>
+            <div class="hl-card">
+              <div class="hl-card-icon">🌿</div>
+              <div class="hl-card-title">Where Goodness Begins</div>
+              <p class="hl-card-desc">At Tattvva, we believe that great nutrition begins with thoughtfully selected ingredients, making healthy eating simple, delicious and fulfilling.</p>
+            </div>
+          </div>
+
+          <!-- Size / Weight Selection (100g, 250g, 500g) -->
+          <div class="product-variant-selector">
+            <div class="variant-selector-header">
+              <span class="variant-label">Select Net Weight:</span>
+              <span class="variant-active-display">250g (Selected)</span>
+            </div>
+            <div class="variant-pill-group" role="radiogroup" aria-label="Select Weight">
+              <button type="button" class="variant-pill" data-size="100g" data-price="199" data-mrp="240" data-discount="Save 17% OFF" data-pack="Net Wt: 100g &middot; Snacking Jar &middot; Freshness Sealed &middot; Incl. of all taxes" role="radio" aria-checked="false">
+                <span class="pill-weight">100g</span>
+                <span class="pill-badge">Trial Pack</span>
+                <span class="pill-price">₹199</span>
+              </button>
+              <button type="button" class="variant-pill is-active" data-size="250g" data-price="399" data-mrp="480" data-discount="Save 17% OFF" data-pack="Net Wt: 250g &middot; Freshness Sealed Jar &middot; Inclusive of all taxes" role="radio" aria-checked="true">
+                <span class="pill-weight">250g</span>
+                <span class="pill-badge best-seller">Most Popular</span>
+                <span class="pill-price">₹399</span>
+              </button>
+              <button type="button" class="variant-pill" data-size="500g" data-price="749" data-mrp="960" data-discount="Save 22% OFF" data-pack="Net Wt: 500g &middot; Family Value Pack &middot; Freshness Sealed &middot; Incl. of all taxes" role="radio" aria-checked="false">
+                <span class="pill-weight">500g</span>
+                <span class="pill-badge value-save">Save 22%</span>
+                <span class="pill-price">₹749</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="spotlight-price-box">
+            <span class="spotlight-current-price">{% if seeds_prod.price %}{{ seeds_prod.price | money }}{% else %}₹399{% endif %}</span>
+            <span class="spotlight-mrp">{% if seeds_prod.compare_at_price %}{{ seeds_prod.compare_at_price | money }}{% else %}₹480{% endif %}</span>
+            <span class="spotlight-discount-pill">Save 17% OFF</span>
+            <div class="spotlight-pack-info">Net Wt: 250g &middot; Freshness Sealed Jar &middot; Inclusive of all taxes</div>
+          </div>
+
+          <!-- Quantity Stepper & Dynamic Total Subtotal -->
+          <div class="product-qty-row">
+            <div class="qty-control-wrapper">
+              <span class="qty-label">Quantity:</span>
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn btn-minus" aria-label="Decrease quantity">−</button>
+                <input type="number" class="qty-input" value="1" min="1" max="50" aria-label="Product quantity" readonly>
+                <button type="button" class="qty-btn btn-plus" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+
+            <div class="price-summary-dynamic">
+              <div class="total-price-line">
+                <span class="total-label">Subtotal:</span>
+                <span class="spotlight-dynamic-total">₹399</span>
+              </div>
+              <div class="total-unit-breakdown">
+                <span class="breakdown-text">₹399 × 1</span>
+                <span class="total-savings-text">Save ₹81</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="spotlight-action-row">
+            <a href="{{ seeds_prod.url | default: '/products/super-seeds-raw' }}" class="btn-spotlight-buy">Buy Now &middot; Super Seeds <span>→</span></a>
+            {% if seeds_prod.selected_or_first_available_variant %}
+              <form method="post" action="{{ routes.cart_add_url }}" style="flex:1;">
+                <input type="hidden" name="id" value="{{ seeds_prod.selected_or_first_available_variant.id }}">
+                <button type="submit" class="btn-spotlight-cart" style="width:100%;"><span>🛒</span> Add to Bag</button>
+              </form>
+            {% else %}
+              <a href="{{ seeds_prod.url | default: '/products/super-seeds-raw' }}" class="btn-spotlight-cart"><span>🛒</span> Add to Bag</a>
+            {% endif %}
+          </div>
+
+          <div class="spotlight-trust-list">
+            <span>✓ Free Pan-India Delivery</span>
+            <span>✓ Dispatched in 24h</span>
+            <span>✓ FSSAI Certified Sterile Kitchen</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. SUPER GRAIN QUINOA -->
+      {% assign quinoa_prod = all_products['super-grain-quinoa'] %}
+      <article class="spotlight-card" id="prod-super-grain-quinoa">
+        <!-- Left Media Showcase -->
+        <div class="spotlight-media-wrap">
+          <span class="spotlight-live-tag"><span class="pulse-dot"></span> Live in Store</span>
+          <span class="spotlight-edition-tag">★ 99.9% Gluten-Free Super Grain</span>
+
+                    <!-- Interactive Product Slider Gallery -->
+          <div class="spotlight-gallery" id="quinoaProductGallery" data-auto-play="true">
+            <div class="spotlight-slides-viewport">
+              {% if quinoa_prod != blank and quinoa_prod.images.size > 0 %}
+                {% for img in quinoa_prod.images %}
+                  <div class="spotlight-slide{% if forloop.first %} is-active{% endif %}" data-index="{{ forloop.index0 }}" data-caption="View {{ forloop.index }} of {{ quinoa_prod.images.size }}" data-full="{{ img | image_url: width: 1600 }}">
+                    <img src="{{ img | image_url: width: 800 }}" alt="{{ quinoa_prod.title }} - Shot {{ forloop.index }}" class="spotlight-slide-img" width="520" height="460"{% if forloop.first %} loading="eager"{% else %} loading="lazy"{% endif %}>
+                    <span class="spotlight-slide-caption">✦ View {{ forloop.index }} of {{ quinoa_prod.images.size }}</span>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div class="spotlight-slide is-active" data-index="0" data-caption="Signature Premium Packaging" data-full="{{ 'tattvva-super-grain-quinoa-front.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-super-grain-quinoa-front.webp' | asset_url }}" alt="SUPER GRAIN QUINOA - Signature Premium Packaging" class="spotlight-slide-img" width="520" height="460" loading="eager">
+                  <span class="spotlight-slide-caption">✦ Signature Premium Packaging</span>
+                </div>
+                <div class="spotlight-slide" data-index="1" data-caption="Gluten-Free &amp; High Fibre &middot; Lifestyle" data-full="{{ 'tattvva-super-grain-quinoa-lifestyle.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-super-grain-quinoa-lifestyle.webp' | asset_url }}" alt="SUPER GRAIN QUINOA - Wholesome Lifestyle Presentation" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Gluten-Free &amp; High Fibre &middot; Lifestyle</span>
+                </div>
+                <div class="spotlight-slide" data-index="2" data-caption="Packaging &amp; Label Details" data-full="{{ 'tattvva-super-grain-quinoa-back.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-super-grain-quinoa-back.webp' | asset_url }}" alt="SUPER GRAIN QUINOA - Packaging Details &amp; Jar Back" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Packaging &amp; Label Details</span>
+                </div>
+                <div class="spotlight-slide" data-index="3" data-caption="Certified NABL Nutritional Table" data-full="{{ 'tattvva-super-grain-quinoa-nutrition.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-super-grain-quinoa-nutrition.webp' | asset_url }}" alt="SUPER GRAIN QUINOA - Certified Nutritional Facts" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Certified NABL Nutritional Table</span>
+                </div>
+                <div class="spotlight-slide" data-index="4" data-caption="Complete Product &amp; Packaging Showcase" data-full="{{ 'tattvva-super-grain-quinoa-showcase.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-super-grain-quinoa-showcase.webp' | asset_url }}" alt="SUPER GRAIN QUINOA - Complete Product Showcase" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Complete Product &amp; Packaging Showcase</span>
+                </div>
+              {% endif %}
+
+              <!-- Navigation Arrows -->
+              <button type="button" class="spotlight-nav-btn prev" aria-label="Previous shot">‹</button>
+              <button type="button" class="spotlight-nav-btn next" aria-label="Next shot">›</button>
+            </div>
+
+            <!-- Running Progress bar & Counter -->
+            <div class="spotlight-gallery-footer">
+              <div class="spotlight-progress-track">
+                <div class="spotlight-progress-fill" style="width: 20%;"></div>
+              </div>
+              <span class="spotlight-runner-pill"><span class="runner-dot"></span> <span class="runner-counter">Shot 1 of {% if quinoa_prod != blank and quinoa_prod.images.size > 0 %}{{ quinoa_prod.images.size }}{% else %}5{% endif %}</span></span>
+            </div>
+
+            <!-- Luxury Thumbnail Strip with Labels -->
+            <div class="spotlight-thumb-strip">
+              {% if quinoa_prod != blank and quinoa_prod.images.size > 0 %}
+                {% for img in quinoa_prod.images %}
+                  <div class="spotlight-thumb-item">
+                    <button type="button" class="spotlight-thumb{% if forloop.first %} is-active{% endif %}" data-slide="{{ forloop.index0 }}" aria-label="Shot {{ forloop.index }}"><img src="{{ img | image_url: width: 140 }}" width="60" height="60" alt="Thumbnail {{ forloop.index }}"></button>
+                    <span class="spotlight-thumb-label">Shot {{ forloop.index }}</span>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb is-active" data-slide="0" aria-label="Shot 1: Jar Front"><img src="{{ 'tattvva-super-grain-quinoa-front.webp' | asset_url }}" width="60" height="60" alt="Jar Front"></button>
+                  <span class="spotlight-thumb-label">Front Jar</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="1" aria-label="Shot 2: Lifestyle"><img src="{{ 'tattvva-super-grain-quinoa-lifestyle.webp' | asset_url }}" width="60" height="60" alt="Lifestyle"></button>
+                  <span class="spotlight-thumb-label">Lifestyle</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="2" aria-label="Shot 3: Jar Back"><img src="{{ 'tattvva-super-grain-quinoa-back.webp' | asset_url }}" width="60" height="60" alt="Jar Back"></button>
+                  <span class="spotlight-thumb-label">Back Label</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="3" aria-label="Shot 4: Nutrition"><img src="{{ 'tattvva-super-grain-quinoa-nutrition.webp' | asset_url }}" width="60" height="60" alt="Nutrition"></button>
+                  <span class="spotlight-thumb-label">Nutrition</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="4" aria-label="Shot 5: Showcase"><img src="{{ 'tattvva-super-grain-quinoa-showcase.webp' | asset_url }}" width="60" height="60" alt="Showcase"></button>
+                  <span class="spotlight-thumb-label">Showcase</span>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- Micro Seals -->
+          <div class="spotlight-micro-seals">
+            <div class="micro-seal"><span class="micro-seal-icon">&#x1F33E;</span><span>Plant-Based Protein</span></div>
+            <div class="micro-seal"><span class="micro-seal-icon">🌿</span><span>Natural Antioxidants</span></div>
+            <div class="micro-seal"><span class="micro-seal-icon">🌿</span><span>99.9% Gluten-Free</span></div>
+          </div>
+        </div>
+
+        <!-- Right Product Details -->
+        <div class="spotlight-details">
+          <div class="spotlight-rating-wrap">
+            <span class="spotlight-stars">★★★★★</span>
+            <span class="spotlight-verified">4.9 / 5.0</span>
+            <span>(270+ verified customer ratings)</span>
+          </div>
+
+          <h3 class="spotlight-title">SUPER GRAIN QUINOA</h3>
+          <span class="spotlight-sub-badge">Power of Natural Nutrition &middot; Premium Packaging</span>
+
+          <p class="spotlight-lead-copy">“A wholesome grain packed with natural goodness, carefully selected to bring nutrition and versatility to your everyday meals. Tattvva Super Grain Quinoa is a nutritious choice for health-conscious consumers seeking a balanced lifestyle and delicious, wholesome food.”</p>
+
+          <!-- Key Ingredients -->
+          <div class="spotlight-ingredients-wrap">
+            <div class="spotlight-ingredients-label">Key Ingredients</div>
+            <div class="spotlight-ingredients-pills">
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Quinoa</span>
+            </div>
+          </div>
+
+          <div class="spotlight-highlights-label">Product Highlights</div>
+          <div class="spotlight-highlights-grid">
+            <div class="hl-card">
+              <div class="hl-card-icon">⚡</div>
+              <div class="hl-card-title">Power of Natural Nutrition</div>
+              <p class="hl-card-desc">Naturally rich in plant-based protein and dietary fibre, quinoa is a versatile grain providing complete essential amino acids and clean energy.</p>
+            </div>
+            <div class="hl-card">
+              <div class="hl-card-icon">🥗</div>
+              <div class="hl-card-title">Delightful Texture</div>
+              <p class="hl-card-desc">Its delightful texture and mild nutty flavour make it a perfect addition to salads, wholesome bowls, and everyday balanced meals.</p>
+            </div>
+            <div class="hl-card">
+              <div class="hl-card-icon">🌿</div>
+              <div class="hl-card-title">Where Taste Meets Nutrition</div>
+              <p class="hl-card-desc">At Tattvva, we believe that great nutrition begins with thoughtfully selected ingredients, making healthy eating simple, wholesome and fulfilling.</p>
+            </div>
+          </div>
+
+          <!-- Size / Weight Selection (100g, 250g, 500g) -->
+          <div class="product-variant-selector">
+            <div class="variant-selector-header">
+              <span class="variant-label">Select Net Weight:</span>
+              <span class="variant-active-display">250g (Selected)</span>
+            </div>
+            <div class="variant-pill-group" role="radiogroup" aria-label="Select Weight">
+              <button type="button" class="variant-pill" data-size="100g" data-price="179" data-mrp="210" data-discount="Save 15% OFF" data-pack="Net Wt: 100g &middot; Snacking Jar &middot; Freshness Sealed &middot; Incl. of all taxes" role="radio" aria-checked="false">
+                <span class="pill-weight">100g</span>
+                <span class="pill-badge">Trial Pack</span>
+                <span class="pill-price">₹179</span>
+              </button>
+              <button type="button" class="variant-pill is-active" data-size="250g" data-price="349" data-mrp="420" data-discount="Save 17% OFF" data-pack="Net Wt: 250g &middot; Freshness Sealed Jar &middot; Inclusive of all taxes" role="radio" aria-checked="true">
+                <span class="pill-weight">250g</span>
+                <span class="pill-badge best-seller">Most Popular</span>
+                <span class="pill-price">₹349</span>
+              </button>
+              <button type="button" class="variant-pill" data-size="500g" data-price="649" data-mrp="840" data-discount="Save 23% OFF" data-pack="Net Wt: 500g &middot; Family Value Pack &middot; Freshness Sealed &middot; Incl. of all taxes" role="radio" aria-checked="false">
+                <span class="pill-weight">500g</span>
+                <span class="pill-badge value-save">Save 23%</span>
+                <span class="pill-price">₹649</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="spotlight-price-box">
+            <span class="spotlight-current-price">{% if quinoa_prod.price %}{{ quinoa_prod.price | money }}{% else %}₹349{% endif %}</span>
+            <span class="spotlight-mrp">{% if quinoa_prod.compare_at_price %}{{ quinoa_prod.compare_at_price | money }}{% else %}₹420{% endif %}</span>
+            <span class="spotlight-discount-pill">Save 17% OFF</span>
+            <div class="spotlight-pack-info">Net Wt: 250g &middot; Freshness Sealed Jar &middot; Inclusive of all taxes</div>
+          </div>
+
+          <!-- Quantity Stepper & Dynamic Total Subtotal -->
+          <div class="product-qty-row">
+            <div class="qty-control-wrapper">
+              <span class="qty-label">Quantity:</span>
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn btn-minus" aria-label="Decrease quantity">−</button>
+                <input type="number" class="qty-input" value="1" min="1" max="50" aria-label="Product quantity" readonly>
+                <button type="button" class="qty-btn btn-plus" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+
+            <div class="price-summary-dynamic">
+              <div class="total-price-line">
+                <span class="total-label">Subtotal:</span>
+                <span class="spotlight-dynamic-total">₹349</span>
+              </div>
+              <div class="total-unit-breakdown">
+                <span class="breakdown-text">₹349 × 1</span>
+                <span class="total-savings-text">Save ₹71</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="spotlight-action-row">
+            <a href="{{ quinoa_prod.url | default: '/products/super-grain-quinoa' }}" class="btn-spotlight-buy">Buy Now &middot; Quinoa <span>→</span></a>
+            {% if quinoa_prod.selected_or_first_available_variant %}
+              <form method="post" action="{{ routes.cart_add_url }}" style="flex:1;">
+                <input type="hidden" name="id" value="{{ quinoa_prod.selected_or_first_available_variant.id }}">
+                <button type="submit" class="btn-spotlight-cart" style="width:100%;"><span>🛒</span> Add to Bag</button>
+              </form>
+            {% else %}
+              <a href="{{ quinoa_prod.url | default: '/products/super-grain-quinoa' }}" class="btn-spotlight-cart"><span>🛒</span> Add to Bag</a>
+            {% endif %}
+          </div>
+
+          <div class="spotlight-trust-list">
+            <span>✓ Free Pan-India Delivery</span>
+            <span>✓ Dispatched in 24h</span>
+            <span>✓ FSSAI Certified Sterile Kitchen</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7. BLACK SALT -->
+      {% assign salt_prod = all_products['black-salt'] %}
+      <article class="spotlight-card" id="prod-black-salt">
+        <!-- Left Media Showcase -->
+        <div class="spotlight-media-wrap">
+          <span class="spotlight-live-tag"><span class="pulse-dot"></span> Live in Store</span>
+          <span class="spotlight-edition-tag">★ Mineral-Rich Kala Namak</span>
+          <!-- Interactive Product Slider Gallery -->
+          <div class="spotlight-gallery" id="saltProductGallery" data-auto-play="true">
+            <div class="spotlight-slides-viewport">
+              {% if salt_prod != blank and salt_prod.images.size > 0 %}
+                {% for img in salt_prod.images %}
+                  <div class="spotlight-slide{% if forloop.first %} is-active{% endif %}" data-index="{{ forloop.index0 }}" data-caption="{{ img.alt | default: 'BLACK SALT View ' | append: forloop.index }}" data-full="{{ img | image_url: width: 1200 }}">
+                    <img src="{{ img | image_url: width: 600 }}" alt="{{ img.alt | default: 'BLACK SALT View ' | append: forloop.index }}" class="spotlight-slide-img" width="520" height="460" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
+                    <span class="spotlight-slide-caption">✦ View {{ forloop.index }} of {{ salt_prod.images.size }}</span>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div class="spotlight-slide is-active" data-index="0" data-caption="Signature Premium Packaging" data-full="{{ 'tattvva-black-salt-front.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-black-salt-front.webp' | asset_url }}" alt="BLACK SALT - Signature Premium Packaging" class="spotlight-slide-img" width="520" height="460" loading="eager">
+                  <span class="spotlight-slide-caption">✦ Signature Premium Packaging</span>
+                </div>
+                <div class="spotlight-slide" data-index="1" data-caption="Natural Minerals &amp; Digestive Balance &middot; Lifestyle" data-full="{{ 'tattvva-black-salt-lifestyle.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-black-salt-lifestyle.webp' | asset_url }}" alt="BLACK SALT - Wholesome Lifestyle Presentation" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Natural Minerals &amp; Digestive Balance &middot; Lifestyle</span>
+                </div>
+                <div class="spotlight-slide" data-index="2" data-caption="Packaging &amp; Label Details" data-full="{{ 'tattvva-black-salt-back.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-black-salt-back.webp' | asset_url }}" alt="BLACK SALT - Packaging Details &amp; Jar Back" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Packaging &amp; Label Details</span>
+                </div>
+                <div class="spotlight-slide" data-index="3" data-caption="Certified NABL Nutritional Table" data-full="{{ 'tattvva-black-salt-nutrition.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-black-salt-nutrition.webp' | asset_url }}" alt="BLACK SALT - Certified Nutritional Facts" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Certified NABL Nutritional Table</span>
+                </div>
+                <div class="spotlight-slide" data-index="4" data-caption="Complete Product &amp; Packaging Showcase" data-full="{{ 'tattvva-black-salt-showcase.webp' | asset_url }}">
+                  <img src="{{ 'tattvva-black-salt-showcase.webp' | asset_url }}" alt="BLACK SALT - Complete Product Showcase" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                  <span class="spotlight-slide-caption">✦ Complete Product &amp; Packaging Showcase</span>
+                </div>
+              {% endif %}
+
+              <!-- Navigation Arrows -->
+              <button type="button" class="spotlight-nav-btn prev" aria-label="Previous shot">‹</button>
+              <button type="button" class="spotlight-nav-btn next" aria-label="Next shot">›</button>
+            </div>
+
+            <!-- Running Progress bar & Counter -->
+            <div class="spotlight-gallery-footer">
+              <div class="spotlight-progress-track">
+                <div class="spotlight-progress-fill" style="width: 20%;"></div>
+              </div>
+              <span class="spotlight-runner-pill"><span class="runner-dot"></span> <span class="runner-counter">Shot 1 of {% if salt_prod != blank and salt_prod.images.size > 0 %}{{ salt_prod.images.size }}{% else %}5{% endif %}</span></span>
+            </div>
+
+            <!-- Luxury Thumbnail Strip with Labels -->
+            <div class="spotlight-thumb-strip">
+              {% if salt_prod != blank and salt_prod.images.size > 0 %}
+                {% for img in salt_prod.images %}
+                  <div class="spotlight-thumb-item">
+                    <button type="button" class="spotlight-thumb{% if forloop.first %} is-active{% endif %}" data-slide="{{ forloop.index0 }}" aria-label="Shot {{ forloop.index }}"><img src="{{ img | image_url: width: 140 }}" width="60" height="60" alt="Thumbnail {{ forloop.index }}"></button>
+                    <span class="spotlight-thumb-label">Shot {{ forloop.index }}</span>
+                  </div>
+                {% endfor %}
+              {% else %}
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb is-active" data-slide="0" aria-label="Shot 1: Jar Front"><img src="{{ 'tattvva-black-salt-front.webp' | asset_url }}" width="60" height="60" alt="Jar Front"></button>
+                  <span class="spotlight-thumb-label">Front Jar</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="1" aria-label="Shot 2: Lifestyle"><img src="{{ 'tattvva-black-salt-lifestyle.webp' | asset_url }}" width="60" height="60" alt="Lifestyle"></button>
+                  <span class="spotlight-thumb-label">Lifestyle</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="2" aria-label="Shot 3: Jar Back"><img src="{{ 'tattvva-black-salt-back.webp' | asset_url }}" width="60" height="60" alt="Jar Back"></button>
+                  <span class="spotlight-thumb-label">Back Label</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="3" aria-label="Shot 4: Nutrition"><img src="{{ 'tattvva-black-salt-nutrition.webp' | asset_url }}" width="60" height="60" alt="Nutrition"></button>
+                  <span class="spotlight-thumb-label">Nutrition</span>
+                </div>
+                <div class="spotlight-thumb-item">
+                  <button type="button" class="spotlight-thumb" data-slide="4" aria-label="Shot 5: Showcase"><img src="{{ 'tattvva-black-salt-showcase.webp' | asset_url }}" width="60" height="60" alt="Showcase"></button>
+                  <span class="spotlight-thumb-label">Showcase</span>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+
+
+          <!-- Micro Seals -->
+          <div class="spotlight-micro-seals">
+            <div class="micro-seal"><span class="micro-seal-icon">&#x1F9C2;</span><span>99.9% Pure Black Salt</span></div>
+            <div class="micro-seal"><span class="micro-seal-icon">🌋</span><span>Rich Natural Minerals</span></div>
+            <div class="micro-seal"><span class="micro-seal-icon">✨</span><span>Authentic Earthy Flavour</span></div>
+          </div>
+        </div>
+
+        <!-- Right Product Details -->
+        <div class="spotlight-details">
+          <div class="spotlight-rating-wrap">
+            <span class="spotlight-stars">★★★★★</span>
+            <span class="spotlight-verified">5.0 / 5.0</span>
+            <span>(350+ verified customer ratings)</span>
+          </div>
+
+          <h3 class="spotlight-title">BLACK SALT</h3>
+          <span class="spotlight-sub-badge">The Magic of a Perfect Pinch &middot; Premium Packaging</span>
+
+          <p class="spotlight-lead-copy">“A distinctive mineral-rich salt with a bold, earthy character, carefully selected to bring out the flavour of your favourite dishes. Tattvva Black Salt adds a unique taste to everyday meals, snacks and traditional recipes.”</p>
+
+          <!-- Key Ingredients -->
+          <div class="spotlight-ingredients-wrap">
+            <div class="spotlight-ingredients-label">Key Ingredients</div>
+            <div class="spotlight-ingredients-pills">
+              <span class="ing-pill"><span class="ing-pill-dot"></span>Black Salt</span>
+            </div>
+          </div>
+
+          <div class="spotlight-highlights-label">Product Highlights</div>
+          <div class="spotlight-highlights-grid">
+            <div class="hl-card">
+              <div class="hl-card-icon">&#x1F9C2;</div>
+              <div class="hl-card-title">The Magic of a Perfect Pinch</div>
+              <p class="hl-card-desc">Known for its distinctive flavour and traditional culinary use, black salt adds a tangy, savoury touch to fruits, chaats, salads, raitas and Indian delicacies.</p>
+            </div>
+            <div class="hl-card">
+              <div class="hl-card-icon">⚡</div>
+              <div class="hl-card-title">Bold Earthy Character</div>
+              <p class="hl-card-desc">Carefully selected to bring out the flavour of your favourite dishes, everyday meals, and healthy snacks with unique mineral richness.</p>
+            </div>
+            <div class="hl-card">
+              <div class="hl-card-icon">🌿</div>
+              <div class="hl-card-title">Where Flavour Begins</div>
+              <p class="hl-card-desc">At Tattvva, we believe that great taste begins with quality ingredients, making every sprinkle a simple way to elevate your everyday culinary experience.</p>
+            </div>
+          </div>
+
+          <!-- Size / Weight Selection (100g, 250g, 500g) -->
+          <div class="product-variant-selector">
+            <div class="variant-selector-header">
+              <span class="variant-label">Select Net Weight:</span>
+              <span class="variant-active-display">250g (Selected)</span>
+            </div>
+            <div class="variant-pill-group" role="radiogroup" aria-label="Select Weight">
+              <button type="button" class="variant-pill" data-size="100g" data-price="99" data-mrp="120" data-discount="Save 18% OFF" data-pack="Net Wt: 100g &middot; Snacking Jar &middot; Freshness Sealed &middot; Incl. of all taxes" role="radio" aria-checked="false">
+                <span class="pill-weight">100g</span>
+                <span class="pill-badge">Trial Pack</span>
+                <span class="pill-price">₹99</span>
+              </button>
+              <button type="button" class="variant-pill is-active" data-size="250g" data-price="199" data-mrp="240" data-discount="Save 17% OFF" data-pack="Net Wt: 250g &middot; Freshness Sealed Jar &middot; Inclusive of all taxes" role="radio" aria-checked="true">
+                <span class="pill-weight">250g</span>
+                <span class="pill-badge best-seller">Most Popular</span>
+                <span class="pill-price">₹199</span>
+              </button>
+              <button type="button" class="variant-pill" data-size="500g" data-price="369" data-mrp="480" data-discount="Save 23% OFF" data-pack="Net Wt: 500g &middot; Family Value Pack &middot; Freshness Sealed &middot; Incl. of all taxes" role="radio" aria-checked="false">
+                <span class="pill-weight">500g</span>
+                <span class="pill-badge value-save">Save 23%</span>
+                <span class="pill-price">₹369</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="spotlight-price-box">
+            <span class="spotlight-current-price">{% if salt_prod.price %}{{ salt_prod.price | money }}{% else %}₹199{% endif %}</span>
+            <span class="spotlight-mrp">{% if salt_prod.compare_at_price %}{{ salt_prod.compare_at_price | money }}{% else %}₹240{% endif %}</span>
+            <span class="spotlight-discount-pill">Save 17% OFF</span>
+            <div class="spotlight-pack-info">Net Wt: 250g &middot; Freshness Sealed Jar &middot; Inclusive of all taxes</div>
+          </div>
+
+          <!-- Quantity Stepper & Dynamic Total Subtotal -->
+          <div class="product-qty-row">
+            <div class="qty-control-wrapper">
+              <span class="qty-label">Quantity:</span>
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn btn-minus" aria-label="Decrease quantity">−</button>
+                <input type="number" class="qty-input" value="1" min="1" max="50" aria-label="Product quantity" readonly>
+                <button type="button" class="qty-btn btn-plus" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+
+            <div class="price-summary-dynamic">
+              <div class="total-price-line">
+                <span class="total-label">Subtotal:</span>
+                <span class="spotlight-dynamic-total">₹199</span>
+              </div>
+              <div class="total-unit-breakdown">
+                <span class="breakdown-text">₹199 × 1</span>
+                <span class="total-savings-text">Save ₹41</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="spotlight-action-row">
+            <a href="{{ salt_prod.url | default: '/products/black-salt' }}" class="btn-spotlight-buy">Buy Now &middot; Black Salt <span>→</span></a>
+            {% if salt_prod.selected_or_first_available_variant %}
+              <form method="post" action="{{ routes.cart_add_url }}" style="flex:1;">
+                <input type="hidden" name="id" value="{{ salt_prod.selected_or_first_available_variant.id }}">
+                <button type="submit" class="btn-spotlight-cart" style="width:100%;"><span>🛒</span> Add to Bag</button>
+              </form>
+            {% else %}
+              <a href="{{ salt_prod.url | default: '/products/black-salt' }}" class="btn-spotlight-cart"><span>🛒</span> Add to Bag</a>
+            {% endif %}
+          </div>
+
+          <div class="spotlight-trust-list">
+            <span>✓ Free Pan-India Delivery</span>
+            <span>✓ Dispatched in 24h</span>
+            <span>✓ FSSAI Certified Sterile Kitchen</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Future Product Categories Roadmap -->
+    <div class="future-sec-wrap">
+      <div class="future-header">
+        <span class="future-badge">🚀 Expanding Our Clean Kitchen</span>
+        <h3 class="future-title">{{ section.settings.future_heading | default: 'Future Product Categories' }}</h3>
+        <p class="future-sub">{{ section.settings.future_subheading | default: 'We are formulating the next generation of wholesome snacking with the same uncompromising purity. Zero refined sugar, zero preservatives, 99.9% nutrient density.' }}</p>
+      </div>
+
+      <!-- Future Categories Grid -->
+      <div class="future-grid">
+        <!-- 1. Healthy snack bars -->
+        <article class="future-card f-snack-bar">
+          <div class="future-card-top">
+            <div class="future-card-icon ic-snack-bar">🍫</div>
+            <span class="future-status-pill st-dev">In R&amp;D</span>
+          </div>
+          <h4 class="future-card-title">Healthy snack bars</h4>
+          <span class="future-card-sub">Active Stamina Nutrition</span>
+          <p class="future-card-desc">Cold-pressed nut &amp; date superfood energy bars crafted with whole roasted almonds and raw seeds. Clean satiety with zero palm oil or corn syrups.</p>
+          <div class="future-card-chip">🌱 0% Palm Oil &middot; High Fiber</div>
+          <button type="button" class="btn-future-notify" onclick="handleNotify(this, 'Healthy snack bars')">
+            <span>🔔</span> Notify When Live
+          </button>
+        </article>
+
+        <!-- 2. Gift hampers -->
+        <article class="future-card f-gift-hamper">
+          <div class="future-card-top">
+            <div class="future-card-icon ic-gift-hamper">🎁</div>
+            <span class="future-status-pill st-preorder">Pre-Order Open</span>
+          </div>
+          <h4 class="future-card-title">Gift hampers</h4>
+          <span class="future-card-sub">Bespoke &amp; Corporate Keepsakes</span>
+          <p class="future-card-desc">Luxurious gold-foiled keepsake gift hampers curated with premium packaging, customizable sleeves, and personalized greeting notes.</p>
+          <div class="future-card-chip">✨ Keepsake &middot; Custom Sleeve</div>
+          <button type="button" class="btn-future-notify" onclick="handleNotify(this, 'Gift hampers')">
+            <span>✨</span> Join Waitlist / Enquire
+          </button>
+        </article>
+
+        <!-- 3. Festive collections -->
+        <article class="future-card f-festive">
+          <div class="future-card-top">
+            <div class="future-card-icon ic-festive">🪔</div>
+            <span class="future-status-pill st-soon">Seasonal Edition</span>
+          </div>
+          <h4 class="future-card-title">Festive collections</h4>
+          <span class="future-card-sub">Celebrations Without Guilt</span>
+          <p class="future-card-desc">Artisanal celebratory mithai reimagined with slow-churned Desi ghee and naturally sweet superfoods so festivals can be enjoyed without sugar spikes.</p>
+          <div class="future-card-chip">🍯 Heritage Recipes &middot; Zero Vanaspati</div>
+          <button type="button" class="btn-future-notify" onclick="handleNotify(this, 'Festive collections')">
+            <span>🔔</span> Notify When Live
+          </button>
+        </article>
+      </div>
+    </div>
+
+
+  </div>
+
+    <script>
+    function handleNotify(btn, category) {
+      btn.classList.add('is-notified');
+      btn.innerHTML = '<span>✓</span> You’re on the VIP list!';
+    }
+
+    (function initProductTabs() {
+      var tabs = document.querySelectorAll('.prod-tab');
+      var cards = document.querySelectorAll('.spotlight-card');
+
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          var targetId = tab.getAttribute('data-target');
+          tabs.forEach(function(t) {
+            t.classList.remove('is-active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          tab.classList.add('is-active');
+          tab.setAttribute('aria-selected', 'true');
+
+          cards.forEach(function(card) {
+            if (card.id === targetId) {
+              card.classList.add('is-active');
+            } else {
+              card.classList.remove('is-active');
+            }
+          });
+        });
+      });
+    })();
+
+    // Luxury Product Gallery Slider & Lightbox Inspection
+    (function initProductGalleries() {
+      var galleries = document.querySelectorAll('.spotlight-gallery');
+      var lightbox = document.getElementById('productLightbox');
+      var lightboxImg = document.getElementById('lightboxImg');
+      var lightboxCaption = document.getElementById('lightboxCaption');
+      var lightboxClose = lightbox ? lightbox.querySelector('.tattvva-lightbox-close') : null;
+      var lightboxPrev = lightbox ? lightbox.querySelector('.tattvva-lightbox-nav.prev') : null;
+      var lightboxNext = lightbox ? lightbox.querySelector('.tattvva-lightbox-nav.next') : null;
+      var currentGallery = null;
+      var currentSlideIndex = 0;
+
+      function openLightbox(gal, idx) {
+        if (!lightbox) return;
+        currentGallery = gal;
+        var slides = gal.querySelectorAll('.spotlight-slide');
+        if (!slides.length) return;
+        currentSlideIndex = (idx >= 0 && idx < slides.length) ? idx : 0;
+        updateLightboxSlide();
+        lightbox.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function updateLightboxSlide() {
+        if (!currentGallery || !lightboxImg) return;
+        var slides = currentGallery.querySelectorAll('.spotlight-slide');
+        var slide = slides[currentSlideIndex];
+        if (!slide) return;
+        var fullSrc = slide.getAttribute('data-full') || (slide.querySelector('img') ? slide.querySelector('img').src : '');
+        var caption = slide.getAttribute('data-caption') || (slide.querySelector('.spotlight-slide-caption') ? slide.querySelector('.spotlight-slide-caption').textContent : '');
+        lightboxImg.src = fullSrc;
+        if (lightboxCaption) lightboxCaption.textContent = caption;
+      }
+
+      function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      if (lightbox) {
+        if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', function(e) {
+          if (e.target === lightbox) closeLightbox();
+        });
+        if (lightboxPrev) {
+          lightboxPrev.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (!currentGallery) return;
+            var slides = currentGallery.querySelectorAll('.spotlight-slide');
+            currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+            updateLightboxSlide();
+            if (currentGallery._goToSlide) currentGallery._goToSlide(currentSlideIndex);
+          });
+        }
+        if (lightboxNext) {
+          lightboxNext.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (!currentGallery) return;
+            var slides = currentGallery.querySelectorAll('.spotlight-slide');
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            updateLightboxSlide();
+            if (currentGallery._goToSlide) currentGallery._goToSlide(currentSlideIndex);
+          });
+        }
+        document.addEventListener('keydown', function(e) {
+          if (!lightbox.classList.contains('is-open')) return;
+          if (e.key === 'Escape') closeLightbox();
+          else if (e.key === 'ArrowLeft' && lightboxPrev) lightboxPrev.click();
+          else if (e.key === 'ArrowRight' && lightboxNext) lightboxNext.click();
+        });
+      }
+
+      galleries.forEach(function(gal) {
+        var slides = gal.querySelectorAll('.spotlight-slide');
+        var thumbs = gal.querySelectorAll('.spotlight-thumb');
+        var prevBtn = gal.querySelector('.spotlight-nav-btn.prev');
+        var nextBtn = gal.querySelector('.spotlight-nav-btn.next');
+        var zoomBtn = gal.querySelector('.spotlight-zoom-trigger');
+        var counter = gal.querySelector('.runner-counter');
+        var progress = gal.querySelector('.spotlight-progress-fill');
+        var total = slides.length;
+        if (total === 0) return;
+        var currentIndex = 0;
+
+        function goToSlide(idx) {
+          if (idx < 0) idx = total - 1;
+          if (idx >= total) idx = 0;
+          currentIndex = idx;
+
+          slides.forEach(function(s, i) {
+            if (i === currentIndex) s.classList.add('is-active');
+            else s.classList.remove('is-active');
+          });
+
+          var thumbStrip = gal.querySelector('.spotlight-thumb-strip');
+          thumbs.forEach(function(t, i) {
+            var item = t.closest('.spotlight-thumb-item') || t;
+            if (i === currentIndex) {
+              t.classList.add('is-active');
+              if (thumbStrip && item) {
+                var targetLeft = item.offsetLeft - (thumbStrip.clientWidth / 2) + (item.clientWidth / 2);
+                thumbStrip.scrollTo({ left: targetLeft, behavior: 'smooth' });
+              }
+            } else {
+              t.classList.remove('is-active');
+            }
+          });
+
+          if (counter) counter.textContent = 'Shot ' + (currentIndex + 1) + ' of ' + total;
+          if (progress) progress.style.width = (((currentIndex + 1) / total) * 100) + '%';
+        }
+        gal._goToSlide = goToSlide;
+
+        if (prevBtn) prevBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          e.preventDefault();
+          goToSlide(currentIndex - 1);
+        });
+        if (nextBtn) nextBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          e.preventDefault();
+          goToSlide(currentIndex + 1);
+        });
+
+        if (zoomBtn) {
+          zoomBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            openLightbox(gal, currentIndex);
+          });
+        }
+
+        var viewport = gal.querySelector('.spotlight-slides-viewport');
+        if (viewport) {
+          viewport.addEventListener('click', function(e) {
+            if (e.target.closest('.spotlight-nav-btn') || e.target.closest('.spotlight-zoom-trigger')) return;
+            openLightbox(gal, currentIndex);
+          });
+        }
+
+        thumbs.forEach(function(t, i) {
+          t.addEventListener('click', function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            goToSlide(i);
+          });
+        });
+
+        // Touch swipe support
+        var startX = 0, startY = 0;
+        if (viewport) {
+          viewport.addEventListener('touchstart', function(e) {
+            if (e.touches && e.touches.length === 1) {
+              startX = e.touches[0].clientX;
+              startY = e.touches[0].clientY;
+            }
+          }, { passive: true });
+          viewport.addEventListener('touchend', function(e) {
+            if (e.changedTouches && e.changedTouches.length === 1) {
+              var diffX = e.changedTouches[0].clientX - startX;
+              var diffY = e.changedTouches[0].clientY - startY;
+              if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+                if (diffX < 0) goToSlide(currentIndex + 1);
+                else goToSlide(currentIndex - 1);
+              }
+            }
+          }, { passive: true });
+        }
+
+        // Auto rotate
+        var autoTimer = null;
+        function startAuto() {
+          if (autoTimer) clearInterval(autoTimer);
+          autoTimer = setInterval(function() {
+            var rect = gal.getBoundingClientRect();
+            if (rect.bottom > 0 && rect.top < (window.innerHeight || document.documentElement.clientHeight)) {
+              goToSlide(currentIndex + 1);
+            }
+          }, 3600);
+        }
+        startAuto();
+
+        gal.addEventListener('mouseenter', function() { clearInterval(autoTimer); });
+        gal.addEventListener('mouseleave', function() { startAuto(); });
+      });
+    })();
+
+    // Dynamic Product Variants (100g, 250g, 500g) and Quantity Recalculator
+    (function initProductVariantsAndQuantity() {
+      var cards = document.querySelectorAll('.spotlight-card');
+      cards.forEach(function(card) {
+        var pills = card.querySelectorAll('.variant-pill');
+        var activeDisplay = card.querySelector('.variant-active-display');
+        var priceEl = card.querySelector('.spotlight-current-price');
+        var mrpEl = card.querySelector('.spotlight-mrp');
+        var discountEl = card.querySelector('.spotlight-discount-pill');
+        var packInfoEl = card.querySelector('.spotlight-pack-info');
+        var minusBtn = card.querySelector('.qty-btn.btn-minus');
+        var plusBtn = card.querySelector('.qty-btn.btn-plus');
+        var qtyInput = card.querySelector('.qty-input');
+        var totalEl = card.querySelector('.spotlight-dynamic-total');
+        var breakdownEl = card.querySelector('.breakdown-text');
+        var savingsEl = card.querySelector('.total-savings-text');
+        var buyBtn = card.querySelector('.btn-spotlight-buy');
+        var hiddenVariantInput = card.querySelector('input[name="id"]');
+        var hiddenQtyInput = card.querySelector('input[name="quantity"]');
+
+        var currentPrice = 499;
+        var currentMrp = 599;
+        var currentSize = '250g';
+        var quantity = 1;
+
+        // Read initial active pill
+        var activePill = card.querySelector('.variant-pill.is-active');
+        if (activePill) {
+          currentPrice = parseInt(activePill.getAttribute('data-price'), 10) || 499;
+          currentMrp = parseInt(activePill.getAttribute('data-mrp'), 10) || 599;
+          currentSize = activePill.getAttribute('data-size') || '250g';
+        }
+
+        // Save base title for buy button
+        if (buyBtn && !buyBtn.getAttribute('data-base-title')) {
+          var raw = buyBtn.textContent.replace('→', '').trim();
+          var parts = raw.split('&middot;');
+          buyBtn.setAttribute('data-base-title', parts[0].trim());
+        }
+
+        function updateCalculations() {
+          var subtotal = currentPrice * quantity;
+          var totalMrp = currentMrp * quantity;
+          var savings = totalMrp - subtotal;
+
+          if (priceEl) priceEl.textContent = '₹' + currentPrice;
+          if (mrpEl) mrpEl.textContent = '₹' + currentMrp;
+          if (qtyInput) qtyInput.value = quantity;
+          if (hiddenQtyInput) hiddenQtyInput.value = quantity;
+          if (totalEl) totalEl.textContent = '₹' + subtotal.toLocaleString('en-IN');
+          if (breakdownEl) breakdownEl.textContent = '₹' + currentPrice + ' × ' + quantity;
+          if (savingsEl) {
+            if (savings > 0) {
+              savingsEl.style.display = 'inline-block';
+              savingsEl.textContent = 'Save ₹' + savings.toLocaleString('en-IN');
+            } else {
+              savingsEl.style.display = 'none';
+            }
+          }
+          if (activeDisplay) activeDisplay.textContent = currentSize + ' (Selected)';
+
+          if (buyBtn) {
+            var baseTitle = buyBtn.getAttribute('data-base-title') || 'Buy Now';
+            buyBtn.innerHTML = baseTitle + ' &middot; ' + currentSize + ' (' + (quantity > 1 ? quantity + ' × ' : '') + '₹' + subtotal.toLocaleString('en-IN') + ') <span>→</span>';
+          }
+        }
+
+        pills.forEach(function(pill) {
+          pill.addEventListener('click', function(e) {
+            e.preventDefault();
+            pills.forEach(function(p) {
+              p.classList.remove('is-active');
+              p.setAttribute('aria-checked', 'false');
+            });
+            pill.classList.add('is-active');
+            pill.setAttribute('aria-checked', 'true');
+
+            currentPrice = parseInt(pill.getAttribute('data-price'), 10);
+            currentMrp = parseInt(pill.getAttribute('data-mrp'), 10);
+            currentSize = pill.getAttribute('data-size');
+            var discountText = pill.getAttribute('data-discount');
+            var packText = pill.getAttribute('data-pack');
+
+            if (discountEl && discountText) discountEl.textContent = discountText;
+            if (packInfoEl && packText) packInfoEl.textContent = packText;
+
+            updateCalculations();
+          });
+        });
+
+        if (minusBtn && qtyInput) {
+          minusBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (quantity > 1) {
+              quantity--;
+              updateCalculations();
+            }
+          });
+        }
+
+        if (plusBtn && qtyInput) {
+          plusBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (quantity < 50) {
+              quantity++;
+              updateCalculations();
+            }
+          });
+        }
+
+        updateCalculations();
+      });
+    })();
+  </script>
+
+  <!-- High-Definition Product Lightbox Modal -->
+  <div class="tattvva-lightbox" id="productLightbox" role="dialog" aria-modal="true" aria-label="High Definition Product View">
+    <div class="tattvva-lightbox-content">
+      <button type="button" class="tattvva-lightbox-close" aria-label="Close Preview">✕</button>
+      <button type="button" class="tattvva-lightbox-nav prev" aria-label="Previous image">‹</button>
+      <button type="button" class="tattvva-lightbox-nav next" aria-label="Next image">›</button>
+      <img src="{{ 'tattvva-elite-21-front.webp' | asset_url }}" alt="TATTVVA ELITE 21" class="tattvva-lightbox-img" id="lightboxImg">
+      <div class="tattvva-lightbox-caption" id="lightboxCaption">✦ Signature Premium Packaging</div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Products & Categories",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker Badge",
+      "default": "✦ 99.9% Honest Nutrition &middot; Handcrafted Daily"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Products"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Pure superfood creations crafted without preservatives, artificial binders, or refined sugar. Discover our flagship live creation and upcoming kitchen innovations."
+    },
+    {
+      "type": "product",
+      "id": "product_handle",
+      "label": "Spotlight Product"
+    },
+    {
+      "type": "textarea",
+      "id": "lead_copy",
+      "label": "Product Lead Copy",
+      "default": "“Crafted using premium nuts, seeds, fruits, and traditional ingredients.”"
+    },
+    {
+      "type": "text",
+      "id": "future_heading",
+      "label": "Future Categories Heading",
+      "default": "Future Product Categories"
+    },
+    {
+      "type": "textarea",
+      "id": "future_subheading",
+      "label": "Future Categories Subheading",
+      "default": "We are formulating the next generation of wholesome snacking with the same uncompromising purity. Zero refined sugar, zero preservatives, 99.9% nutrient density."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Products & Categories"
+    }
+  ]
+}
+{% endschema %}

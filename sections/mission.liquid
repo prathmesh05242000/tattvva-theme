@@ -1,0 +1,99 @@
+<section class="sec mission-sec" id="our-mission">
+  <div class="mission-ambient-glow" aria-hidden="true"></div>
+  <div class="w">
+    <div class="mission-grid">
+      <!-- Left Column: Mission Typography & Stats -->
+      <div class="mission-content">
+        <span class="mission-badge">{{ section.settings.kicker | default: 'Our Mission' }}</span>
+        <h2 class="mission-statement">
+          {% if section.settings.statement != blank and section.settings.statement != "To make wholesome nutrition simple, convenient, and enjoyable for every family." %}
+            {{ section.settings.statement }}
+          {% else %}
+            To make wholesome nutrition 
+            <span class="word-hl w-simple">simple</span>, 
+            <span class="word-hl w-convenient">convenient</span>, and 
+            <span class="word-hl w-enjoyable">enjoyable</span> 
+            for every family.
+          {% endif %}
+        </h2>
+        <p class="mission-story">
+          {{ section.settings.story | default: 'At Tattvva, we believe healthy eating should never feel like a chore or a compromise. We combine ancient Ayurvedic food wisdom with modern purity standards so your family can thrive every single day.' }}
+        </p>
+
+        <!-- Stats / Impact Row -->
+        <div class="mission-stats">
+          <div class="m-stat">
+            <span class="m-stat-num">21</span>
+            <span class="m-stat-lbl">Pure Superfoods</span>
+          </div>
+          <div class="m-stat">
+            <span class="m-stat-num">0%</span>
+            <span class="m-stat-lbl">Refined Sugar</span>
+          </div>
+          <div class="m-stat">
+            <span class="m-stat-num">99.9%</span>
+            <span class="m-stat-lbl">Clean Nutrition</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: 3 Pillar Cards (Simple, Convenient, Enjoyable) -->
+      <div class="mission-values">
+        <div class="m-value-card v-simple">
+          <div class="m-value-icon">🌱</div>
+          <div class="m-value-body">
+            <h3>Simple</h3>
+            <p>Uncomplicated, clean-label ingredients you can pronounce and trust. No hidden sugars, no synthetic fillers, and no fine print.</p>
+          </div>
+        </div>
+
+        <div class="m-value-card v-convenient">
+          <div class="m-value-icon">⚡</div>
+          <div class="m-value-body">
+            <h3>Convenient</h3>
+            <p>Nutrient-dense laddus and wholesome snacks made for hectic morning routines, school tiffins, post-workout fuel, and on-the-go cravings.</p>
+          </div>
+        </div>
+
+        <div class="m-value-card v-enjoyable">
+          <div class="m-value-icon">🍯</div>
+          <div class="m-value-body">
+            <h3>Enjoyable</h3>
+            <p>Melt-in-the-mouth heritage flavour crafted with slow-churned Desi ghee and natural dates. Good health that tastes like celebration.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Our Mission",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Small line / Subtitle",
+      "default": "Our Mission"
+    },
+    {
+      "type": "textarea",
+      "id": "statement",
+      "label": "Mission statement",
+      "default": "To make wholesome nutrition simple, convenient, and enjoyable for every family."
+    },
+    {
+      "type": "textarea",
+      "id": "story",
+      "label": "Supporting text",
+      "default": "At Tattvva, we believe healthy eating should never feel like a chore or a compromise. We combine ancient Ayurvedic food wisdom with modern purity standards so your family can thrive every single day."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our Mission"
+    }
+  ]
+}
+{% endschema %}

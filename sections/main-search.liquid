@@ -1,0 +1,9 @@
+{% paginate search.results by 12 %}
+<section class="ph"><div class="w"><h1>Search</h1></div></section>
+<section class="sec"><div class="w"><form action="{{ routes.search_url }}" class="f" style="margin-bottom:24px"><input type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search products" aria-label="Search"></form>
+<div class="g">{% for r in search.results %}{% if r.object_type == 'product' %}{% render 'product-card', product: r %}{% else %}<a class="c" href="{{ r.url }}"><h3>{{ r.title }}</h3></a>{% endif %}{% endfor %}</div>
+{% if search.performed and search.results_count == 0 %}<p>No results for “{{ search.terms }}”.</p>{% endif %}</div></section>
+{% endpaginate %}
+{% schema %}
+{"name":"Search"}
+{% endschema %}

@@ -1,0 +1,8 @@
+{% paginate collection.products by 12 %}
+<section class="ph"><div class="w"><h1>{{ collection.title }}</h1>{% if collection.description != blank %}<p>{{ collection.description | strip_html | truncate: 200 }}</p>{% endif %}</div></section>
+<section class="sec"><div class="w"><div class="g">{% for product in collection.products %}{% render 'product-card', product: product %}{% else %}<p>No products yet.</p>{% endfor %}</div>
+{% if paginate.pages > 1 %}<div class="pg">{% if paginate.previous %}<a class="btn p" href="{{ paginate.previous.url }}">Previous</a>{% endif %}{% if paginate.next %}<a class="btn p" href="{{ paginate.next.url }}">Next</a>{% endif %}</div>{% endif %}</div></section>
+{% endpaginate %}
+{% schema %}
+{"name":"Collection"}
+{% endschema %}

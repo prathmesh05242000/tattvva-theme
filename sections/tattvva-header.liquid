@@ -1,0 +1,165 @@
+﻿{% assign ticker_raw = section.settings.announcement_ticker | default: "No Sugar No Jaggery &middot; No Preservatives &middot; No Artificial Additives &middot; Only All Natural Ingrediants &middot; Made with Love and Care" %}
+{% if ticker_raw != blank %}
+<div class="bar" role="region" aria-label="Announcement">
+  <div class="bar-ticker-wrap">
+    <div class="bar-ticker-track">
+      {% for i in (1..4) %}
+      <div class="bar-ticker-group"{% if i > 1 %} aria-hidden="true"{% endif %}>
+        {% assign ticker_items = ticker_raw | split: '&middot;' %}
+        {% for item in ticker_items %}
+          <span class="bar-ticker-item">{{ item | strip }}</span><span class="bar-ticker-sep" aria-hidden="true">✦</span>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}
+<header class="hd"><div class="nav">
+<a class="logo logo-img-wrap" href="{{ routes.root_url }}" aria-label="Tattvva">{% if section.settings.logo %}{{ section.settings.logo | image_url: width: 280 | image_tag: alt: shop.name, class: 'tattvva-logo-img' }}{% else %}<img src="{{ 'tattvva-logo.webp' | asset_url }}" alt="{{ shop.name | default: 'Tattvva - The Pure Essence of Nutrition' }}" width="138" height="54" class="tattvva-logo-img">{% endif %}</a>
+<nav aria-label="Main navigation">
+{% if section.settings.use_custom_menu %}
+  <a href="{{ routes.root_url }}"{% if request.path == routes.root_url %} class="on"{% endif %}>Home</a>
+  <a href="{{ routes.root_url }}#about">About Us</a>
+  <a href="{{ routes.root_url }}#products">Products</a>
+  <a href="{{ routes.root_url }}#distributors">Business with us</a>
+  <a href="#track-order">Tracker your Order</a>
+  <a href="{{ routes.root_url }}#blogs">Blogs</a>
+  <a href="{{ routes.root_url }}#contact">Contact Us</a>
+{% elsif linklists[section.settings.menu].links.size > 0 %}
+  {% for l in linklists[section.settings.menu].links %}
+    <a href="{{ l.url }}"{% if l.active %} class="on"{% endif %}>{{ l.title }}</a>
+  {% endfor %}
+{% else %}
+  <a href="{{ routes.root_url }}"{% if request.path == routes.root_url %} class="on"{% endif %}>Home</a>
+  <a href="{{ routes.root_url }}#about">About Us</a>
+  <a href="{{ routes.root_url }}#products">Products</a>
+  <a href="{{ routes.root_url }}#distributors">Business with us</a>
+  <a href="#track-order">Tracker your Order</a>
+  <a href="{{ routes.root_url }}#blogs">Blogs</a>
+  <a href="{{ routes.root_url }}#contact">Contact Us</a>
+{% endif %}
+</nav>
+<a class="cartl" href="{{ routes.cart_url }}">Cart ({{ cart.item_count }})</a>
+</div></header>
+
+<!-- INTERACTIVE TRACK ORDER MODAL -->
+<div class="jrn-modal-overlay" id="trackOrderModal" onclick="if(event.target === this) window.tattvvaCloseTrackModal()">
+  <div class="jrn-modal-card" style="max-width:540px;padding:32px 28px;text-align:left;position:relative;">
+    <button class="jrn-modal-close-float" type="button" onclick="window.tattvvaCloseTrackModal()" aria-label="Close modal" style="top:18px;right:18px;background:rgba(0,0,0,0.06);color:#5c1d47;border:none;width:34px;height:34px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+    <div style="display:inline-block;background:rgba(255,209,0,0.2);color:#5E1D47;padding:5px 14px;border-radius:99px;font-family:var(--font-heading);font-size:11.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Shipment Dispatch &amp; Tracking</div>
+    <h2 style="font-family:var(--font-heading);color:var(--plum-d);font-size:24px;margin-bottom:8px;line-height:1.25;">Tracker your Order</h2>
+    <p style="color:#66554d;font-size:14px;line-height:1.55;margin-bottom:20px;">Enter your 5-digit Tattvva Order Number (e.g. <b>#TAT-8821</b>) or registered contact number to check dispatch status and courier tracking.</p>
+    <form onsubmit="event.preventDefault(); document.getElementById('trackResultBoxShopify').style.display='block';">
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:16px;">
+        <input type="text" id="trackOrderInput" placeholder="Order ID or 10-digit mobile..." required style="padding:12px 16px;border:1.5px solid #d9cfc4;border-radius:12px;font-size:15px;outline:none;" />
+        <button type="submit" class="btn" style="width:100%;padding:13px;font-size:15px;">Track Shipment Now</button>
+      </div>
+    </form>
+    <div id="trackResultBoxShopify" style="display:none;background:#fdf9f4;border:1.5px solid #e8dec8;border-radius:14px;padding:16px;font-size:13.5px;color:#4a3830;margin-top:14px;">
+      <div style="display:flex;align-items:center;gap:8px;font-weight:700;color:#2f6b2e;margin-bottom:4px;">
+        <span>✓</span> <span>Order Verified &amp; Dispatched</span>
+      </div>
+      <p style="margin:4px 0 0;font-size:13px;color:#5a4a42;">Partner Courier: <b>Delhivery Express Air</b><br>Expected Delivery: <b>Within 24 to 48 Hours</b><br>Live tracking updates sent via SMS &amp; WhatsApp.</p>
+    </div>
+  </div>
+</div>
+
+<!-- INTERACTIVE QUERIES & FAQ MODAL -->
+<div class="jrn-modal-overlay" id="queriesModal" onclick="if(event.target === this) window.tattvvaCloseQueriesModal()">
+  <div class="jrn-modal-card" style="max-width:620px;padding:32px 28px;text-align:left;position:relative;max-height:90vh;overflow-y:auto;">
+    <button class="jrn-modal-close-float" type="button" onclick="window.tattvvaCloseQueriesModal()" aria-label="Close modal" style="top:18px;right:18px;background:rgba(0,0,0,0.06);color:#5c1d47;border:none;width:34px;height:34px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+    <div style="display:inline-block;background:rgba(255,209,0,0.2);color:#5E1D47;padding:5px 14px;border-radius:99px;font-family:var(--font-heading);font-size:11.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Customer Support &amp; FAQ</div>
+    <h2 style="font-family:var(--font-heading);color:var(--plum-d);font-size:24px;margin-bottom:8px;line-height:1.25;">Frequently Asked Queries</h2>
+    <p style="color:#66554d;font-size:14px;line-height:1.55;margin-bottom:18px;">Quick answers to common queries regarding our products, ingredients, shipping, and bulk orders.</p>
+    
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <details style="background:#fdf9f4;border:1px solid #ebdccb;border-radius:12px;padding:12px 16px;cursor:pointer;">
+        <summary style="font-weight:700;color:var(--plum-d);font-size:14.5px;">Are Tattvva products 99.9% free from white sugar and jaggery?</summary>
+        <p style="margin:8px 0 0;font-size:13.5px;color:#5a4a42;line-height:1.55;">Yes, absolutely. We use 99.9% whole sun-dried dates and natural superfoods to sweeten our recipes. Zero refined white sugar, zero commercial jaggery adulterants, zero chemical sweeteners.</p>
+      </details>
+      <details style="background:#fdf9f4;border:1px solid #ebdccb;border-radius:12px;padding:12px 16px;cursor:pointer;">
+        <summary style="font-weight:700;color:var(--plum-d);font-size:14.5px;">What is the shelf life and storage recommendation?</summary>
+        <p style="margin:8px 0 0;font-size:13.5px;color:#5a4a42;line-height:1.55;">Our products have a shelf life of 6 months from the date of manufacture. Store in a cool, dry place away from direct sunlight.</p>
+      </details>
+      <details style="background:#fdf9f4;border:1px solid #ebdccb;border-radius:12px;padding:12px 16px;cursor:pointer;">
+        <summary style="font-weight:700;color:var(--plum-d);font-size:14.5px;">How do I order in bulk or inquire about distribution?</summary>
+        <p style="margin:8px 0 0;font-size:13.5px;color:#5a4a42;line-height:1.55;">You can click on the <b>'Business with us'</b> link in our header to submit our B2B distributor form, or reach out to us at <a href="mailto:info@tattvva.in" style="color:var(--plum);font-weight:700;">info@tattvva.in</a> / <a href="tel:+917666642112" style="color:var(--plum);font-weight:700;">+91 7666642112</a>.</p>
+      </details>
+      <details style="background:#fdf9f4;border:1px solid #ebdccb;border-radius:12px;padding:12px 16px;cursor:pointer;">
+        <summary style="font-weight:700;color:var(--plum-d);font-size:14.5px;">Have a specific query not listed here?</summary>
+        <p style="margin:8px 0 0;font-size:13.5px;color:#5a4a42;line-height:1.55;">Feel free to contact our customer care team anytime at <a href="mailto:info@tattvva.in" style="color:var(--plum);font-weight:700;">info@tattvva.in</a>. We respond to all queries within 24 business hours.</p>
+      </details>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.tattvvaOpenTrackModal = function() {
+    var overlay = document.getElementById('trackOrderModal');
+    if (overlay) {
+      overlay.classList.add('is-visible');
+      document.body.style.overflow = 'hidden';
+      var inp = document.getElementById('trackOrderInput');
+      if (inp) setTimeout(function(){ inp.focus(); }, 150);
+    }
+  };
+
+  window.tattvvaCloseTrackModal = function() {
+    var overlay = document.getElementById('trackOrderModal');
+    if (overlay) overlay.classList.remove('is-visible');
+    document.body.style.overflow = '';
+  };
+
+  window.tattvvaOpenQueriesModal = function() {
+    var overlay = document.getElementById('queriesModal');
+    if (overlay) {
+      overlay.classList.add('is-visible');
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  window.tattvvaCloseQueriesModal = function() {
+    var overlay = document.getElementById('queriesModal');
+    if (overlay) overlay.classList.remove('is-visible');
+    document.body.style.overflow = '';
+  };
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') {
+      window.tattvvaCloseTrackModal && window.tattvvaCloseTrackModal();
+      window.tattvvaCloseQueriesModal && window.tattvvaCloseQueriesModal();
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "announcement_ticker",
+      "label": "Announcement ticker items (separated by &middot;)",
+      "default": "No Sugar No Jaggery &middot; No Preservatives &middot; No Artificial Additives &middot; Only All Natural Ingrediants &middot; Made with Love and Care"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo (optional)"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_custom_menu",
+      "label": "Use dedicated Tattvva menu (Home, About Us, Products, Business with us, Tracker your Order, Blogs, Contact Us)",
+      "default": true
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu (used if dedicated menu is unchecked)",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}

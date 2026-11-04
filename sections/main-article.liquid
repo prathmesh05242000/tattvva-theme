@@ -1,0 +1,5 @@
+<section class="ph"><div class="w"><h1>{{ article.title }}</h1><p>{{ article.published_at | date: '%d %B %Y' }}</p></div></section>
+<section class="sec"><div class="w rte" style="max-width:800px">{% if article.image %}{{ article.image | image_url: width: 1000 | image_tag: alt: article.title }}<br>{% endif %}{{ article.content }}<p><a class="btn p" href="{{ blog.url }}">Back to blog</a></p></div></section>
+{% schema %}
+{"name":"Article"}
+{% endschema %}

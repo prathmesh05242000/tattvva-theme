@@ -1,0 +1,8 @@
+{% paginate blog.articles by 9 %}
+<section class="ph"><div class="w"><h1>{{ blog.title }}</h1><p>Helping customers make informed food choices.</p></div></section>
+<section class="sec"><div class="w"><div class="g">{% for a in blog.articles %}<a class="c" href="{{ a.url }}">{% if a.image %}<div class="im">{{ a.image | image_url: width: 600 | image_tag: loading: 'lazy', alt: a.title }}</div>{% endif %}<h3>{{ a.title }}</h3><p>{{ a.excerpt_or_content | strip_html | truncate: 120 }}</p></a>{% else %}<p>No posts yet.</p>{% endfor %}</div>
+{% if paginate.pages > 1 %}<div class="pg">{% if paginate.previous %}<a class="btn p" href="{{ paginate.previous.url }}">Newer</a>{% endif %}{% if paginate.next %}<a class="btn p" href="{{ paginate.next.url }}">Older</a>{% endif %}</div>{% endif %}</div></section>
+{% endpaginate %}
+{% schema %}
+{"name":"Blog"}
+{% endschema %}

@@ -1,0 +1,517 @@
+﻿<section class="superfood-explorer-sec" id="ingredients">
+  <!-- Ambient Aurora Glow Canvas -->
+  <div class="sf-aurora-glow" aria-hidden="true"></div>
+  
+  <div class="w">
+    
+    <!-- Section Header -->
+    <div class="sf-header">
+      <div class="sf-kicker-wrap">
+        <span class="sf-live-beacon" aria-hidden="true"></span>
+        <span class="sf-kicker">99.9% TRANSPARENT FORMULATION &middot; 21 SACRED SUPERFOODS</span>
+      </div>
+      <h2 class="sf-title">Anatomy of a <span class="sf-title-gold">Pure Laddu</span></h2>
+      <p class="sf-subtitle">No fillers, no artificial binders, zero secret numbers. Explore all 21 raw whole-food superfoods deconstructed down to their bio-nutrients, farm origin, and clinical wellness purpose.</p>
+      
+      <!-- Formula Strip (Deconstruction at a glance) -->
+      <div class="sf-formula-bar">
+        <div class="sf-f-item"><span class="sf-f-val">7</span> <span class="sf-f-lbl">Tree Nuts</span></div>
+        <span class="sf-f-op">+</span>
+        <div class="sf-f-item"><span class="sf-f-val">7</span> <span class="sf-f-lbl">Power Seeds</span></div>
+        <span class="sf-f-op">+</span>
+        <div class="sf-f-item"><span class="sf-f-val">3</span> <span class="sf-f-lbl">Whole Fruits</span></div>
+        <span class="sf-f-op">+</span>
+        <div class="sf-f-item"><span class="sf-f-val">4</span> <span class="sf-f-lbl">Vedic Herbs &amp; Ghee</span></div>
+        <span class="sf-f-op">=</span>
+        <div class="sf-f-item sf-f-total"><span class="sf-f-val">99.9%</span> <span class="sf-f-lbl">Clean Nutrition</span></div>
+      </div>
+    </div>
+
+    <!-- MAIN INTERACTIVE STAGE (Split Layout) -->
+    <div class="sf-stage-grid">
+      
+      <!-- LEFT: Dynamic Interactive Spotlight Stage -->
+      <div class="sf-spotlight-stage" id="sfSpotlightStage" data-asset-base="{{ 'ing-almonds.webp' | asset_url | split: 'ing-almonds.webp' | first }}">
+        <!-- Dynamic Ambient Background Visual Layer -->
+        <div class="sf-stage-bg-visual" id="sfStageBgVisual" style="background-image: url('{{ 'ing-almonds.webp' | asset_url }}');"></div>
+        <div class="sf-stage-bg-overlay" aria-hidden="true"></div>
+
+        <!-- Watermark numeral in background -->
+        <div class="sf-watermark-num" id="sfWatermarkNum">01</div>
+        
+        <div class="sf-spotlight-inner">
+          <div class="sf-spotlight-top">
+            <span class="sf-cat-badge" id="sfCatBadge">Royal Tree Nut</span>
+            <span class="sf-index-tag" id="sfIndexTag">SUPERFOOD 01 OF 21</span>
+          </div>
+
+          <!-- Hero Graphic Floating Orb & Dynamic Ingredient Image -->
+          <div class="sf-graphic-orb-wrap">
+            <div class="sf-orb-aura" id="sfOrbAura" aria-hidden="true"></div>
+            <div class="sf-graphic-orb" id="sfGraphicOrb">
+              <img id="sfHeroImg" src="{{ 'ing-almonds.webp' | asset_url }}" alt="Almonds" class="sf-hero-img" loading="eager" />
+            </div>
+          </div>
+
+          <!-- Ingredient Identity -->
+          <h3 class="sf-item-name" id="sfItemName">Almonds</h3>
+          
+          <div class="sf-origin-pill" id="sfOriginPill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span id="sfOriginText">California &amp; Kashmir Valley</span>
+          </div>
+
+          <p class="sf-item-desc" id="sfItemDesc">Sun-dried whole almonds packed with natural alpha-tocopherol Vitamin E, magnesium, and dietary protein for cognitive stamina and cellular vitality.</p>
+
+          <!-- Bioactive Nutritional Highlight -->
+          <div class="sf-bio-highlight" id="sfBioHighlight">
+            <span class="sf-bio-highlight-icon">✦</span>
+            <p class="sf-bio-highlight-text" id="sfBioHighlightText">Packed with Natural Alpha-Tocopherol Vitamin E &amp; Magnesium for Neural Stamina</p>
+          </div>
+
+          <!-- Dynamic Bio-Nutrient Meters -->
+          <div class="sf-meters-block" id="sfMetersBlock">
+            <div class="sf-meters-header">
+              <span>ACTIVE BIO-POTENCY PROFILE</span>
+              <span class="sf-verified-badge">✓ CLINICALLY VERIFIED</span>
+            </div>
+            
+            <div class="sf-meter-row">
+              <div class="sf-meter-info">
+                <span class="sf-m-name" id="sfM1Label">Cognitive Stamina & Brain Power</span>
+                <span class="sf-m-pct" id="sfM1Val">98%</span>
+              </div>
+              <div class="sf-m-track"><div class="sf-m-fill" id="sfM1Fill" style="width:98%;background:#FFD100"></div></div>
+            </div>
+
+            <div class="sf-meter-row">
+              <div class="sf-meter-info">
+                <span class="sf-m-name" id="sfM2Label">Natural Vitamin E & Antioxidants</span>
+                <span class="sf-m-pct" id="sfM2Val">94%</span>
+              </div>
+              <div class="sf-m-track"><div class="sf-m-fill" id="sfM2Fill" style="width:94%;background:#82DE80"></div></div>
+            </div>
+
+            <div class="sf-meter-row">
+              <div class="sf-meter-info">
+                <span class="sf-m-name" id="sfM3Label">Healthy Monounsaturated Fats</span>
+                <span class="sf-m-pct" id="sfM3Val">90%</span>
+              </div>
+              <div class="sf-m-track"><div class="sf-m-fill" id="sfM3Fill" style="width:90%;background:#F3BEDD"></div></div>
+            </div>
+          </div>
+
+          <!-- Micro Tags -->
+          <div class="sf-tags-cluster" id="sfTagsCluster">
+            <span class="sf-micro-tag">✦ Brain Power</span><span class="sf-micro-tag">✦ Vitamin E</span><span class="sf-micro-tag">✦ Low GI</span><span class="sf-micro-tag">✦ Cellular Health</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT: The 4 Living Superfood Constellations (Interactive Matrix) -->
+      <div class="sf-matrix-panel">
+        
+        <!-- Group 1: Tree Nuts -->
+        <div class="sf-group-block">
+          <div class="sf-group-head">
+            <div class="sf-group-icon">&#x1F330;</div>
+            <div>
+              <h4 class="sf-group-title">The Royal Tree Nuts</h4>
+              <span class="sf-group-meta">7 Superfoods &middot; Cognitive Stamina &amp; Heart Omega Fats</span>
+            </div>
+          </div>
+          <div class="sf-pills-flow">
+            
+              <button class="sf-pill-btn is-selected" data-id="almonds" type="button">
+                <span class="sf-pill-num">01</span>
+                <span class="sf-pill-text">Almonds</span>
+                <span class="sf-pill-sparkle">✦</span>
+              </button>
+            
+              <button class="sf-pill-btn " data-id="cashews" type="button">
+                <span class="sf-pill-num">02</span>
+                <span class="sf-pill-text">Whole Cashews</span>
+                <span class="sf-pill-sparkle">✦</span>
+              </button>
+            
+              <button class="sf-pill-btn " data-id="walnuts" type="button">
+                <span class="sf-pill-num">03</span>
+                <span class="sf-pill-text">Kashmiri Walnuts</span>
+                <span class="sf-pill-sparkle">✦</span>
+              </button>
+            
+              <button class="sf-pill-btn " data-id="pistachios" type="button">
+                <span class="sf-pill-num">04</span>
+                <span class="sf-pill-text">Pistachios</span>
+                <span class="sf-pill-sparkle">✦</span>
+              </button>
+            
+              <button class="sf-pill-btn " data-id="pecans" type="button">
+                <span class="sf-pill-num">05</span>
+                <span class="sf-pill-text">Wild Pecans</span>
+                <span class="sf-pill-sparkle">✦</span>
+              </button>
+            
+              <button class="sf-pill-btn " data-id="macadamia" type="button">
+                <span class="sf-pill-num">06</span>
+                <span class="sf-pill-text">Macadamia Nuts</span>
+                <span class="sf-pill-sparkle">✦</span>
+              </button>
+            
+              <button class="sf-pill-btn " data-id="brazil-nuts" type="button">
+                <span class="sf-pill-num">07</span>
+                <span class="sf-pill-text">Brazil Nuts</span>
+                <span class="sf-pill-sparkle">✦</span>
+              </button>
+            
+          </div>
+        </div>
+
+        <!-- Group 2: Power Seeds -->
+        <div class="sf-group-block">
+          <div class="sf-group-head">
+            <div class="sf-group-icon">&#x1F33E;</div>
+            <div>
+              <h4 class="sf-group-title">The Power Seeds &amp; Ancient Puffs</h4>
+              <span class="sf-group-meta">7 Superfoods &middot; Plant Protein, Zinc &amp; Restorative Satiety</span>
+            </div>
+          </div>
+          <div class="sf-pills-flow">
+            
+              <button class="sf-pill-btn" data-id="pumpkin-seeds" type="button">
+                <span class="sf-pill-num">08</span>
+                <span class="sf-pill-text">Pumpkin Seeds</span>
+                <span class="sf-pill-sparkle">✦</span>
+              </button>
+            
+              <button class="sf-pill-btn" data-id="sunflower-seeds" type="button">
+                <span class="sf-pill-num">09</span>
+                <span class="sf-pill-text">Sunflower Seeds</span>
+                <span class="sf-pill-sparkle">✦</span>
+              </button>
+            
+              <button class="sf-pill-btn" data-id="flaxseeds" type="button">
+                <span class="sf-pill-num">10</span>
+                <span class="sf-pill-text">Flaxseeds</span>
+                <span class="sf-pill-sparkle">✦</span>
+              </button>
+            
+              <button class="sf-pill-btn" data-id="sesame-seeds" type="button">
+                <span class="sf-pill-num">11</span>
+                <span class="sf-pill-text">Sesame Seeds (Til)</span>
+                <span class="sf-pill-sparkle">✦</span>
+              </button>
+            
+              <button class="sf-pill-btn" data-id="hemp-seeds" type="button">
+                <span class="sf-pill-num">12</span>
+                <span class="sf-pill-text">Hemp Seeds</span>
+                <span class="sf-pill-sparkle">✦</span>
+              </button>
+            
+              <button class="sf-pill-btn" data-id="watermelon-seeds" type="button">
+                <span class="sf-pill-num">13</span>
+                <span class="sf-pill-text">Watermelon Seeds</span>
+                <span class="sf-pill-sparkle">✦</span>
+              </button>
+            
+              <button class="sf-pill-btn" data-id="makhana" type="button">
+                <span class="sf-pill-num">14</span>
+                <span class="sf-pill-text">Roasted Makhana</span>
+                <span class="sf-pill-sparkle">✦</span>
+              </button>
+            
+          </div>
+        </div>
+
+        <!-- Group 3: Whole Sweeteners -->
+        <div class="sf-group-block">
+          <div class="sf-group-head">
+            <div class="sf-group-icon">🍯</div>
+            <div>
+              <h4 class="sf-group-title">Natural Whole-Fruit Sweeteners</h4>
+              <span class="sf-group-meta">3 Whole Fruits &middot; 0% Refined Sugar, Slow-Release Glycemic Curve</span>
+            </div>
+          </div>
+          <div class="sf-pills-flow">
+            
+              <button class="sf-pill-btn" data-id="dates" type="button">
+                <span class="sf-pill-num">15</span>
+                <span class="sf-pill-text">Royal Black Dates</span>
+                <span class="sf-pill-sparkle">✦</span>
+              </button>
+            
+              <button class="sf-pill-btn" data-id="date-powder" type="button">
+                <span class="sf-pill-num">16</span>
+                <span class="sf-pill-text">Pure Date Powder</span>
+                <span class="sf-pill-sparkle">✦</span>
+              </button>
+            
+              <button class="sf-pill-btn" data-id="figs" type="button">
+                <span class="sf-pill-num">17</span>
+                <span class="sf-pill-text">Wild Figs (Anjeer)</span>
+                <span class="sf-pill-sparkle">✦</span>
+              </button>
+            
+          </div>
+        </div>
+
+        <!-- Group 4: Vedic Botanicals & Pure Desi Ghee -->
+        <div class="sf-group-block">
+          <div class="sf-group-head">
+            <div class="sf-group-icon">✨</div>
+            <div>
+              <h4 class="sf-group-title">Vedic Botanicals &amp; Traditional Fats</h4>
+              <span class="sf-group-meta">4 Sacred Elements &middot; Gut Absorption, Digestive Agni &amp; Mood Glow</span>
+            </div>
+          </div>
+          <div class="sf-pills-flow">
+            
+              <button class="sf-pill-btn" data-id="desi-ghee" type="button">
+                <span class="sf-pill-num">18</span>
+                <span class="sf-pill-text">Desi Ghee</span>
+                <span class="sf-pill-sparkle">✦</span>
+              </button>
+            
+              <button class="sf-pill-btn" data-id="cardamom" type="button">
+                <span class="sf-pill-num">19</span>
+                <span class="sf-pill-text">Green Cardamom (Elaichi)</span>
+                <span class="sf-pill-sparkle">✦</span>
+              </button>
+            
+              <button class="sf-pill-btn" data-id="cinnamon" type="button">
+                <span class="sf-pill-num">20</span>
+                <span class="sf-pill-text">Cinnamon</span>
+                <span class="sf-pill-sparkle">✦</span>
+              </button>
+            
+              <button class="sf-pill-btn" data-id="saffron" type="button">
+                <span class="sf-pill-num">21</span>
+                <span class="sf-pill-text">Kashmiri Saffron (Kesar)</span>
+                <span class="sf-pill-sparkle">✦</span>
+              </button>
+            
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- KINETIC INFINITE MARQUEE TICKER (Continuous Smooth Ribbon) -->
+    <div class="sf-marquee-wrap">
+      <div class="sf-marquee-track">
+        <div class="sf-marquee-content">
+          <span>✨ 99.9% ALMONDS</span>
+          <span>•</span>
+          <span>🏺 SLOW-CHURNED DESI GHEE</span>
+          <span>•</span>
+          <span>&#x1F330; SNOW-IRRIGATED KASHMIRI WALNUTS</span>
+          <span>•</span>
+          <span>🌺 GRADE-1 MONGERA KASHMIRI SAFFRON</span>
+          <span>•</span>
+          <span>🍯 ROYAL SUN-DRIED BLACK DATES</span>
+          <span>•</span>
+          <span>&#x1F33E; ORGANIC GREEN PEPITAS</span>
+          <span>•</span>
+          <span>🍇 SUN-CURED AFGHAN FIGS</span>
+          <span>•</span>
+          <span>🌿 PURE MALABAR CARDAMOM</span>
+          <span>•</span>
+          <span>🥥 QUEENSLAND MACADAMIA</span>
+          <span>•</span>
+          <span>🪵 TRUE CEYLON CINNAMON</span>
+          <span>•</span>
+        </div>
+        <div class="sf-marquee-content" aria-hidden="true">
+          <span>✨ 99.9% ALMONDS</span>
+          <span>•</span>
+          <span>🏺 SLOW-CHURNED DESI GHEE</span>
+          <span>•</span>
+          <span>&#x1F330; SNOW-IRRIGATED KASHMIRI WALNUTS</span>
+          <span>•</span>
+          <span>🌺 GRADE-1 MONGERA KASHMIRI SAFFRON</span>
+          <span>•</span>
+          <span>🍯 ROYAL SUN-DRIED BLACK DATES</span>
+          <span>•</span>
+          <span>&#x1F33E; ORGANIC GREEN PEPITAS</span>
+          <span>•</span>
+          <span>🍇 SUN-CURED AFGHAN FIGS</span>
+          <span>•</span>
+          <span>🌿 PURE MALABAR CARDAMOM</span>
+          <span>•</span>
+          <span>🥥 QUEENSLAND MACADAMIA</span>
+          <span>•</span>
+          <span>🪵 TRUE CEYLON CINNAMON</span>
+          <span>•</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- THE TATTVVA ZERO-COMPROMISE PLEDGE (Pledge Ribbon) -->
+    <div class="sf-pledge-ribbon">
+      <div class="sf-pledge-col">
+        <span class="sf-pledge-mark">No</span>
+        <div>
+          <b>Added White Sugar or Syrups</b>
+          <p>Zero refined sugars, zero artificial sweeteners, zero jaggery adulteration.</p>
+        </div>
+      </div>
+      <div class="sf-pledge-col">
+        <span class="sf-pledge-mark">No</span>
+        <div>
+          <b>Palm Oil or Hydrogenated Dalda</b>
+          <p>handcrafted exclusively with 99.9% pure traditional churned Desi ghee.</p>
+        </div>
+      </div>
+      <div class="sf-pledge-col">
+        <span class="sf-pledge-mark">No</span>
+        <div>
+          <b>Chemical Preservatives</b>
+          <p>No synthetic shelf-extenders, gums, stabilizers, or artificial coloring.</p>
+        </div>
+      </div>
+      <div class="sf-pledge-col">
+        <span class="sf-pledge-mark sf-pledge-mark-100">Yes</span>
+        <div>
+          <b>FSSAI Certified &amp; Batch Traceable</b>
+          <p>Clean label testing for heavy metals and pesticide residue guarantee.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+    <!-- Interactive Logic -->
+  <script>
+    (function(){
+      var data = [{"id":"almonds","num":"01","name":"Almonds","category":"nuts","catLabel":"Royal Tree Nut","origin":"California & Kashmir Valley","image":"ing-almonds.webp","highlight":"Packed with Natural Alpha-Tocopherol Vitamin E & Magnesium for Neural Stamina","accent":"#FFD100","desc":"Sun-dried whole almonds packed with natural alpha-tocopherol Vitamin E, magnesium, and dietary protein for cognitive stamina and cellular vitality.","meters":[{"label":"Cognitive Stamina & Brain Power","val":98,"color":"#FFD100"},{"label":"Natural Vitamin E & Antioxidants","val":94,"color":"#82DE80"},{"label":"Healthy Monounsaturated Fats","val":90,"color":"#F3BEDD"}],"tags":["Brain Power","Vitamin E","Low GI","Cellular Health"]},{"id":"cashews","num":"02","name":"Whole Cashews","category":"nuts","catLabel":"Royal Tree Nut","origin":"Goa & Mangalore Coast","image":"ing-cashews.webp","highlight":"Grade-W180 Whole Cashews &middot; Natural Creaminess & Bioavailable Plant Zinc","accent":"#FFD100","desc":"Grade-W180 whole cashews providing healthy monounsaturated fatty acids, essential copper, and bio-available plant zinc for immune and muscular recovery.","meters":[{"label":"Plant Zinc & Muscle Recovery","val":92,"color":"#FFD100"},{"label":"Natural Creaminess & Good Fats","val":96,"color":"#82DE80"},{"label":"Trace Copper & Collagen Support","val":88,"color":"#F3BEDD"}],"tags":["Plant Zinc","Natural Creaminess","Heart Healthy"]},{"id":"walnuts","num":"03","name":"Kashmiri Walnuts","category":"nuts","catLabel":"Royal Tree Nut","origin":"Kashmir Valley (Hand-Cracked)","image":"ing-walnuts.webp","highlight":"Highest Whole-Food Source of Plant ALA Omega-3 Fatty Acids for Heart & Brain","accent":"#FFD100","desc":"Snow-irrigated Kashmiri walnuts with a high concentration of plant ALA Omega-3 fatty acids that actively nourish neurotransmitters and cardiovascular walls.","meters":[{"label":"ALA Omega-3 Fatty Acids","val":99,"color":"#FFD100"},{"label":"Neuro-Protection & Focus","val":95,"color":"#82DE80"},{"label":"Cardiovascular Support","val":92,"color":"#F3BEDD"}],"tags":["High Omega-3","Brain Food","Kashmiri Origin"]},{"id":"pistachios","num":"04","name":"Pistachios","category":"nuts","catLabel":"Royal Tree Nut","origin":"California Certified","image":"ing-pistachios.webp","highlight":"Lutein & Zeaxanthin Carotenoids Shielding Cellular Retinal Longevity","accent":"#82DE80","desc":"Vibrant emerald whole pistachios containing lutein, zeaxanthin, dietary potassium, and natural amino acids that shield against daily oxidative fatigue.","meters":[{"label":"Lutein & Retinal Health","val":94,"color":"#FFD100"},{"label":"Antioxidant Polyphenols","val":91,"color":"#82DE80"},{"label":"Dietary Electrolytes (Potassium)","val":86,"color":"#F3BEDD"}],"tags":["Lutein","Antioxidants","Clean Potassium"]},{"id":"pecans","num":"05","name":"Wild Pecans","category":"nuts","catLabel":"Royal Tree Nut","origin":"North America Wild Orchards","image":"ing-pecans.webp","highlight":"Rich in Polyphenols & Bioavailable Manganese for Sustained Caloric Satiety","accent":"#FFD100","desc":"Fluted buttery pecans exceptionally dense in polyphenols, bioavailable manganese, and cellular copper to sustain natural metabolic vigor.","meters":[{"label":"Cellular Copper & Manganese","val":93,"color":"#FFD100"},{"label":"Polyphenol Antioxidant Index","val":96,"color":"#82DE80"},{"label":"Sustained Caloric Satiety","val":89,"color":"#F3BEDD"}],"tags":["Wild Harvest","Metabolic Vigor","Cellular Defense"]},{"id":"macadamia","num":"06","name":"Macadamia Nuts","category":"nuts","catLabel":"Royal Tree Nut","origin":"Queensland Sun Orchards","image":"ing-macadamia.webp","highlight":"Rare Monounsaturated Palmitoleic Acid (Omega-7) for Clean Ketogenic Energy","accent":"#FFD100","desc":"Silky ivory spheres revered for their rare palmitoleic acid (Omega-7) content, providing luxury texture and sustained, clean ketogenic energy.","meters":[{"label":"Monounsaturated Omega-7 & 9","val":97,"color":"#FFD100"},{"label":"Clean Ketogenic Fuel","val":94,"color":"#82DE80"},{"label":"Zero Inflammatory Sugars","val":100,"color":"#F3BEDD"}],"tags":["Omega-7","Luxury Nut","Slow Burn Energy"]},{"id":"brazil-nuts","num":"07","name":"Brazil Nuts","category":"nuts","catLabel":"Royal Tree Nut","origin":"Amazonian Wild Canopy","image":"ing-brazil-nuts.webp","highlight":"#1 Dietary Source of Natural Selenium to Optimize Thyroid Harmony & Immunity","accent":"#FFD100","desc":"The undisputed dietary champion of natural selenium. One single nut provides the full daily requirement to optimize thyroid hormone synthesis and immunity.","meters":[{"label":"Natural Selenium Supercharge","val":100,"color":"#FFD100"},{"label":"Thyroid Hormone Regulation","val":98,"color":"#82DE80"},{"label":"Cellular Immune Integrity","val":95,"color":"#F3BEDD"}],"tags":["Selenium King","Thyroid Support","Amazonian Wild"]},{"id":"pumpkin-seeds","num":"08","name":"Pumpkin Seeds","category":"seeds","catLabel":"Ancient Power Seed","origin":"Organic Raw Green Pepitas","image":"ing-pumpkin-seeds.webp","highlight":"Rich in Bioavailable Zinc & Tryptophan for Natural Deep Rest & Recovery","accent":"#82DE80","desc":"Dark forest-green pepitas loaded with plant zinc, magnesium, and tryptophan to support natural sleep regulation, muscle relaxation, and immune vitality.","meters":[{"label":"Bioavailable Plant Zinc","val":97,"color":"#FFD100"},{"label":"Magnesium & Deep Recovery","val":95,"color":"#82DE80"},{"label":"Tryptophan Relaxation Pathway","val":91,"color":"#F3BEDD"}],"tags":["Sleep Support","Zinc Powerhouse","Immune Defense"]},{"id":"sunflower-seeds","num":"09","name":"Sunflower Seeds","category":"seeds","catLabel":"Ancient Power Seed","origin":"Hulled Organic Kernels","image":"ing-sunflower-seeds.webp","highlight":"Natural Phytosterols & Whole-Food Vitamin E Complex for Arterial Defense","accent":"#FFD100","desc":"Sun-drenched de-hulled kernels providing whole-food Vitamin E and phytosterols to shield arterial walls and foster balanced cholesterol profiles.","meters":[{"label":"Phytosterol Heart Defense","val":93,"color":"#FFD100"},{"label":"Vitamin E Complex","val":92,"color":"#82DE80"},{"label":"Clean Sustained Endurance","val":88,"color":"#F3BEDD"}],"tags":["Phytosterols","Vitamin E","Endurance"]},{"id":"flaxseeds","num":"10","name":"Flaxseeds","category":"seeds","catLabel":"Ancient Power Seed","origin":"Stone-Milled Whole Golden","image":"ing-flaxseeds.webp","highlight":"SDG Lignans & Soluble Prebiotic Mucilage Fiber for Gut Microbiome Harmony","accent":"#FFD100","desc":"Golden linseed kernels exceptionally rich in active secoisolariciresinol diglucoside (SDG) lignans and soluble mucilage fiber for microbiome balance.","meters":[{"label":"Lignan Polyphenol Potency","val":99,"color":"#FFD100"},{"label":"Digestive Prebiotic Fiber","val":96,"color":"#82DE80"},{"label":"Gut Microbiome Harmony","val":93,"color":"#F3BEDD"}],"tags":["Lignans","Prebiotic Fiber","Gut Balance"]},{"id":"sesame-seeds","num":"11","name":"Sesame Seeds (Til)","category":"seeds","catLabel":"Ancient Power Seed","origin":"Ancient White & Black Til","image":"ing-sesame-seeds.webp","highlight":"Ayurvedic Rasayana King &middot; Premier Whole-Food Plant Calcium for Bone Density","accent":"#F3BEDD","desc":"Revered in Charaka Samhita as the premier Rasayana seed. Packed with bio-available bone calcium, sesamin, and copper for joint and tissue longevity.","meters":[{"label":"Plant Calcium Bone Density","val":98,"color":"#FFD100"},{"label":"Sesamin Antioxidant Shield","val":92,"color":"#82DE80"},{"label":"Ayurvedic Rasayana Strength","val":95,"color":"#F3BEDD"}],"tags":["Bone Calcium","Rasayana","Joint Strength"]},{"id":"hemp-seeds","num":"12","name":"Hemp Seeds","category":"seeds","catLabel":"Ancient Power Seed","origin":"Shelled Raw Hearts","image":"ing-hemp-seeds.webp","highlight":"Complete Botanical Protein with All 9 Essential Amino Acids in Perfect Balance","accent":"#82DE80","desc":"Complete botanical protein containing all 9 essential amino acids in perfect biological proportion, alongside gamma-linolenic acid (GLA) for hormonal equilibrium.","meters":[{"label":"9 Essential Amino Acid Balance","val":100,"color":"#FFD100"},{"label":"Anti-Inflammatory GLA Index","val":94,"color":"#82DE80"},{"label":"Bioavailable Plant Digestibility","val":96,"color":"#F3BEDD"}],"tags":["Complete Protein","GLA","Amino Acids"]},{"id":"watermelon-seeds","num":"13","name":"Watermelon Seeds","category":"seeds","catLabel":"Ancient Power Seed","origin":"Shelled Sun-Dried Kernels","image":"ing-watermelon-seeds.webp","highlight":"Concentrated Plant Iron, Folate & L-Arginine for Natural Micro-Circulation","accent":"#FFD100","desc":"Often discarded, these powerhouse kernels harbor dense concentrations of iron, folate, and arginine to assist natural micro-vascular circulation.","meters":[{"label":"Natural Plant Iron & Folate","val":91,"color":"#FFD100"},{"label":"L-Arginine Circulation Factor","val":89,"color":"#82DE80"},{"label":"Cellular Hydration Minerals","val":87,"color":"#F3BEDD"}],"tags":["Plant Iron","Nitric Oxide","Mineral Dense"]},{"id":"makhana","num":"14","name":"Roasted Makhana","category":"seeds","catLabel":"Ancient Power Seed","origin":"Bihar Organic Lotus Ponds","image":"ing-makhana.webp","highlight":"Low-GI Popped Gorgon Lotus Seed Rich in Kaempferol Flavonoids & 0% Cholesterol","accent":"#FFD100","desc":"Slow-popped gorgon lotus seeds offering cloud-like crisp texture. Low-glycemic, virtually zero saturated fats, and rich in the anti-aging flavonoid kaempferol.","meters":[{"label":"Kaempferol Anti-Aging Flavonoid","val":95,"color":"#FFD100"},{"label":"Low-Glycemic Index Satiety","val":98,"color":"#82DE80"},{"label":"Zero Trans-Fat / Cholesterol","val":100,"color":"#F3BEDD"}],"tags":["Lotus Seed","Kaempferol","Zero Cholesterol"]},{"id":"dates","num":"15","name":"Royal Black Dates","category":"sweeteners","catLabel":"Whole Fruit Sweetener","origin":"Selected Whole Dates","image":"ing-dates.webp","highlight":"Whole-Food Intact Cellular Fiber Mesh Pacing Natural Fructose Uptake Smoothly","accent":"#FFD100","desc":"Whole fruit sweetness in its purest state. Sun-dried whole black dates provide natural slow-release fructose paired with dietary fiber, preventing glucose spikes.","meters":[{"label":"Slow-Release Glycemic Curve","val":96,"color":"#FFD100"},{"label":"Bioactive Fruit Iron & Potassium","val":93,"color":"#82DE80"},{"label":"100% Unrefined Whole Food","val":100,"color":"#F3BEDD"}],"tags":["Zero Refined Sugar","Natural Iron","Slow Glycemic"]},{"id":"date-powder","num":"16","name":"Pure Date Powder","category":"sweeteners","catLabel":"Whole Fruit Sweetener","origin":"100% Dehydrated Whole Fruit","image":"ing-date-powder.webp","highlight":"100% Dehydrated Whole Fruit &middot; Zero Added Maltodextrin or Refined Sugars","accent":"#FFD100","desc":"Simply whole dates dehydrated and finely stone-milled. Absolutely zero maltodextrin, anti-caking chemicals, or white sugar adulterants.","meters":[{"label":"Zero Refined Sucrose or Glucose","val":100,"color":"#FFD100"},{"label":"Whole Fruit Fiber Retention","val":95,"color":"#82DE80"},{"label":"Trace Minerals (Copper, Iron)","val":90,"color":"#F3BEDD"}],"tags":["Pure Fruit Dust","Zero Chemical Additives","Clean Sweet"]},{"id":"figs","num":"17","name":"Wild Figs (Anjeer)","category":"sweeteners","catLabel":"Whole Fruit Sweetener","origin":"Sun-Cured Afghan Figs","image":"ing-figs.webp","highlight":"Sun-Cured Afghan Figs &middot; Rich in Prebiotic Pectin Fiber & Alkalizing Minerals","accent":"#F3BEDD","desc":"Luscious wild sun-cured figs laden with crunchy micro-seeds that deliver concentrated bio-available calcium, potassium, and active prebiotic pectin.","meters":[{"label":"Bioavailable Fruit Calcium","val":96,"color":"#FFD100"},{"label":"Prebiotic Pectin Colon Fuel","val":97,"color":"#82DE80"},{"label":"Alkalizing Mineral Density","val":92,"color":"#F3BEDD"}],"tags":["Wild Anjeer","Pectin Fiber","Alkalizing"]},{"id":"desi-ghee","num":"18","name":"Desi Ghee","category":"ayurvedic","catLabel":"Vedic Elixir","origin": "Pure Traditional Churned","image":"ing-desi-ghee.webp","highlight":"Traditional Churned Desi Ghee &middot; Butyric Acid Yogavahi for Nutrient Absorption","accent":"#FFD100","desc":"The crowning Ayurvedic Yogavahi (catalytic carrier). Churned from whole curd in bronze and clay pots. Rich in butyric acid, unlocking fat-soluble Vitamin A, D, E, K assimilation.","meters":[{"label":"Fat-Soluble Nutrient Assimilation","val":100,"color":"#FFD100"},{"label":"Butyric Acid Gut Barrier Integrity","val":98,"color":"#82DE80"},{"label":"Sattvic Ojas Energy Index","val":99,"color":"#F3BEDD"}],"tags":["Desi Ghee", "Traditional Churned","Nutrient Carrier","Pure Vedic"]},{"id":"cardamom","num":"19","name":"Green Cardamom (Elaichi)","category":"ayurvedic","catLabel":"Vedic Botanical","origin":"Idukki Misty Hills, Kerala","image":"ing-cardamom.webp","highlight":"Malabar Queen of Spices &middot; Natural Cineole Essential Oil Igniting Digestive Agni","accent":"#82DE80","desc":"Malabar Queen of Spices containing cineole and terpinyl acetate. Awakens the digestive Agni, dispels gas, and enhances the sweet aroma without synthetic flavorings.","meters":[{"label":"Digestive Agni Activation","val":96,"color":"#FFD100"},{"label":"Natural Cineole Essential Oil","val":94,"color":"#82DE80"},{"label":"Zero Artificial Flavoring","val":100,"color":"#F3BEDD"}],"tags":["Digestive Fire","Kerala Grown","Zero Perfume"]},{"id":"cinnamon","num":"20","name":"Cinnamon","category":"ayurvedic","catLabel":"Vedic Botanical","origin":"True Sri Lankan Bark (Cinnamomum verum)","image":"ing-cinnamon.webp","highlight":"True Sri Lankan Ceylon Bark (Not Toxic Cassia) for Post-Meal Glucose Balance","accent":"#FFD100","desc":"True Ceylon rolled quills (not toxic cassia). Rich in cinnamaldehyde that naturally mimics insulin action and assists in curbing post-snack glucose fluctuations.","meters":[{"label":"Cinnamaldehyde Glucose Control","val":97,"color":"#FFD100"},{"label":"Zero Toxic Coumarin (True Ceylon)","val":99,"color":"#82DE80"},{"label":"Metabolic Thermogenesis","val":92,"color":"#F3BEDD"}],"tags":["True Ceylon","Blood Sugar Balance","Pure Bark"]},{"id":"saffron","num":"21","name":"Kashmiri Saffron (Kesar)","category":"ayurvedic","catLabel":"Vedic Botanical","origin":"Pampore Plateau, Kashmir (Grade-1 Mongra)","image":"ing-saffron.webp","highlight":"Kashmiri Grade-1 Mongra Stigmas &middot; Bioactive Crocin & Safranal for Mood & Glow","accent":"#FFD100","desc":"The red gold of Kashmir. World-renowned Mogra grade stigmas brimming with active crocin, picrocrocin, and safranal to promote uplifting mood, cellular rejuvenation, and radiant inner glow.","meters":[{"label":"Active Crocin Potency (Grade-1)","val":100,"color":"#FFD100"},{"label":"Safranal Mood & Vitality Lift","val":98,"color":"#82DE80"},{"label":"Cellular Radiant Complexion","val":95,"color":"#F3BEDD"}],"tags":["Mongra Grade-1","Red Gold","Mood Elevator","Ayurvedic Radiance"]}];
+      var pills = document.querySelectorAll('.sf-pill-btn');
+      var stage = document.getElementById('sfSpotlightStage');
+      var bgVisual = document.getElementById('sfStageBgVisual');
+      var orbAura = document.getElementById('sfOrbAura');
+      var heroImg = document.getElementById('sfHeroImg');
+      var bioHighlight = document.getElementById('sfBioHighlightText');
+      
+      var watermark = document.getElementById('sfWatermarkNum');
+      var catBadge = document.getElementById('sfCatBadge');
+      var indexTag = document.getElementById('sfIndexTag');
+      var itemName = document.getElementById('sfItemName');
+      var originText = document.getElementById('sfOriginText');
+      var itemDesc = document.getElementById('sfItemDesc');
+      
+      var m1Label = document.getElementById('sfM1Label');
+      var m1Val = document.getElementById('sfM1Val');
+      var m1Fill = document.getElementById('sfM1Fill');
+
+      var m2Label = document.getElementById('sfM2Label');
+      var m2Val = document.getElementById('sfM2Val');
+      var m2Fill = document.getElementById('sfM2Fill');
+
+      var m3Label = document.getElementById('sfM3Label');
+      var m3Val = document.getElementById('sfM3Val');
+      var m3Fill = document.getElementById('sfM3Fill');
+
+      var tagsCluster = document.getElementById('sfTagsCluster');
+
+      var assetBase = (stage && stage.getAttribute('data-asset-base')) || 'assets/';
+
+      function updateSpotlight(item) {
+        if(!item) return;
+
+        // Stage pulse & image crossfade
+        stage.classList.remove('sf-stage-transition');
+        void stage.offsetWidth; // trigger reflow
+        stage.classList.add('sf-stage-transition');
+
+        if(heroImg) {
+          heroImg.classList.add('is-updating');
+          setTimeout(function(){
+            heroImg.src = assetBase + item.image;
+            heroImg.alt = item.name;
+            heroImg.classList.remove('is-updating');
+          }, 120);
+        }
+
+        if(bgVisual) {
+          bgVisual.style.backgroundImage = "url('" + (assetBase + item.image) + "')";
+        }
+
+        if(orbAura && item.accent) {
+          orbAura.style.background = 'radial-gradient(circle, ' + item.accent + '66 0%, rgba(142,47,106,0.25) 50%, transparent 70%)';
+        }
+
+        if(bioHighlight && item.highlight) {
+          bioHighlight.textContent = item.highlight;
+        }
+
+        watermark.textContent = item.num;
+        catBadge.textContent = item.catLabel;
+        indexTag.textContent = 'SUPERFOOD ' + item.num + ' OF 21';
+        itemName.textContent = item.name;
+        originText.textContent = item.origin;
+        itemDesc.textContent = item.desc;
+
+        m1Label.textContent = item.meters[0].label;
+        m1Val.textContent = item.meters[0].val + '%';
+        m1Fill.style.width = item.meters[0].val + '%';
+        m1Fill.style.background = item.meters[0].color;
+
+        m2Label.textContent = item.meters[1].label;
+        m2Val.textContent = item.meters[1].val + '%';
+        m2Fill.style.width = item.meters[1].val + '%';
+        m2Fill.style.background = item.meters[1].color;
+
+        m3Label.textContent = item.meters[2].label;
+        m3Val.textContent = item.meters[2].val + '%';
+        m3Fill.style.width = item.meters[2].val + '%';
+        m3Fill.style.background = item.meters[2].color;
+
+        tagsCluster.innerHTML = item.tags.map(function(t){
+          return '<span class="sf-micro-tag">✦ ' + t + '</span>';
+        }).join('');
+      }
+
+      pills.forEach(function(btn){
+        btn.addEventListener('click', function(){
+          pills.forEach(function(b){ b.classList.remove('is-selected'); });
+          this.classList.add('is-selected');
+          var id = this.getAttribute('data-id');
+          var item = data.find(function(d){ return d.id === id; });
+          updateSpotlight(item);
+        });
+      });
+    })();
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Superfood Explorer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker / Eyebrow Badge",
+      "default": "99.9% TRANSPARENT FORMULATION &middot; 21 SACRED SUPERFOODS"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Anatomy of a Pure Laddu"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "No fillers, no artificial binders, zero secret numbers. Explore all 21 raw whole-food superfoods deconstructed down to their bio-nutrients, farm origin, and clinical wellness purpose."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Superfood Explorer"
+    }
+  ]
+}
+{% endschema %}

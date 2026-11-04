@@ -1,0 +1,351 @@
+﻿<section class="tattvva-journal-sec" id="blogs">
+  <!-- Subtle Ambient Radiant Glow -->
+  <div class="jrn-ambient-glow" aria-hidden="true"></div>
+
+  <div class="w">
+    
+    <!-- Section Header -->
+    <div class="jrn-header">
+      <div class="jrn-kicker-wrap">
+        <span class="jrn-live-dot" aria-hidden="true"></span>
+        <span class="jrn-kicker">{{ section.settings.kicker | default: "CONSCIOUS COOKBOOK &amp; JOURNAL &middot; PURE INGREDIENTS" }}</span>
+      </div>
+      <h2 class="jrn-title">{{ section.settings.heading | default: "Stories from our <span class='jrn-title-hl'>Kitchen &amp; Heritage</span>" }}</h2>
+      <p class="jrn-subtitle">{{ section.settings.subheading | default: "Wholesome recipes, nutritional science, and mindful snacking rituals designed to nourish your body and mind with pure intention." }}</p>
+    </div>
+
+    <!-- 3-CARD EDITORIAL BLOG SHOWCASE -->
+    <div class="jrn-cards-grid">
+      
+      <!-- Card 1: Recipe & Bio-Science -->
+      <article class="jrn-blog-card" onclick="window.tattvvaOpenArticle('story-1')">
+        <div class="jrn-card-media">
+          <img src="{{ 'journal-laddu-blend.webp' | asset_url }}" alt="Handcrafted Indian dry fruit laddu balls on ceramic platter" loading="lazy" />
+          <span class="jrn-card-badge-cat">RECIPE &amp; SCIENCE</span>
+          <span class="jrn-card-badge-time">⏱️ 5 min read</span>
+        </div>
+        <div class="jrn-card-content">
+          <div class="jrn-card-meta">
+            <div class="jrn-author-tiny">
+              <span class="jrn-author-avatar-sm">AV</span>
+              <span class="jrn-author-name-sm">Dr. Ananya Vaidya</span>
+            </div>
+            <span class="jrn-meta-sep">•</span>
+            <span class="jrn-card-date">Cellular Bio-Nutrition</span>
+          </div>
+          <h3 class="jrn-card-title">The Science Behind Elite-21: How Bioavailable Nutrients Fuel Real Energy</h3>
+          <p class="jrn-card-excerpt">Discover how pairing slow-roasted almonds, Kashmiri walnuts, and Queensland macadamias with pure Desi ghee delivers sustained cognitive stamina without glucose spikes.</p>
+          <div class="jrn-card-highlight">
+            <span class="jrn-ch-icon">🥄</span>
+            <span class="jrn-ch-text">Suggested Ritual: Pair 1 laddu with warm herbal tea at 11 AM</span>
+          </div>
+          <div class="jrn-card-footer">
+            <span class="jrn-card-cta">
+              <span>Read Article</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+            <span class="jrn-card-view-badge">Editorial Story</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Clean Sweeteners -->
+      <article class="jrn-blog-card" onclick="window.tattvvaOpenArticle('story-2')">
+        <div class="jrn-card-media">
+          <img src="{{ 'journal-dates-figs.webp' | asset_url }}" alt="Royal black dates, Afghan wild figs, and raw almonds" loading="lazy" />
+          <span class="jrn-card-badge-cat">CLEAN SWEETENERS</span>
+          <span class="jrn-card-badge-time">⏱️ 3 min read</span>
+        </div>
+        <div class="jrn-card-content">
+          <div class="jrn-card-meta">
+            <div class="jrn-author-tiny">
+              <span class="jrn-author-avatar-sm">KM</span>
+              <span class="jrn-author-name-sm">Kabir Mehta</span>
+            </div>
+            <span class="jrn-meta-sep">•</span>
+            <span class="jrn-card-date">Zero Refined Sugar</span>
+          </div>
+          <h3 class="jrn-card-title">Why We Say No to Refined Sugar: The Power of Sun-Dried Dates</h3>
+          <p class="jrn-card-excerpt">Whole sun-dried dates deliver luscious caramel sweetness bound in 7g of prebiotic fiber, buffering blood sugar absorption and deeply nourishing healthy gut flora.</p>
+          <div class="jrn-card-highlight">
+            <span class="jrn-ch-icon">🍃</span>
+            <span class="jrn-ch-text">Whole Fruit Nutrition: 99.9% Date sweetened &middot; Zero syrups</span>
+          </div>
+          <div class="jrn-card-footer">
+            <span class="jrn-card-cta">
+              <span>Read Article</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+            <span class="jrn-card-view-badge">Editorial Story</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Vedic Alchemy -->
+      <article class="jrn-blog-card" onclick="window.tattvvaOpenArticle('story-3')">
+        <div class="jrn-card-media">
+          <img src="{{ 'journal-bilona-ghee.webp' | asset_url }}" alt="Pure golden liquid Desi ghee dripping from brass spoon" loading="lazy" />
+          <span class="jrn-card-badge-cat">VEDIC ALCHEMY</span>
+          <span class="jrn-card-badge-time">⏱️ 4 min read</span>
+        </div>
+        <div class="jrn-card-content">
+          <div class="jrn-card-meta">
+            <div class="jrn-author-tiny">
+              <span class="jrn-author-avatar-sm">RJ</span>
+              <span class="jrn-author-name-sm">Dr. Radhika Joshi</span>
+            </div>
+            <span class="jrn-meta-sep">•</span>
+            <span class="jrn-card-date">Sacred Rasayana</span>
+          </div>
+          <h3 class="jrn-card-title">Traditional Laddus Reimagined: The Sacred Role of Desi Ghee</h3>
+          <p class="jrn-card-excerpt">Slow-churned using traditional methods, authentic Desi ghee acts as Ayurveda's lipophilic Yogavahi carrier, unlocking cellular absorption of fat-soluble vitamins.</p>
+          <div class="jrn-card-highlight">
+            <span class="jrn-ch-icon">🏺</span>
+            <span class="jrn-ch-text">Traditional Churned: Living butyric acid &amp; active gut enzymes</span>
+          </div>
+          <div class="jrn-card-footer">
+            <span class="jrn-card-cta">
+              <span>Read Article</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+            <span class="jrn-card-view-badge">Editorial Story</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- CONSCIOUS FOOD PHILOSOPHY RIBBON (3 Minimalist Clean Badges) -->
+    <div class="jrn-philosophy-strip">
+      <div class="jrn-philo-item">
+        <div class="jrn-philo-icon">&#x1F33E;</div>
+        <div class="jrn-philo-text">
+          <b>99.9% Unprocessed Whole Ingredients</b>
+          <p>Raw tree nuts and power seeds sourced directly from regional grower cooperatives without chemical fumigation or solvent extraction.</p>
+        </div>
+      </div>
+
+      <div class="jrn-philo-item">
+        <div class="jrn-philo-icon">🏺</div>
+        <div class="jrn-philo-text">
+          <b>Traditional Churned Desi Ghee</b>
+          <p>Slowly cultured and hand-churned from pure curd, retaining living butyric acid and gut-nourishing short-chain fatty acids.</p>
+        </div>
+      </div>
+
+      <div class="jrn-philo-item">
+        <div class="jrn-philo-icon">☀️</div>
+        <div class="jrn-philo-text">
+          <b>Naturally Sweetened with Whole Sun-Dried Dates</b>
+          <p>Zero refined white sugar, commercial jaggery adulterants, or chemical shelf-extenders. Clean nutrition your cells genuinely trust.</p>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- INTERACTIVE ARTICLE QUICK-READ MODAL -->
+  <div class="jrn-modal-overlay" id="jrnModalOverlay" onclick="if(event.target === this) window.tattvvaCloseModal()">
+    <div class="jrn-modal-card" role="dialog" aria-modal="true">
+      <div class="jrn-modal-img-top">
+        <img id="jrnModalHeroImg" src="{{ 'journal-laddu-blend.webp' | asset_url }}" alt="Article Cover" />
+        <button class="jrn-modal-close-float" type="button" onclick="window.tattvvaCloseModal()" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="jrn-modal-scroll">
+        <span class="jrn-modal-category" id="jrnModalCat">CONSCIOUS RECIPES &amp; SCIENCE &middot; 5 MIN READ</span>
+        <h2 class="jrn-modal-headline" id="jrnModalTitle">The Alchemy of 21 Superfoods: How Bioavailable Fats Fuel Real Cellular Energy</h2>
+
+        <div class="jrn-modal-author-strip">
+          <div class="jrn-modal-author-avatar" id="jrnModalAvatar">AV</div>
+          <div class="jrn-modal-author-name">
+            <b id="jrnModalAuthor">Dr. Ananya Vaidya, M.D.</b>
+            <small id="jrnModalAuthorRole">Ayurvedic Medicine &amp; Clinical Nutrition Lead</small>
+          </div>
+        </div>
+
+        <div class="jrn-modal-body" id="jrnModalBody">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Featured Product E-Commerce Card in Modal -->
+        <div class="jrn-modal-product-box">
+          <div class="jrn-mp-left">
+            <div class="jrn-mp-icon">✨</div>
+            <div class="jrn-mp-title">
+              <b id="jrnModalProdName">Signature Elite-21 Laddu (400g Premium Packaging)</b>
+              <small id="jrnModalProdSub">Handcrafted with 21 superfoods, Desi ghee &amp; zero refined sugar &middot; ₹499</small>
+            </div>
+          </div>
+          <a class="jrn-mp-action" href="#products" onclick="window.tattvvaCloseModal()">
+            <span>Shop This Creation</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive JavaScript Controller -->
+  <script>
+    (function(){
+      var articlesData = {
+        'story-1': {
+          id: 'story-1',
+          catKey: 'recipes',
+          catLabel: 'CONSCIOUS RECIPES &middot; BIO-NUTRITIONAL SCIENCE',
+          readTime: '⏱️ 5 MIN READ',
+          imgSrc: '{{ "journal-laddu-blend.webp" | asset_url }}',
+          title: 'The Alchemy of 21 Superfoods: How Bioavailable Fats Fuel Real Cellular Energy',
+          author: 'Dr. Ananya Vaidya, M.D.',
+          authorRole: 'Ayurvedic Medicine & Clinical Nutrition Lead',
+          initials: 'AV',
+          productName: 'Signature Elite-21 Laddu (400g Premium Packaging)',
+          productSub: 'Handcrafted with 21 superfoods, Desi ghee & zero refined sugar &middot; ₹499',
+          bodyHtml: `
+            <p>For decades, commercial dietary advice has reduced human wellness to a simplistic mathematical equation: calories in versus calories out. Yet millions of individuals counting every gram of food find themselves perpetually fatigued, battling intense late-afternoon brain fog and insatiable sugar cravings.</p>
+            <div class="jrn-modal-pullquote">
+              “True satiety isn't about filling the stomach volume—it is about satisfying cellular biological hunger. When you nourish the cell with bioavailable living enzymes, the brain halts craving alarms immediately.”
+            </div>
+            <p>When you consume a conventional biscuit or packaged snack bar made with refined wheat flour and vegetable palm fat, insulin spikes precipitously. Cells are bombarded with simple glucose, followed an hour later by reactive hypoglycemia—the metabolic crash that triggers your 4 PM craving for another tea and snack.</p>
+            <p><strong>The Tattvva Elite-21 Synergy:</strong> In contrast, our recipe pairs cold-pressed natural fats from almonds, Kashmiri walnuts, and Queensland macadamias with whole sun-dried dates and Desi ghee. Because dates retain their intact cellular fiber mesh, fructose uptake is strictly paced. Concurrently, the short-chain fatty acids in Desi ghee stimulate cholecystokinin (CCK) and peptide YY—hormones that signal genuine, sustained satiety to the hypothalamus.</p>
+            <p><strong>Recommended Ritual:</strong> Enjoy 1 whole laddu at 11 AM or during your 4 PM tea break accompanied by a warm cup of herbal tea or warm golden turmeric milk for maximum fat-soluble nutrient absorption.</p>
+          `
+        },
+        'story-2': {
+          id: 'story-2',
+          catKey: 'sugar',
+          catLabel: 'ZERO REFINED SUGAR &middot; CLEAN SWEETENERS',
+          readTime: '⏱️ 3 MIN READ',
+          imgSrc: '{{ "journal-dates-figs.webp" | asset_url }}',
+          title: 'Why We Say No to Refined Sugar: The Power of Sun-Dried Dates',
+          author: 'Kabir Mehta',
+          authorRole: 'Integrative Food Biochemist & Formulation Consultant',
+          initials: 'KM',
+          productName: 'Date-Sweetened Dry Fruit Laddu (400g Premium Packaging)',
+          productSub: '99.9% Whole Fruit Sweetened &middot; Zero Refined Sugar or Syrups &middot; ₹499',
+          bodyHtml: `
+            <p>White refined sugar is one of modern food industry's greatest illusions. Stripped of all accompanying minerals, enzymes, and fibers during heavy chemical bleaching and sulfitation, sucrose enters the bloodstream with violent speed, inflaming endothelial arterial walls and disrupting delicate gut microbiome equilibria.</p>
+            <div class="jrn-modal-pullquote">
+              “The human body recognizes whole sun-dried dates as whole-food medicine; it recognizes chemically refined white sucrose as metabolic distress.”
+            </div>
+            <p>Many 'healthy' confection brands attempt to disguise sugar under names like maltodextrin, inverted sugar syrup, or heavily processed industrial jaggery powders cut with sodium hydrosulphite. At Tattvva, our pledge is absolute zero refined sweeteners.</p>
+            <p><strong>The Whole Fruit Distinction:</strong> Sun-dried black dates and sun-cured Afghan wild figs provide rich caramel sweetness accompanied by nature's protective matrix: over 7 grams of prebiotic dietary fiber per 100 grams, vital potassium that balances intracellular electrolytes, and bioavailable plant iron that supports oxygen transport.</p>
+            <p>You enjoy the rich, celebratory mouthfeel of authentic Indian sweets without post-snack guilt, inflammation, or tooth-decaying free sugars.</p>
+          `
+        },
+        'story-3': {
+          id: 'story-3',
+          catKey: 'ayurveda',
+          catLabel: 'VEDIC ALCHEMY &middot; SACRED RASAYANA',
+          readTime: '⏱️ 4 MIN READ',
+          imgSrc: '{{ "journal-bilona-ghee.webp" | asset_url }}',
+          title: 'The Sacred Catalyst: Why Pure Desi Ghee is Ayurveda\'s Golden Elixir',
+          author: 'Dr. Radhika Joshi, B.A.M.S.',
+          authorRole: 'Senior Ayurvedic Rasayana Practitioner & Herbologist',
+          initials: 'RJ',
+          productName: 'Heritage Desi Ghee Laddu (400g Premium Packaging)',
+          productSub: 'Traditional Desi Ghee with Kashmiri Mogra Saffron &middot; ₹499',
+          bodyHtml: `
+            <p>In modern industrial dairy production, commercial ghee is created cheaply by skimming raw buffalo or crossbreed cow cream and boiling it at aggressive temperatures. This destroys heat-sensitive conjugated linoleic acids (CLA) and enzymes.</p>
+            <div class="jrn-modal-pullquote">
+              “Sanskrit treatises call pure Desi ghee ‘Yogavahi’—meaning an elixir that absorbs the healing qualities of herbs and delivers them straight to the deepest bodily tissues (Dhatus) without losing its own innate purity.”
+            </div>
+            <p><strong>The Traditional Churned Method:</strong> Pure fresh milk is first boiled gently over firewood, inoculated with natural curd culture overnight, and then hand-churned before sunrise. The extracted butter (makkhan) is then clarified slowly into pure golden Desi ghee.</p>
+            <p>When warm Desi ghee is folded into roasted dry fruits, freshly ground Malabar green cardamom, and Kashmiri Mogra saffron, it performs an extraordinary biochemical feat: fat-soluble vitamins (such as alpha-tocopherol Vitamin E in almonds) dissolve into the ghee matrix, bypassing stomach acid destruction and absorbing seamlessly through lymphatic intestinal pathways.</p>
+            <p>Far from elevating arterial plaque, pure Desi ghee nourishes the myelin sheath of nerves, lubricates synovial joints, and builds enduring *Ojas* (vital life immunity).</p>
+          `
+        },
+        'story-4': {
+          id: 'story-4',
+          catKey: 'energy',
+          catLabel: 'EVERYDAY VITALITY &middot; MINDFUL RITUALS',
+          readTime: '⏱️ 3 MIN READ',
+          imgSrc: '{{ "tattvva-elite-21-jar.webp" | asset_url }}',
+          title: 'The 4 PM Slump Solved: Trade Empty Biscuits for Living Satiety',
+          author: 'Meera Sen, C.N.S.',
+          authorRole: 'Functional Nutrition Coach & Corporate Wellness Lead',
+          initials: 'MS',
+          productName: 'Everyday Nutrition Snacking Pack (400g Premium Packaging)',
+          productSub: 'Your Clean 4 PM Workday Ritual &middot; Zero Vanaspati &middot; ₹499',
+          bodyHtml: `
+            <p>Between 3:30 PM and 4:30 PM, office desks across the country witness the same predictable phenomenon: eyelids grow heavy, attention spans fracture, and the office pantry fills with orders for sugary chai and maida biscuits.</p>
+            <div class="jrn-modal-pullquote">
+              “You do not need another shot of dehydrating caffeine. You need cellular nourishment that honors your natural afternoon metabolic dip.”
+            </div>
+            <p>The standard tea-time biscuit is composed of 65% refined flour, 25% hydrogenated vegetable oils (vanaspati), and 20% refined sugar. This floods the bloodstream with empty starch, forcing a sharp insulin surge followed by acute neuro-glycopenia—the scientific term for mental fog and sluggish reflexes.</p>
+            <p><strong>The Clean 4 PM Alternative:</strong> One Tattvva dry fruit laddu provides dense, slow-combustion fuel. The zinc and tryptophan from raw pumpkin seeds support serotonin synthesis; the ALA Omega-3s from Kashmiri walnuts calm mental fatigue; and the unrefined dates supply clean glucose at a measured rate.</p>
+            <p>Pair one laddu with a cup of warm water or herbal infusion at 4 PM to cruise through your final work meetings with razor-sharp cognitive stamina.</p>
+          `
+        }
+      };
+
+
+      // Modal Open / Close Logic
+      window.tattvvaOpenArticle = function(id) {
+        var a = articlesData[id] || articlesData['story-1'];
+        if(!a) return;
+
+        document.getElementById('jrnModalHeroImg').src = a.imgSrc;
+        document.getElementById('jrnModalCat').textContent = a.catLabel + ' &middot; ' + a.readTime;
+        document.getElementById('jrnModalTitle').textContent = a.title;
+        document.getElementById('jrnModalAvatar').textContent = a.initials;
+        document.getElementById('jrnModalAuthor').textContent = a.author;
+        document.getElementById('jrnModalAuthorRole').textContent = a.authorRole;
+        document.getElementById('jrnModalBody').innerHTML = a.bodyHtml;
+        document.getElementById('jrnModalProdName').textContent = a.productName;
+        document.getElementById('jrnModalProdSub').textContent = a.productSub;
+
+        var overlay = document.getElementById('jrnModalOverlay');
+        overlay.classList.add('is-visible');
+        document.body.style.overflow = 'hidden';
+      };
+
+      window.tattvvaCloseModal = function() {
+        var overlay = document.getElementById('jrnModalOverlay');
+        overlay.classList.remove('is-visible');
+        document.body.style.overflow = '';
+      };
+
+      // Keyboard ESC to close modal
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape') {
+          window.tattvvaCloseModal();
+        }
+      });
+
+    })();
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Conscious Journal",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker",
+      "default": "CONSCIOUS COOKBOOK &amp; JOURNAL &middot; PURE INGREDIENTS"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Stories from our <span class='jrn-title-hl'>Kitchen &amp; Heritage</span>"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Wholesome recipes, nutritional science, and mindful snacking rituals designed to nourish your body and mind with pure intention."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Conscious Journal"
+    }
+  ]
+}
+{% endschema %}

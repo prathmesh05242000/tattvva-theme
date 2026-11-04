@@ -1,0 +1,18 @@
+{
+ "sections": {
+  "s0": {
+   "type": "banner",
+   "settings": {
+    "heading": "Contact us",
+    "text": "Nutrilife Foods & Products · Brand: Tattvva"
+   }
+  },
+  "s1": {
+   "type": "contact"
+  }
+ },
+ "order": [
+  "s0",
+  "s1"
+ ]
+}

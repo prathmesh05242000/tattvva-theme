@@ -1,0 +1,101 @@
+<!-- WhatsApp Floating Click to Chat Button -->
+<style>
+.tattvva-whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.25s ease;
+}
+
+.tattvva-whatsapp-float:hover {
+  transform: translateY(-4px) scale(1.06);
+  filter: drop-shadow(0 10px 22px rgba(37, 211, 102, 0.45));
+}
+
+.tattvva-whatsapp-float:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.tattvva-whatsapp-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45), 0 3px 8px rgba(0, 0, 0, 0.15);
+  position: relative;
+  transition: box-shadow 0.25s ease;
+}
+
+.tattvva-whatsapp-pulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #25D366;
+  opacity: 0.6;
+  animation: wa-pulse-wave 2.2s infinite ease-out;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes wa-pulse-wave {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
+}
+
+.tattvva-whatsapp-icon {
+  width: 32px;
+  height: 32px;
+  fill: #ffffff;
+  display: block;
+}
+
+@media(max-width: 640px) {
+  .tattvva-whatsapp-float {
+    bottom: 20px;
+    right: 18px;
+  }
+  .tattvva-whatsapp-btn {
+    width: 52px;
+    height: 52px;
+  }
+  .tattvva-whatsapp-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+</style>
+
+<a href="https://wa.me/917666642112?text=Hello%20Tattvva%20Team%2C%20I%20have%20an%20inquiry%20about%20your%20products." 
+   class="tattvva-whatsapp-float" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   aria-label="Chat with us on WhatsApp (+91 76666 42112)">
+  <div class="tattvva-whatsapp-btn">
+    <div class="tattvva-whatsapp-pulse" aria-hidden="true"></div>
+    <svg class="tattvva-whatsapp-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M12.04 2C6.54 2 2.08 6.46 2.08 11.96C2.08 13.72 2.54 15.42 3.42 16.94L2.01 22.09L7.29 20.71C8.75 21.51 10.37 21.93 12.04 21.93C17.54 21.93 22 17.47 22 11.97C22 6.47 17.54 2 12.04 2ZM17.91 16.32C17.67 17 16.51 17.58 15.96 17.64C15.45 17.69 14.79 17.72 12.55 16.79C9.69 15.61 7.84 12.7 7.7 12.51C7.56 12.33 6.56 10.99 6.56 9.61C6.56 8.23 7.26 7.56 7.54 7.27C7.78 7.02 8.1 6.94 8.35 6.94C8.47 6.94 8.57 6.94 8.66 6.95C8.91 6.96 9.04 6.98 9.2 7.37C9.4 7.86 9.89 9.06 9.95 9.18C10.01 9.3 10.07 9.46 9.99 9.62C9.91 9.78 9.84 9.86 9.72 10C9.6 10.14 9.49 10.24 9.36 10.4C9.22 10.56 9.08 10.72 9.24 11C9.4 11.28 9.95 12.18 10.76 12.9C11.8 13.83 12.65 14.13 12.95 14.26C13.19 14.36 13.38 14.34 13.56 14.13C13.78 13.88 14.05 13.49 14.33 13.1C14.53 12.82 14.78 12.86 15.06 12.96C15.34 13.06 16.83 13.8 17.14 13.95C17.44 14.1 17.65 14.18 17.72 14.3C17.8 14.42 17.8 15.02 17.91 16.32Z" fill="white"/>
+    </svg>
+  </div>
+</a>

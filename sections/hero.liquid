@@ -1,0 +1,175 @@
+<section class="hero">
+  <div class="hero-video-wrap" aria-hidden="true">
+    {% if section.settings.video != blank %}
+      {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, playsinline: true, class: 'hero-bg-video is-active' }}
+    {% elsif section.settings.video_url != blank %}
+      <video id="heroCinematicVideo" class="hero-bg-video is-active" autoplay muted loop playsinline preload="auto" data-speed="{{ section.settings.video_speed | default: 25 | divided_by: 100.0 }}">
+        <source src="{{ section.settings.video_url }}" type="video/mp4">
+      </video>
+    {% else %}
+      <video id="heroCinematicVideo" class="hero-bg-video is-active" autoplay muted loop playsinline preload="auto" poster="{{ 'hero-cinematic-poster.webp' | asset_url }}" data-speed="{{ section.settings.video_speed | default: 25 | divided_by: 100.0 }}">
+        <source src="{{ 'hero-cinematic.mp4' | asset_url }}" type="video/mp4">
+      </video>
+    {% endif %}
+    <div class="hero-white-layer" style="opacity: {{ section.settings.white_layer_opacity | default: 35 | divided_by: 100.0 }};"></div>
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="w hg hero-single-col">
+    <div class="hero-content">
+      {% if section.settings.kicker != blank %}
+        <span class="hero-badge"><span class="hero-badge-dot" aria-hidden="true">✦</span> {{ section.settings.kicker }}</span>
+      {% endif %}
+      {% assign hero_heading = section.settings.heading_title | default: "Everyday Nutrition" %}
+      <h1 class="hero-title">{{ hero_heading | replace: 'Everyday Nutrition', 'Everyday <span class="hero-title-white">Nutrition</span>' | replace: 'Everyday Wellness', 'Everyday <span class="hero-title-white">Nutrition</span>' }}</h1>
+      {% assign hero_sublead = section.settings.sublead | default: "Fuel Your Day with Nature's Best" %}
+      {% if hero_sublead != blank %}
+        <div class="hero-sublead">{{ hero_sublead }}</div>
+      {% endif %}
+      <p class="hero-desc">{{ section.settings.text_desc | default: "Explore TATTVVA's range of premium dry fruit snacks, seed blends, and nutritious foods, thoughtfully crafted to deliver taste, energy, and wellness for you and your family." }}</p>
+      <div class="hero-cta-group cta">
+        <div class="hero-cta-row">
+          {% if section.settings.b1 != blank %}
+            <a class="btn btn-hero-shop" href="{{ section.settings.l1 | default: routes.all_products_collection_url | default: '/collections/all' }}">
+              <span>{{ section.settings.b1 }}</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          {% endif %}
+          {% if section.settings.b2 != blank %}
+            <a class="btn o btn-hero-dist" href="{{ section.settings.l2 | default: '/pages/distributors' }}">{{ section.settings.b2 }}</a>
+          {% endif %}
+          {% if section.settings.b3 != blank %}
+            <a class="btn g btn-hero-explore" href="{{ section.settings.l3 | default: routes.all_products_collection_url | default: '/collections/all' }}">{{ section.settings.b3 }}</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      var vid = document.querySelector('.hero-bg-video');
+      if (!vid) return;
+      var rate = parseFloat(vid.getAttribute('data-speed')) || 0.25;
+      function applySlowMo() {
+        try {
+          if (vid.defaultPlaybackRate !== rate) vid.defaultPlaybackRate = rate;
+          if (vid.playbackRate !== rate) vid.playbackRate = rate;
+        } catch(e) {}
+      }
+      applySlowMo();
+      ['loadstart', 'loadedmetadata', 'canplay', 'play', 'playing', 'seeked', 'seeking', 'timeupdate', 'ratechange'].forEach(function(evt){
+        vid.addEventListener(evt, applySlowMo, { passive: true });
+      });
+      var enforceTimer = setInterval(applySlowMo, 100);
+      window.addEventListener('beforeunload', function(){ clearInterval(enforceTimer); });
+    })();
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Small line / Subtitle",
+      "default": "Pure Nutrition. Honest Ingredients."
+    },
+    {
+      "type": "text",
+      "id": "heading_title",
+      "label": "Heading",
+      "default": "Everyday Nutrition"
+    },
+    {
+      "type": "text",
+      "id": "sublead",
+      "label": "Subheading",
+      "default": "Fuel Your Day with Nature's Best"
+    },
+    {
+      "type": "textarea",
+      "id": "text_desc",
+      "label": "Text",
+      "default": "Explore TATTVVA's range of premium dry fruit snacks, seed blends, and nutritious foods, thoughtfully crafted to deliver taste, energy, and wellness for you and your family."
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Shopify hosted background video"
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "External video MP4 URL (optional)"
+    },
+    {
+      "type": "range",
+      "id": "video_speed",
+      "label": "Video playback speed (%)",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "white_layer_opacity",
+      "label": "White transparent layer opacity (%)",
+      "min": 10,
+      "max": 80,
+      "step": 5,
+      "default": 35
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Background overlay opacity (%)",
+      "min": 10,
+      "max": 90,
+      "step": 2,
+      "default": 38
+    },
+    {
+      "type": "text",
+      "id": "b1",
+      "label": "Button 1",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "l1",
+      "label": "Button 1 link"
+    },
+    {
+      "type": "text",
+      "id": "b2",
+      "label": "Button 2",
+      "default": "Become a Distributor"
+    },
+    {
+      "type": "url",
+      "id": "l2",
+      "label": "Button 2 link"
+    },
+    {
+      "type": "text",
+      "id": "b3",
+      "label": "Button 3",
+      "default": "Explore Products"
+    },
+    {
+      "type": "url",
+      "id": "l3",
+      "label": "Button 3 link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,12 @@
+<section class="sec"><div class="w"><div class="g" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+<div><div class="c" style="margin-bottom:20px"><h3>Visit or call</h3><p>{{ section.settings.address }}<br><a href="tel:{{ section.settings.phone | remove: ' ' }}"><b>{{ section.settings.phone }}</b></a><br>{{ section.settings.hours }}</p></div>
+<div class="c"><h3>Email</h3><p>{{ section.settings.emails | newline_to_br }}</p></div></div>
+{% form 'contact', class: 'f' %}<h2 style="color:var(--plum)">Send a message</h2>
+{% if form.posted_successfully? %}<p class="ok">Thank you. We will reply soon.</p>{% endif %}{% if form.errors %}<p class="ok" style="border-color:var(--plum)">Please check your details and try again.</p>{% endif %}
+<input name="contact[name]" required placeholder="Name" aria-label="Name"><input type="email" name="contact[email]" required placeholder="Email" aria-label="Email"><input type="tel" name="contact[phone]" placeholder="Phone" aria-label="Phone"><textarea name="contact[body]" rows="5" required placeholder="How can we help?" aria-label="Message"></textarea><button class="btn p" type="submit">Send message</button>{% endform %}</div></div></section>
+{% schema %}
+{"name":"Contact","settings":[
+{"type":"textarea","id":"address","label":"Address","default":"Nutrilife Foods & Products, 1502, Sarvoday Onyx, Kalyan-Sape Road, Kalyan 421301, Maharashtra"},
+{"type":"text","id":"phone","label":"Phone","default":"+91 7666642112"},{"type":"text","id":"hours","label":"Hours","default":"Mon–Sat, 9:00 AM – 6:00 PM"},
+{"type":"textarea","id":"emails","label":"Emails","default":"General: info@tattvva.in\nSales: sales@tattvva.in\nDistributors: distributor@tattvva.in\nSupport: support@tattvva.in"}]}
+{% endschema %}

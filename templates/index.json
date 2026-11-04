@@ -1,0 +1,153 @@
+{
+  "sections": {
+    "s0": {
+      "type": "hero"
+    },
+    "s1": {
+      "type": "why-tattvva",
+      "settings": {
+        "heading": "Why Choose Tattvva?",
+        "kicker": "The Tattvva Promise",
+        "subtext": "Real nutrition crafted with zero compromises. Made with 21 pure superfoods and ancestral recipes to nourish your body everyday."
+      }
+    },
+    "s1_mission": {
+      "type": "mission",
+      "settings": {
+        "kicker": "Our Mission",
+        "statement": "To make wholesome nutrition simple, convenient, and enjoyable for every family.",
+        "story": "At Tattvva, we believe healthy eating should never feel like a chore or a compromise. We combine ancient Ayurvedic food wisdom with modern purity standards so your family can thrive every single day."
+      }
+    },
+    "s2": {
+      "type": "featured-products",
+      "settings": {
+        "kicker": "✦ 99.9% Honest Nutrition · Handcrafted Daily",
+        "heading": "Products",
+        "subheading": "Pure superfood creations crafted without preservatives, artificial binders, or refined sugar. Discover our flagship live creation and upcoming kitchen innovations.",
+        "lead_copy": "“Crafted using premium nuts, seeds, fruits, and traditional ingredients.”",
+        "future_heading": "Future Product Categories",
+        "future_subheading": "We are formulating the next generation of wholesome snacking with the same uncompromising purity. Zero refined sugar, zero preservatives, 99.9% nutrient density."
+      }
+    },
+    "s3": {
+      "type": "testimonials",
+      "settings": {
+        "kicker": "Customer Stories",
+        "heading": "Customer Testimonials",
+        "subheading": "Honest reviews from families embracing clean, mindful nutrition every day.",
+        "cta_kicker": "Call to Action",
+        "cta_heading": "Join thousands of customers choosing better nutrition with Tattvva.",
+        "cta_subtext": "Handcrafted with 21 pure superfoods, slow-churned Desi ghee, and zero refined sugar.",
+        "cta_btn_text": "Shop Now",
+        "cta_btn_url": "#products"
+      },
+      "blocks": {
+        "b0": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Excellent taste and premium quality.",
+            "detail": "Our kids and grandparents all love these laddus. Knowing there is zero refined sugar and authentic Desi ghee makes it a daily guilt-free staple.",
+            "author": "Priya S.",
+            "location": "Mumbai",
+            "product": "Signature Elite-21 Laddu",
+            "initials": "PS"
+          }
+        },
+        "b1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Perfect combination of nutrition and flavour.",
+            "detail": "The natural sweetness of dates combined with 21 rich superfood nuts gives long-lasting energy throughout busy afternoons without any sugar spikes.",
+            "author": "Rahul M.",
+            "location": "Bengaluru",
+            "product": "Everyday Nutrition Range",
+            "initials": "RM"
+          }
+        },
+        "b2": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Finally a brand that respects clean ingredients.",
+            "detail": "No palm oil, no vanaspati, and zero synthetic preservatives. The aroma of authentic slow-churned Desi ghee is pure nostalgia.",
+            "author": "Ananya K.",
+            "location": "New Delhi",
+            "product": "Signature Elite-21 Laddu",
+            "initials": "AK"
+          }
+        },
+        "b3": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "The packaging and freshness exceeded all expectations.",
+            "detail": "Arrived in beautiful premium packaging. We gifted three premium packages for festive celebrations and everyone loved the authentic taste.",
+            "author": "Vikram N.",
+            "location": "Pune",
+            "product": "Premium Gift Packs",
+            "initials": "VN"
+          }
+        },
+        "b4": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Noticeable boost in everyday stamina.",
+            "detail": "Replaced my 4 PM biscuits with one Tattvva laddu. Feels light on digestion yet keeps hunger away till dinner.",
+            "author": "Meera D.",
+            "location": "Ahmedabad",
+            "product": "Signature Elite-21 Laddu",
+            "initials": "MD"
+          }
+        },
+        "b5": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Authentic festival flavor without the sugar guilt.",
+            "detail": "The slow-churned Desi ghee aroma reminds me of homemade sweets my grandmother used to make. Truly premium!",
+            "author": "Kabir T.",
+            "location": "Hyderabad",
+            "product": "Everyday Nutrition Range",
+            "initials": "KT"
+          }
+        }
+      },
+      "block_order": [
+        "b0",
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5"
+      ]
+    },
+    "s4": {
+      "type": "distributor-form",
+      "settings": {
+        "heading": "Become a Tattvva partner"
+      }
+    },
+    "s3_story": {
+      "type": "our-story"
+    },
+    "s_ingredients": {
+      "type": "ingredients"
+    },
+    "s_steps": {
+      "type": "steps"
+    },
+    "s_journal": {
+      "type": "journal"
+    }
+  },
+  "order": [
+    "s0",
+    "s2",
+    "s1",
+    "s1_mission",
+    "s3",
+    "s3_story",
+    "s_ingredients",
+    "s_steps",
+    "s4",
+    "s_journal"
+  ]
+}

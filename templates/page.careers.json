@@ -1,0 +1,71 @@
+{
+ "sections": {
+  "s0": {
+   "type": "banner",
+   "settings": {
+    "heading": "Grow with Tattvva",
+    "text": "Great brands are built by passionate people."
+   }
+  },
+  "s1": {
+   "type": "jobs",
+   "blocks": {
+    "b0": {
+     "type": "job",
+     "settings": {
+      "title": "Sales Executive"
+     }
+    },
+    "b1": {
+     "type": "job",
+     "settings": {
+      "title": "Marketing Executive"
+     }
+    },
+    "b2": {
+     "type": "job",
+     "settings": {
+      "title": "Quality Executive"
+     }
+    },
+    "b3": {
+     "type": "job",
+     "settings": {
+      "title": "Production Associate"
+     }
+    },
+    "b4": {
+     "type": "job",
+     "settings": {
+      "title": "Supply Chain Executive"
+     }
+    },
+    "b5": {
+     "type": "job",
+     "settings": {
+      "title": "Graphic Designer"
+     }
+    },
+    "b6": {
+     "type": "job",
+     "settings": {
+      "title": "Digital Marketing Executive"
+     }
+    }
+   },
+   "block_order": [
+    "b0",
+    "b1",
+    "b2",
+    "b3",
+    "b4",
+    "b5",
+    "b6"
+   ]
+  }
+ },
+ "order": [
+  "s0",
+  "s1"
+ ]
+}

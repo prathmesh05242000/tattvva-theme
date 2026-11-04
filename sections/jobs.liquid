@@ -1,0 +1,8 @@
+<section class="sec"><div class="w" style="max-width:760px"><h2>{{ section.settings.heading }}</h2>
+{% for b in section.blocks %}<div class="job" {{ b.shopify_attributes }}><b>{{ b.settings.title }}</b><a class="btn p" href="mailto:{{ section.settings.email }}?subject={{ b.settings.title | url_encode }}">Apply</a></div>{% endfor %}
+<p>Send your resume to {{ section.settings.email }}.</p></div></section>
+{% schema %}
+{"name":"Job list","settings":[{"type":"text","id":"heading","label":"Heading","default":"Current opportunities"},{"type":"text","id":"email","label":"Careers email","default":"info@tattvva.in"}],
+"blocks":[{"type":"job","name":"Job","settings":[{"type":"text","id":"title","label":"Job title","default":"Sales Executive"}]}],
+"presets":[{"name":"Job list","blocks":[{"type":"job"}]}]}
+{% endschema %}

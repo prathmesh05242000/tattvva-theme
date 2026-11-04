@@ -1,0 +1,6 @@
+<a class="c" href="{{ product.url }}">
+<div class="im">{% if product.featured_image %}{{ product.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: product.title }}{% endif %}</div>
+<h3>{{ product.title }}</h3>
+<div class="price">{{ product.price | money }}</div>
+<span class="btn p" style="padding:8px 18px;font-size:14px">{% if product.available %}View &amp; buy{% else %}Sold out{% endif %}</span>
+</a>

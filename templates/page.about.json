@@ -1,0 +1,59 @@
+{
+ "sections": {
+  "s0": {
+   "type": "banner",
+   "settings": {
+    "text": "The Essence of Wellness, Inspired by Sanskrit Wisdom"
+   }
+  },
+  "s1": {
+   "type": "cards",
+   "settings": {
+    "heading": "Our story",
+    "text": "TATTVVA® embodies the ancient Sanskrit concept of \"Tattva\" - the true essence of nature. We transform carefully selected dry fruits, nuts, and natural ingredients into wholesome snacks that nourish, energize, and inspire healthier living.",
+    "bg": "light"
+   },
+   "blocks": {
+    "b0": {
+     "type": "card",
+     "settings": {
+      "title": "TATTVVA® Vision",
+      "text": "To become India's most trusted natural wellness food brand, inspiring a global movement towards healthier living through authentic, nutritious, and sustainably crafted food solutions."
+     }
+    },
+    "b1": {
+     "type": "card",
+     "settings": {
+      "title": "TATTVVA® Mission",
+      "text": "To create premium nutrient-dense foods, upholding the philosophy of Tattva by preserving the true essence and nutritional value of every ingredient."
+     }
+    },
+    "b2": {
+     "type": "card",
+     "settings": {
+      "title": "TATTVVA® Brand Purpose",
+      "text": "To bring the true essence of nature into everyday nutrition, empowering people to live healthier, happier, and more mindful lives through pure, wholesome, and authentic foods."
+     }
+    }
+   },
+   "block_order": [
+    "b0",
+    "b1",
+    "b2"
+   ]
+  },
+  "s2": {
+   "type": "chips",
+   "settings": {
+    "heading": "Core values",
+    "items": "Quality, Integrity, Innovation, Transparency, Customer First, Sustainability",
+    "bg": "dark"
+   }
+  }
+ },
+ "order": [
+  "s0",
+  "s1",
+  "s2"
+ ]
+}

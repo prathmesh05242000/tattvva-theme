@@ -1,0 +1,404 @@
+﻿<section class="sec story-sec" id="our-story">
+  <div class="story-ambient-glow" aria-hidden="true"></div>
+  <div class="story-ambient-glow-2" aria-hidden="true"></div>
+  <div class="w">
+    
+    <!-- Top Hero Banner: Story Header + Sanskrit Essence Card -->
+    <div class="story-hero-grid">
+      <div class="story-intro">
+        <span class="story-badge">{{ section.settings.badge | default: 'Our Story' }}</span>
+        <h2 class="story-heading">{{ section.settings.heading | default: 'Tattvva – The Pure Essence of Nutrition' }}</h2>
+        <div class="story-lead-box">
+          <p class="story-flagship">
+            {{ section.settings.lead_text | default: 'The Essence of Wellness, Inspired by Sanskrit Wisdom' }}
+          </p>
+          <p class="story-body">
+            {{ section.settings.body_text | default: '<strong>TATTVVA®</strong> embodies the ancient Sanskrit concept of <em>"Tattva"</em> – the true essence of nature. We transform carefully selected dry fruits, nuts, and natural ingredients into wholesome snacks that nourish, energize, and inspire healthier living.' }}
+          </p>
+        </div>
+      </div>
+      
+      <!-- Sanskrit Essence Showcase Card -->
+      <div class="story-essence-card">
+        <div class="essence-badge-tag">Sanskrit Origin</div>
+        <div class="essence-sanskrit">तत्त्व</div>
+        <div class="essence-translit">{{ section.settings.card_tagline | default: 'Tattvva – The Pure Essence of Nutrition' }}</div>
+        <p class="essence-desc">
+          {{ section.settings.card_desc | default: 'Pure Superfoods &middot; 0% Refined Sugar' }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Middle: The 3 Strategic Pillars (Vision, Mission, Brand Purpose) -->
+    <div class="story-pillars-grid">
+      <!-- Pillar 1: Vision -->
+      <div class="story-pillar-card p-vision">
+        <div class="pillar-top-row">
+          <div class="pillar-icon-wrap icon-gold">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M2 12s4-8 10-8 10 8 10 8-4 8-10 8-10-8-10-8z"/>
+            </svg>
+          </div>
+          <span class="pillar-kicker">Strategic Horizon</span>
+        </div>
+        <div class="pillar-content">
+          <h3 class="pillar-title">{{ section.settings.vision_title | default: 'TATTVVA® Vision' }}</h3>
+          <p class="pillar-desc">{{ section.settings.vision_text | default: "To become India's most trusted natural wellness food brand, inspiring a global movement towards healthier living through authentic, nutritious, and sustainably crafted food solutions." }}</p>
+          {% assign vision_sub = section.settings.vision_text_2 | default: "We envision a future where TATTVVA is recognized not only for premium products but also for redefining healthy snacking and nutrition by bringing together ancient wisdom, modern nutrition, and uncompromising quality." %}
+          {% if vision_sub != blank %}
+            <p class="pillar-desc pillar-sub">{{ vision_sub }}</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Pillar 2: Mission -->
+      <div class="story-pillar-card p-mission">
+        <div class="pillar-top-row">
+          <div class="pillar-icon-wrap icon-leaf">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="6"/>
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+          </div>
+          <span class="pillar-kicker">Our Commitment</span>
+        </div>
+        <div class="pillar-content">
+          <h3 class="pillar-title">{{ section.settings.mission_title | default: 'TATTVVA® Mission' }}</h3>
+          <ul class="pillar-list">
+            <li>To create premium, nutrient-dense food products using carefully sourced natural ingredients.</li>
+            <li>To uphold the philosophy of Tattva by preserving the true essence and nutritional value of every ingredient.</li>
+            <li>To make healthy eating convenient, enjoyable, and accessible for every household.</li>
+            <li>To continuously innovate and expand our portfolio of wellness-focused foods and functional nutrition products.</li>
+            <li>To build lasting trust through transparency, quality, and ethical business practices.</li>
+            <li>To contribute to a healthier and more sustainable future for generations to come.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Pillar 3: Purpose -->
+      <div class="story-pillar-card p-purpose">
+        <div class="pillar-top-row">
+          <div class="pillar-icon-wrap icon-plum">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <span class="pillar-kicker">Guiding North Star</span>
+        </div>
+        <div class="pillar-content">
+          <h3 class="pillar-title">{{ section.settings.purpose_title | default: 'TATTVVA® Brand Purpose' }}</h3>
+          <p class="pillar-desc">{{ section.settings.purpose_text | default: "To bring the true essence of nature into everyday nutrition, empowering people to live healthier, happier, and more mindful lives through pure, wholesome, and authentic foods." }}</p>
+          {% assign purpose_sub = section.settings.purpose_text_2 | default: "At TATTVVA, we believe that wellness begins with simplicity, purity, and trust. Our purpose is to reconnect modern lifestyles with nature's timeless wisdom by creating nutrient-rich foods that nourish both body and mind." %}
+          {% if purpose_sub != blank %}
+            <p class="pillar-desc pillar-sub">{{ purpose_sub }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Brand Philosophy Showcase -->
+    <div class="story-philosophy-wrap">
+      <div class="philosophy-top">
+        <span class="philosophy-badge">✦ {{ section.settings.philosophy_kicker | default: 'Brand Philosophy' }}</span>
+        <h3 class="philosophy-title">{{ section.settings.philosophy_title | default: '"The Essence of Wellness"' }}</h3>
+        <p class="philosophy-lead">
+          {{ section.settings.philosophy_desc | default: 'Derived from the Sanskrit word <em>Tattva</em>, meaning the fundamental truth or essence, <strong>TATTVVA®</strong> stands for returning to what is pure, natural, and meaningful.' }}
+        </p>
+      </div>
+      <div class="philosophy-pillars-row">
+        <div class="phil-pillar-item">
+          <div class="phil-icon-chip" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <p class="phil-pillar-text">{{ section.settings.philosophy_pillar_1 | default: 'Every ingredient has a purpose.' }}</p>
+        </div>
+        <div class="phil-pillar-item">
+          <div class="phil-icon-chip" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <p class="phil-pillar-text">{{ section.settings.philosophy_pillar_2 | default: 'Every product has integrity.' }}</p>
+        </div>
+        <div class="phil-pillar-item">
+          <div class="phil-icon-chip" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <p class="phil-pillar-text">{{ section.settings.philosophy_pillar_3 | default: 'Every bite delivers the essence of nature.' }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom: Core Values Section -->
+    <div class="story-values-wrap">
+      <div class="story-values-head">
+        <span class="values-badge">✦ {{ section.settings.values_badge | default: 'What Drives Us' }}</span>
+        <h3 class="story-values-title">{{ section.settings.values_title | default: 'Our Core Values' }}</h3>
+        <p class="story-values-sub">{{ section.settings.values_sub | default: 'The unshakeable principles behind every recipe, batch, and premium packaging we create.' }}</p>
+      </div>
+
+      <div class="story-values-grid">
+        <!-- Value 1: Quality -->
+        <div class="value-item-card v-quality">
+          <div class="value-card-top">
+            <div class="value-icon-coin coin-gold" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <span class="value-num">01</span>
+          </div>
+          <h4>Quality</h4>
+          <p>Sourcing only the finest dry fruits, dates, and pure Desi ghee with zero compromises on grade or purity.</p>
+        </div>
+
+        <!-- Value 2: Integrity -->
+        <div class="value-item-card v-integrity">
+          <div class="value-card-top">
+            <div class="value-icon-coin coin-leaf" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </div>
+            <span class="value-num">02</span>
+          </div>
+          <h4>Integrity</h4>
+          <p>Absolute honesty in our promises. Zero artificial preservatives, palm oil, or hidden refined sugars.</p>
+        </div>
+
+        <!-- Value 3: Innovation -->
+        <div class="value-item-card v-innovation">
+          <div class="value-card-top">
+            <div class="value-icon-coin coin-amber" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18h6"/>
+                <path d="M10 22h4"/>
+                <path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.3 4.7 3.2 6h7.6c1.9-1.3 3.2-3.5 3.2-6a7 7 0 0 0-7-7z"/>
+              </svg>
+            </div>
+            <span class="value-num">03</span>
+          </div>
+          <h4>Innovation</h4>
+          <p>Harmonizing time-tested Ayurvedic superfood knowledge with modern nutrition science and convenient formats.</p>
+        </div>
+
+        <!-- Value 4: Transparency -->
+        <div class="value-item-card v-transparency">
+          <div class="value-card-top">
+            <div class="value-icon-coin coin-cyan" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                <path d="M11 8v6"/>
+                <path d="M8 11h6"/>
+              </svg>
+            </div>
+            <span class="value-num">04</span>
+          </div>
+          <h4>Transparency</h4>
+          <p>Clear, clean labeling you can trust. Full traceability from sourced ingredient to the finished seal.</p>
+        </div>
+
+        <!-- Value 5: Customer First -->
+        <div class="value-item-card v-customer">
+          <div class="value-card-top">
+            <div class="value-icon-coin coin-plum" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <span class="value-num">05</span>
+          </div>
+          <h4>Customer First</h4>
+          <p>Listening to families, crafting wholesome taste, and prioritizing health in every premium packaging dispatched.</p>
+        </div>
+
+        <!-- Value 6: Sustainability -->
+        <div class="value-item-card v-sustainability">
+          <div class="value-card-top">
+            <div class="value-icon-coin coin-mint" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 20A7 7 0 0 1 4 13C4 7 11 3 11 3s7 4 7 10a7 7 0 0 1-7 7z"/>
+                <path d="M11 20V10"/>
+                <path d="M11 13l4-2"/>
+              </svg>
+            </div>
+            <span class="value-num">06</span>
+          </div>
+          <h4>Sustainability</h4>
+          <p>Responsible procurement, minimal waste, and food-grade premium packaging that honours the planet.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Our Story",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge Kicker",
+      "default": "Our Story"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main Heading / Tagline",
+      "default": "Tattvva – The Pure Essence of Nutrition"
+    },
+    {
+      "type": "textarea",
+      "id": "lead_text",
+      "label": "Flagship Brand Text",
+      "default": "The Essence of Wellness, Inspired by Sanskrit Wisdom"
+    },
+    {
+      "type": "textarea",
+      "id": "body_text",
+      "label": "Story Body Text",
+      "default": "<strong>TATTVVA®</strong> embodies the ancient Sanskrit concept of <em>\"Tattva\"</em> – the true essence of nature. We transform carefully selected dry fruits, nuts, and natural ingredients into wholesome snacks that nourish, energize, and inspire healthier living."
+    },
+    {
+      "type": "text",
+      "id": "card_tagline",
+      "label": "Sanskrit Card Tagline",
+      "default": "Tattvva – The Pure Essence of Nutrition"
+    },
+    {
+      "type": "text",
+      "id": "card_desc",
+      "label": "Sanskrit Card Subtext",
+      "default": "Pure Superfoods &middot; 0% Refined Sugar"
+    },
+    {
+      "type": "header",
+      "content": "Strategic Pillars"
+    },
+    {
+      "type": "text",
+      "id": "vision_title",
+      "label": "Vision Title",
+      "default": "TATTVVA® Vision"
+    },
+    {
+      "type": "textarea",
+      "id": "vision_text",
+      "label": "Vision Statement",
+      "default": "To become India's most trusted natural wellness food brand, inspiring a global movement towards healthier living through authentic, nutritious, and sustainably crafted food solutions."
+    },
+    {
+      "type": "textarea",
+      "id": "vision_text_2",
+      "label": "Vision Envision Statement",
+      "default": "We envision a future where TATTVVA is recognized not only for premium products but also for redefining healthy snacking and nutrition by bringing together ancient wisdom, modern nutrition, and uncompromising quality."
+    },
+    {
+      "type": "text",
+      "id": "mission_title",
+      "label": "Mission Title",
+      "default": "TATTVVA® Mission"
+    },
+    {
+      "type": "text",
+      "id": "purpose_title",
+      "label": "Purpose Title",
+      "default": "TATTVVA® Brand Purpose"
+    },
+    {
+      "type": "textarea",
+      "id": "purpose_text",
+      "label": "Purpose Statement",
+      "default": "To bring the true essence of nature into everyday nutrition, empowering people to live healthier, happier, and more mindful lives through pure, wholesome, and authentic foods."
+    },
+    {
+      "type": "textarea",
+      "id": "purpose_text_2",
+      "label": "Purpose Core Belief",
+      "default": "At TATTVVA, we believe that wellness begins with simplicity, purity, and trust. Our purpose is to reconnect modern lifestyles with nature's timeless wisdom by creating nutrient-rich foods that nourish both body and mind."
+    },
+    {
+      "type": "header",
+      "content": "Brand Philosophy"
+    },
+    {
+      "type": "text",
+      "id": "philosophy_kicker",
+      "label": "Philosophy Kicker",
+      "default": "Brand Philosophy"
+    },
+    {
+      "type": "text",
+      "id": "philosophy_title",
+      "label": "Philosophy Title",
+      "default": "\"The Essence of Wellness\""
+    },
+    {
+      "type": "textarea",
+      "id": "philosophy_desc",
+      "label": "Philosophy Description",
+      "default": "Derived from the Sanskrit word Tattva, meaning the fundamental truth or essence, TATTVVA stands for returning to what is pure, natural, and meaningful."
+    },
+    {
+      "type": "text",
+      "id": "philosophy_pillar_1",
+      "label": "Philosophy Pillar 1",
+      "default": "Every ingredient has a purpose."
+    },
+    {
+      "type": "text",
+      "id": "philosophy_pillar_2",
+      "label": "Philosophy Pillar 2",
+      "default": "Every product has integrity."
+    },
+    {
+      "type": "text",
+      "id": "philosophy_pillar_3",
+      "label": "Philosophy Pillar 3",
+      "default": "Every bite delivers the essence of nature."
+    },
+    {
+      "type": "header",
+      "content": "Core Values"
+    },
+    {
+      "type": "text",
+      "id": "values_badge",
+      "label": "Values Badge",
+      "default": "What Drives Us"
+    },
+    {
+      "type": "text",
+      "id": "values_title",
+      "label": "Values Section Title",
+      "default": "Core Values"
+    },
+    {
+      "type": "text",
+      "id": "values_sub",
+      "label": "Values Subtitle",
+      "default": "The unshakeable principles behind every recipe, batch, and premium packaging we create."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our Story"
+    }
+  ]
+}
+{% endschema %}

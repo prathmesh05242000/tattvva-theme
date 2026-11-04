@@ -1,0 +1,452 @@
+﻿<section class="sec products-sec" style="padding-top:40px;">
+  <div class="products-glow" aria-hidden="true"></div>
+  <div class="w">
+    
+    <article class="spotlight-card is-active" id="mainProductSpotlight" style="display:grid;opacity:1;margin-bottom:28px;">
+      <!-- Left Media Showcase with Running Gallery -->
+      <div class="spotlight-media-wrap">
+        <span class="spotlight-live-tag"><span class="pulse-dot"></span> Live in Store</span>
+        <span class="spotlight-edition-tag">★ {% if product.tags contains 'elite' %}Flagship Elite-21{% else %}Tattvva Selection{% endif %}</span>
+
+        <div class="spotlight-gallery" data-auto-play="true">
+          <div class="spotlight-slides-viewport">
+            {% if product.images.size > 0 %}
+              {% for img in product.images %}
+                <div class="spotlight-slide{% if forloop.first %} is-active{% endif %}" data-index="{{ forloop.index0 }}">
+                  <img src="{{ img | image_url: width: 800 }}" alt="{{ product.title }} - Shot {{ forloop.index }}" class="spotlight-slide-img" width="480" height="420"{% if forloop.first %} loading="eager"{% else %} loading="lazy"{% endif %}>
+                  <span class="spotlight-slide-caption">✦ View {{ forloop.index }} of {{ product.images.size }}</span>
+                </div>
+              {% endfor %}
+            {% else %}
+              <div class="spotlight-slide is-active" data-index="0">
+                <img src="{{ 'tattvva-elite-21-front.webp' | asset_url }}" alt="TATTVVA ELITE 21 - Signature Premium Packaging" class="spotlight-slide-img" width="520" height="460" loading="eager">
+                <span class="spotlight-slide-caption">✦ Signature Premium Packaging</span>
+              </div>
+              <div class="spotlight-slide" data-index="1">
+                <img src="{{ 'tattvva-elite-21-lifestyle.webp' | asset_url }}" alt="TATTVVA ELITE 21 - Premium Nut & Dry Fruit Blend" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                <span class="spotlight-slide-caption">✦ Premium Nut &amp; Dry Fruit Blend</span>
+              </div>
+              <div class="spotlight-slide" data-index="2">
+                <img src="{{ 'tattvva-elite-21-back.webp' | asset_url }}" alt="TATTVVA ELITE 21 - Nutrition Facts & Jar Details" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                <span class="spotlight-slide-caption">✦ Packaging &amp; Nutrition Facts</span>
+              </div>
+              <div class="spotlight-slide" data-index="3">
+                <img src="{{ 'tattvva-elite-21-nutrition.webp' | asset_url }}" alt="TATTVVA ELITE 21 - Certified Nutrition Chart" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                <span class="spotlight-slide-caption">✦ Certified NABL Nutritional Table</span>
+              </div>
+              <div class="spotlight-slide" data-index="4">
+                <img src="{{ 'tattvva-elite-21-showcase.webp' | asset_url }}" alt="TATTVVA ELITE 21 - Complete Showcase" class="spotlight-slide-img" width="520" height="460" loading="lazy">
+                <span class="spotlight-slide-caption">✦ Complete Product &amp; Packaging Showcase</span>
+              </div>
+            {% endif %}
+          </div>
+
+          <button type="button" class="spotlight-nav-btn prev" aria-label="Previous shot">‹</button>
+          <button type="button" class="spotlight-nav-btn next" aria-label="Next shot">›</button>
+
+          <div class="spotlight-gallery-footer">
+            <div class="spotlight-progress-track">
+              <div class="spotlight-progress-fill" style="width:{% if product.images.size > 0 %}{{ 100 | divided_by: product.images.size }}%{% else %}20%{% endif %};"></div>
+            </div>
+            <span class="spotlight-runner-pill"><span class="runner-dot"></span> <span class="runner-counter">Shot 1 of {% if product.images.size > 0 %}{{ product.images.size }}{% else %}5{% endif %}</span></span>
+          </div>
+
+          <div class="spotlight-thumb-strip">
+            {% if product.images.size > 0 %}
+              {% for img in product.images %}
+                <button type="button" class="spotlight-thumb{% if forloop.first %} is-active{% endif %}" data-slide="{{ forloop.index0 }}" aria-label="Shot {{ forloop.index }}"><img src="{{ img | image_url: width: 140 }}" width="52" height="52" alt="Thumbnail {{ forloop.index }}"></button>
+              {% endfor %}
+            {% else %}
+              <button type="button" class="spotlight-thumb is-active" data-slide="0" aria-label="Shot 1: Jar Front"><img src="{{ 'tattvva-elite-21-front.webp' | asset_url }}" width="52" height="52" alt="Jar Front"></button>
+              <button type="button" class="spotlight-thumb" data-slide="1" aria-label="Shot 2: Lifestyle"><img src="{{ 'tattvva-elite-21-lifestyle.webp' | asset_url }}" width="52" height="52" alt="Lifestyle"></button>
+              <button type="button" class="spotlight-thumb" data-slide="2" aria-label="Shot 3: Jar Back"><img src="{{ 'tattvva-elite-21-back.webp' | asset_url }}" width="52" height="52" alt="Jar Back"></button>
+              <button type="button" class="spotlight-thumb" data-slide="3" aria-label="Shot 4: Nutrition Table"><img src="{{ 'tattvva-elite-21-nutrition.webp' | asset_url }}" width="52" height="52" alt="Nutrition Table"></button>
+              <button type="button" class="spotlight-thumb" data-slide="4" aria-label="Shot 5: Showcase"><img src="{{ 'tattvva-elite-21-showcase.webp' | asset_url }}" width="52" height="52" alt="Showcase"></button>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Micro Seals -->
+        <div class="spotlight-micro-seals">
+          <div class="micro-seal"><span class="micro-seal-icon">&#x1F330;</span><span>21 Whole Nuts &amp; Seeds</span></div>
+          <div class="micro-seal"><span class="micro-seal-icon">🍯</span><span>Pure Desi Ghee</span></div>
+          <div class="micro-seal"><span class="micro-seal-icon">🌿</span><span>0% Added Sugar or Jaggery</span></div>
+        </div>
+      </div>
+
+      <!-- Right Product Details -->
+      <div class="spotlight-details">
+        <div class="spotlight-rating-wrap">
+          <span class="spotlight-stars">★★★★★</span>
+          <span class="spotlight-verified">4.9 / 5.0</span>
+          <span>(500+ verified customer ratings)</span>
+        </div>
+
+        <h1 class="spotlight-title" style="margin-top:0;">{{ product.title }}</h1>
+        <span class="spotlight-sub-badge">Signature Artisanal Creation &middot; Premium Packaging</span>
+
+        <p class="spotlight-lead-copy">“Crafted using premium nuts, seeds, fruits, and traditional ingredients.”</p>
+
+        <!-- Product Highlights -->
+        <div class="spotlight-highlights-label">Product Highlights</div>
+        <div class="spotlight-highlights-grid">
+          <div class="hl-card">
+            <div class="hl-card-icon">🧁</div>
+            <div class="hl-card-title">Rich taste</div>
+            <p class="hl-card-desc">Indulgent melt-in-mouth richness from Iranian pistachios, cashews, and Arabian dates. Zero bitter aftertaste.</p>
+          </div>
+          <div class="hl-card">
+            <div class="hl-card-icon">⚡</div>
+            <div class="hl-card-title">Convenient snack</div>
+            <p class="hl-card-desc">Mess-free, pocket-friendly energy bites ready for busy workday mornings, office desks, or post-workout fuel.</p>
+          </div>
+          <div class="hl-card">
+            <div class="hl-card-icon">🌿</div>
+            <div class="hl-card-title">Premium ingredients</div>
+            <p class="hl-card-desc">21 whole cold-selected superfoods slow-bound in pure Desi ghee with absolutely no palm oil.</p>
+          </div>
+        </div>
+
+        <!-- Shopify Cart Form with Weight Variant Selector & Quantity Stepper -->
+        {% form 'product', product, class: 'spotlight-form' %}
+          <!-- Size / Weight Selection (100g, 250g, 500g) -->
+          <div class="product-variant-selector">
+            <div class="variant-selector-header">
+              <span class="variant-label">Select Net Weight:</span>
+              <span class="variant-active-display">250g (Selected)</span>
+            </div>
+            
+            {% if product.variants.size > 1 %}
+              <!-- Store Variants -->
+              <div class="variant-pill-group" role="radiogroup" aria-label="Select Weight">
+                {% for v in product.variants %}
+                  {% assign v_title_lower = v.title | downcase %}
+                  <button type="button" 
+                    class="variant-pill{% if forloop.first or v_title_lower contains '250' %} is-active{% endif %}" 
+                    data-variant-id="{{ v.id }}" 
+                    data-price="{{ v.price | divided_by: 100 }}" 
+                    data-mrp="{% if v.compare_at_price > v.price %}{{ v.compare_at_price | divided_by: 100 }}{% else %}{{ v.price | times: 1.2 | divided_by: 100 }}{% endif %}" 
+                    data-size="{{ v.title }}" 
+                    data-discount="{% if v.compare_at_price > v.price %}Save {{ v.compare_at_price | minus: v.price | times: 100 | divided_by: v.compare_at_price }}% OFF{% else %}Save 17% OFF{% endif %}"
+                    data-pack="Net Wt: {{ v.title }} &middot; Sealed Freshness Premium Packaging &middot; Inclusive of all taxes"
+                    role="radio" 
+                    aria-checked="{% if forloop.first or v_title_lower contains '250' %}true{% else %}false{% endif %}"
+                    {% unless v.available %}disabled{% endunless %}>
+                    <span class="pill-weight">{{ v.title }}</span>
+                    <span class="pill-badge{% if v_title_lower contains '250' %} best-seller{% elsif v_title_lower contains '500' %} value-save{% endif %}">
+                      {% if v_title_lower contains '250' %}Most Popular{% elsif v_title_lower contains '500' %}Best Value{% else %}Trial Pack{% endif %}
+                    </span>
+                    <span class="pill-price">{{ v.price | money }}</span>
+                  </button>
+                {% endfor %}
+              </div>
+              <input type="hidden" name="id" id="mainProductVariantId" value="{{ product.selected_or_first_available_variant.id }}">
+            {% else %}
+              <!-- Default 100g, 250g, 500g Luxury Selection -->
+              {% assign base_p = product.price | divided_by: 100 | default: 499 %}
+              {% if base_p == 0 %}{% assign base_p = 499 %}{% endif %}
+              {% assign p100 = base_p | times: 50 | divided_by: 100 %}
+              {% assign p250 = base_p %}
+              {% assign p500 = base_p | times: 190 | divided_by: 100 %}
+              <div class="variant-pill-group" role="radiogroup" aria-label="Select Weight">
+                <button type="button" class="variant-pill" data-size="100g" data-price="{{ p100 }}" data-mrp="{{ p100 | times: 120 | divided_by: 100 }}" data-discount="Save 17% OFF" data-pack="Net Wt: 100g (Trial / Snacking Size) &middot; Freshness Sealed &middot; Incl. of all taxes" role="radio" aria-checked="false">
+                  <span class="pill-weight">100g</span>
+                  <span class="pill-badge">Trial Pack</span>
+                  <span class="pill-price">₹{{ p100 }}</span>
+                </button>
+                <button type="button" class="variant-pill is-active" data-size="250g" data-price="{{ p250 }}" data-mrp="{{ p250 | times: 120 | divided_by: 100 }}" data-discount="Save 17% OFF" data-pack="Net Wt: 250g &middot; Sealed Freshness Premium Packaging &middot; Incl. of all taxes" role="radio" aria-checked="true">
+                  <span class="pill-weight">250g</span>
+                  <span class="pill-badge best-seller">Most Popular</span>
+                  <span class="pill-price">₹{{ p250 }}</span>
+                </button>
+                <button type="button" class="variant-pill" data-size="500g" data-price="{{ p500 }}" data-mrp="{{ p500 | times: 125 | divided_by: 100 }}" data-discount="Save 21% OFF" data-pack="Net Wt: 500g (Family Value Pack) &middot; Sealed Freshness &middot; Incl. of all taxes" role="radio" aria-checked="false">
+                  <span class="pill-weight">500g</span>
+                  <span class="pill-badge value-save">Save 21%</span>
+                  <span class="pill-price">₹{{ p500 }}</span>
+                </button>
+              </div>
+              <input type="hidden" name="id" id="mainProductVariantId" value="{{ product.selected_or_first_available_variant.id | default: '1' }}">
+            {% endif %}
+          </div>
+
+          <div class="spotlight-price-box">
+            <span class="spotlight-current-price">{{ product.price | money | default: '₹499' }}</span>
+            <span class="spotlight-mrp">{% if product.compare_at_price > product.price %}{{ product.compare_at_price | money }}{% else %}₹599{% endif %}</span>
+            <span class="spotlight-discount-pill">Save 17% OFF</span>
+            <div class="spotlight-pack-info">Net Wt: 250g &middot; Sealed Freshness Premium Packaging &middot; Inclusive of all taxes</div>
+          </div>
+
+          <!-- Quantity Stepper & Dynamic Total Subtotal -->
+          <div class="product-qty-row">
+            <div class="qty-control-wrapper">
+              <span class="qty-label">Quantity:</span>
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn btn-minus" aria-label="Decrease quantity">−</button>
+                <input type="number" id="Quantity-{{ product.id }}" name="quantity" class="qty-input" value="1" min="1" max="50" aria-label="Product quantity" readonly>
+                <button type="button" class="qty-btn btn-plus" aria-label="Increase quantity">+</button>
+              </div>
+            </div>
+
+            <div class="price-summary-dynamic">
+              <div class="total-price-line">
+                <span class="total-label">Subtotal:</span>
+                <span class="spotlight-dynamic-total">{{ product.price | money | default: '₹499' }}</span>
+              </div>
+              <div class="total-unit-breakdown">
+                <span class="breakdown-text">{{ product.price | money | default: '₹499' }} × 1</span>
+                <span class="total-savings-text">Save ₹100</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="spotlight-action-row">
+            <button class="btn-spotlight-buy" type="submit"{% unless product.available %} disabled{% endunless %} style="flex:1;" data-base-title="Add to Bag">
+              {% if product.available %}Add to Bag &middot; 250g ({{ product.price | money | default: '₹499' }}) <span>→</span>{% else %}Sold Out{% endif %}
+            </button>
+          </div>
+        {% endform %}
+
+        <!-- Pincode checker -->
+        <div class="dl" id="dl" data-endpoint="{{ section.settings.endpoint | escape }}" data-min="{{ section.settings.min_days }}" data-max="{{ section.settings.max_days }}" style="margin:16px 0;background:#FAF6EE;padding:14px;border-radius:14px;border:1px solid rgba(217,207,196,0.8);">
+          <b style="font-size:13px;display:block;margin-bottom:6px;">Check estimated delivery date:</b>
+          <div class="row" style="display:flex;gap:8px;">
+            <input inputmode="numeric" maxlength="6" placeholder="Enter 6-digit pincode" aria-label="Pincode" style="flex:1;padding:9px 12px;border-radius:10px;border:1px solid var(--line);font-size:14px;">
+            <button type="button" class="btn p" style="padding:9px 18px;font-size:13px;">Check</button>
+          </div>
+          <output aria-live="polite" style="display:block;margin-top:6px;font-size:12.5px;color:var(--plum-d);"></output>
+        </div>
+
+        <div class="spotlight-trust-list">
+          <span>✓ Free Pan-India Delivery</span>
+          <span>✓ Dispatched in 24h</span>
+          <span>✓ FSSAI Certified Sterile Kitchen</span>
+        </div>
+      </div>
+    </article>
+
+    {% if product.description != blank %}
+      <div class="rte" style="background:#FFF;padding:28px;border-radius:20px;border:1.5px solid rgba(217,207,196,0.7);margin-bottom:30px;">
+        <h3 style="font-size:22px;color:var(--plum-d);margin-bottom:12px;">Detailed Description</h3>
+        {{ product.description }}
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+<script>
+(function() {
+  var gal = document.querySelector('#mainProductSpotlight .spotlight-gallery');
+  if (!gal) return;
+  var slides = gal.querySelectorAll('.spotlight-slide');
+  var thumbs = gal.querySelectorAll('.spotlight-thumb');
+  var prevBtn = gal.querySelector('.spotlight-nav-btn.prev');
+  var nextBtn = gal.querySelector('.spotlight-nav-btn.next');
+  var counter = gal.querySelector('.runner-counter');
+  var progress = gal.querySelector('.spotlight-progress-fill');
+  var total = slides.length;
+  var currentIndex = 0;
+
+  function goToSlide(idx) {
+    if (idx < 0) idx = total - 1;
+    if (idx >= total) idx = 0;
+    currentIndex = idx;
+
+    slides.forEach(function(s, i) {
+      if (i === currentIndex) s.classList.add('is-active');
+      else s.classList.remove('is-active');
+    });
+
+    var thumbStrip = gal.querySelector('.spotlight-thumb-strip');
+    thumbs.forEach(function(t, i) {
+      if (i === currentIndex) {
+        t.classList.add('is-active');
+        if (thumbStrip && t) {
+          var targetLeft = t.offsetLeft - (thumbStrip.clientWidth / 2) + (t.clientWidth / 2);
+          thumbStrip.scrollTo({ left: targetLeft, behavior: 'smooth' });
+        }
+      } else {
+        t.classList.remove('is-active');
+      }
+    });
+
+    if (counter) counter.textContent = 'Shot ' + (currentIndex + 1) + ' of ' + total;
+    if (progress) progress.style.width = (((currentIndex + 1) / total) * 100) + '%';
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', function(e) { e.stopPropagation(); goToSlide(currentIndex - 1); });
+  if (nextBtn) nextBtn.addEventListener('click', function(e) { e.stopPropagation(); goToSlide(currentIndex + 1); });
+
+  thumbs.forEach(function(t, i) {
+    t.addEventListener('click', function() { goToSlide(i); });
+  });
+
+  var autoTimer = setInterval(function() {
+    var rect = gal.getBoundingClientRect();
+    if (rect.bottom > 0 && rect.top < (window.innerHeight || document.documentElement.clientHeight)) {
+      goToSlide(currentIndex + 1);
+    }
+  }, 3500);
+  gal.addEventListener('mouseenter', function() { clearInterval(autoTimer); });
+  gal.addEventListener('mouseleave', function() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(function() {
+      var rect = gal.getBoundingClientRect();
+      if (rect.bottom > 0 && rect.top < (window.innerHeight || document.documentElement.clientHeight)) {
+        goToSlide(currentIndex + 1);
+      }
+    }, 3500);
+  });
+
+  // Pincode estimator
+  var dl = document.getElementById('dl');
+  if (dl) {
+    var b = dl.querySelector('button'), i = dl.querySelector('input'), o = dl.querySelector('output');
+    b.addEventListener('click', function() {
+      var v = i.value.trim();
+      if (!/^[1-9]\d{5}$/.test(v)) { o.textContent = 'Enter a valid 6-digit pincode.'; return; }
+      var a = new Date(); a.setDate(a.getDate() + 1);
+      var lo = new Date(); lo.setDate(lo.getDate() + 3);
+      var hi = new Date(); hi.setDate(hi.getDate() + 6);
+      o.innerHTML = 'Dispatches by <b>' + a.toLocaleDateString('en-IN', {weekday:'short', day:'numeric', month:'short'}) + '</b>. Delivery: <b>' + lo.toLocaleDateString('en-IN', {month:'short', day:'numeric'}) + ' – ' + hi.toLocaleDateString('en-IN', {month:'short', day:'numeric'}) + '</b>.';
+    });
+  }
+
+  // Dynamic Product Variants (100g, 250g, 500g) and Quantity Stepper
+  (function initMainProductVariantsAndQty() {
+    var card = document.getElementById('mainProductSpotlight');
+    if (!card) return;
+
+    var pills = card.querySelectorAll('.variant-pill');
+    var activeDisplay = card.querySelector('.variant-active-display');
+    var priceEl = card.querySelector('.spotlight-current-price');
+    var mrpEl = card.querySelector('.spotlight-mrp');
+    var discountEl = card.querySelector('.spotlight-discount-pill');
+    var packInfoEl = card.querySelector('.spotlight-pack-info');
+    var minusBtn = card.querySelector('.qty-btn.btn-minus');
+    var plusBtn = card.querySelector('.qty-btn.btn-plus');
+    var qtyInput = card.querySelector('.qty-input');
+    var totalEl = card.querySelector('.spotlight-dynamic-total');
+    var breakdownEl = card.querySelector('.breakdown-text');
+    var savingsEl = card.querySelector('.total-savings-text');
+    var buyBtn = card.querySelector('.btn-spotlight-buy');
+    var hiddenId = document.getElementById('mainProductVariantId');
+
+    var currentPrice = 499;
+    var currentMrp = 599;
+    var currentSize = '250g';
+    var quantity = 1;
+
+    var activePill = card.querySelector('.variant-pill.is-active');
+    if (activePill) {
+      currentPrice = parseInt(activePill.getAttribute('data-price'), 10) || 499;
+      currentMrp = parseInt(activePill.getAttribute('data-mrp'), 10) || 599;
+      currentSize = activePill.getAttribute('data-size') || '250g';
+    }
+
+    function updateCalculations() {
+      var subtotal = currentPrice * quantity;
+      var totalMrp = currentMrp * quantity;
+      var savings = totalMrp - subtotal;
+
+      if (priceEl) priceEl.textContent = '₹' + currentPrice.toLocaleString('en-IN');
+      if (mrpEl) mrpEl.textContent = '₹' + currentMrp.toLocaleString('en-IN');
+      if (qtyInput) qtyInput.value = quantity;
+      if (totalEl) totalEl.textContent = '₹' + subtotal.toLocaleString('en-IN');
+      if (breakdownEl) breakdownEl.textContent = '₹' + currentPrice.toLocaleString('en-IN') + ' × ' + quantity;
+      if (savingsEl) {
+        if (savings > 0) {
+          savingsEl.style.display = 'inline-block';
+          savingsEl.textContent = 'Save ₹' + savings.toLocaleString('en-IN');
+        } else {
+          savingsEl.style.display = 'none';
+        }
+      }
+      if (activeDisplay) activeDisplay.textContent = currentSize + ' (Selected)';
+
+      if (buyBtn) {
+        buyBtn.innerHTML = 'Add to Bag &middot; ' + currentSize + ' (' + (quantity > 1 ? quantity + ' × ' : '') + '₹' + subtotal.toLocaleString('en-IN') + ') <span>→</span>';
+      }
+    }
+
+    pills.forEach(function(pill) {
+      pill.addEventListener('click', function(e) {
+        e.preventDefault();
+        pills.forEach(function(p) {
+          p.classList.remove('is-active');
+          p.setAttribute('aria-checked', 'false');
+        });
+        pill.classList.add('is-active');
+        pill.setAttribute('aria-checked', 'true');
+
+        currentPrice = parseInt(pill.getAttribute('data-price'), 10);
+        currentMrp = parseInt(pill.getAttribute('data-mrp'), 10);
+        currentSize = pill.getAttribute('data-size');
+        var vId = pill.getAttribute('data-variant-id');
+        if (hiddenId && vId) hiddenId.value = vId;
+
+        var discountText = pill.getAttribute('data-discount');
+        var packText = pill.getAttribute('data-pack');
+
+        if (discountEl && discountText) discountEl.textContent = discountText;
+        if (packInfoEl && packText) packInfoEl.textContent = packText;
+
+        updateCalculations();
+      });
+    });
+
+    if (minusBtn && qtyInput) {
+      minusBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (quantity > 1) {
+          quantity--;
+          updateCalculations();
+        }
+      });
+    }
+
+    if (plusBtn && qtyInput) {
+      plusBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (quantity < 50) {
+          quantity++;
+          updateCalculations();
+        }
+      });
+    }
+
+    updateCalculations();
+  })();
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Main Product",
+  "settings": [
+    {
+      "type": "url",
+      "id": "endpoint",
+      "label": "Delivery API URL (optional)"
+    },
+    {
+      "type": "range",
+      "id": "min_days",
+      "label": "Fastest delivery (days)",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "max_days",
+      "label": "Slowest delivery (days)",
+      "min": 2,
+      "max": 15,
+      "step": 1,
+      "default": 6
+    }
+  ]
+}
+{% endschema %}

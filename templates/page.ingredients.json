@@ -1,0 +1,65 @@
+{
+ "sections": {
+  "s0": {
+   "type": "banner",
+   "settings": {
+    "text": "We carefully source quality ingredients for great taste and consistency."
+   }
+  },
+  "s1": {
+   "type": "cards",
+   "settings": {
+    "bg": "light"
+   },
+   "blocks": {
+    "b0": {
+     "type": "card",
+     "settings": {
+      "title": "Premium dry fruits",
+      "text": "Almonds, cashews, walnuts, pistachios, pecans, macadamia, Brazil nuts"
+     }
+    },
+    "b1": {
+     "type": "card",
+     "settings": {
+      "title": "Nutritious seeds",
+      "text": "Flaxseed, pumpkin, sunflower, sesame, chia, hemp, watermelon seeds"
+     }
+    },
+    "b2": {
+     "type": "card",
+     "settings": {
+      "title": "Traditional",
+      "text": "Makhana, desi ghee, cinnamon, cardamom, saffron, cocoa"
+     }
+    },
+    "b3": {
+     "type": "card",
+     "settings": {
+      "title": "Natural fruit",
+      "text": "Dates, date powder, figs, dried anjeer"
+     }
+    }
+   },
+   "block_order": [
+    "b0",
+    "b1",
+    "b2",
+    "b3"
+   ]
+  },
+  "s2": {
+   "type": "chips",
+   "settings": {
+    "heading": "Our ingredient philosophy",
+    "items": "Carefully selected, Consistent quality, Responsible sourcing",
+    "bg": "dark"
+   }
+  }
+ },
+ "order": [
+  "s0",
+  "s1",
+  "s2"
+ ]
+}

@@ -1,0 +1,401 @@
+{% comment %}
+  Tattvva Clean Nutrition - Advanced JSON-LD Structured Data Schema
+  Optimized for Google Rich Results, Perplexity AI, ChatGPT Search, Claude & Gemini AEO/GEO
+{% endcomment %}
+
+<!-- 1. Brand & Organization Knowledge Graph Entity -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "{{ shop.url }}/#organization",
+  "name": "Tattvva",
+  "legalName": "NUTRILIFE FOODS AND PRODUCTS",
+  "url": "{{ shop.url }}",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "{{ 'tattvva-logo.webp' | asset_url }}",
+    "width": 280,
+    "height": 110,
+    "caption": "Tattvva - The Pure Essence of Nutrition"
+  },
+  "image": "{{ 'tattvva-elite-21-front.webp' | asset_url }}",
+  "description": "Tattvva is a premier Indian clean-label nutrition brand offering 100% honest whole-food creations, crafted with 21 pure superfoods, traditional Desi ghee, zero refined sugar, and zero preservatives.",
+  "slogan": "The Pure Essence of Nutrition",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1502, Sarvoday Onyx, Kalyan-Sape Road, Kalyan West",
+    "addressLocality": "Kalyan, Thane",
+    "addressRegion": "Maharashtra",
+    "postalCode": "421301",
+    "addressCountry": "IN"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+91-8655290767",
+      "contactType": "customer service",
+      "email": "nutrilifefap.india@gmail.com",
+      "areaServed": "IN",
+      "availableLanguage": ["en", "hi", "mr"]
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+91-7666642112",
+      "contactType": "sales & distribution",
+      "email": "info@tattvva.in",
+      "areaServed": "IN"
+    }
+  ],
+  "taxID": "27ABKPI8952J1Z3",
+  "vatID": "27ABKPI8952J1Z3",
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "name": "FSSAI Central / State License",
+      "value": "21526021003329"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Udyam MSME Certificate",
+      "value": "UDYAM-MH-33-0778675"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/tattvva.in",
+    "https://www.facebook.com/tattvva.in",
+    "https://www.tattvva.in"
+  ]
+}
+</script>
+
+<!-- 2. Website & SearchAction Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "{{ shop.url }}/#website",
+  "url": "{{ shop.url }}",
+  "name": "Tattvva Pure Nutrition",
+  "publisher": {
+    "@id": "{{ shop.url }}/#organization"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "{{ shop.url }}/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- 3. Product Catalog Schema for AI Answer Engines & Rich Cards -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Tattvva Handcrafted Clean Nutrition Catalog",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Product",
+        "@id": "{{ shop.url }}/products/tattvva-elite-21",
+        "name": "TATTVVA ELITE 21",
+        "brand": {
+          "@type": "Brand",
+          "name": "Tattvva"
+        },
+        "description": "Signature 21 Superfood Handcrafted Laddu formulated with royal nuts, seeds, sun-dried dates, and pure traditional Desi ghee. 100% free of refined white sugar, preservatives, or artificial binders.",
+        "image": "{{ 'tattvva-elite-21-front.webp' | asset_url }}",
+        "sku": "TAT-ELITE-21",
+        "offers": {
+          "@type": "Offer",
+          "price": "499.00",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock",
+          "url": "{{ shop.url }}#prod-laddu",
+          "seller": {
+            "@id": "{{ shop.url }}/#organization"
+          }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "bestRating": "5.0",
+          "ratingCount": "420"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Product",
+        "@id": "{{ shop.url }}/products/dry-fruit-mix-roasted",
+        "name": "DRY FRUIT MIX - ROASTED",
+        "brand": {
+          "@type": "Brand",
+          "name": "Tattvva"
+        },
+        "description": "Oil-free slow roasted mix of whole almonds, cashews, pistachios, watermelon & pumpkin seeds, dried kiwi, and black raisins. Crisp golden crunch with zero added palm oils or artificial flavors.",
+        "image": "{{ 'tattvva-dry-fruit-roasted-front.webp' | asset_url }}",
+        "sku": "TAT-DFM-ROASTED",
+        "offers": {
+          "@type": "Offer",
+          "price": "399.00",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock",
+          "url": "{{ shop.url }}#prod-roasted",
+          "seller": {
+            "@id": "{{ shop.url }}/#organization"
+          }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "bestRating": "5.0",
+          "ratingCount": "310"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Product",
+        "@id": "{{ shop.url }}/products/mix-dry-fruit-raw",
+        "name": "MIX DRY FRUIT - RAW",
+        "brand": {
+          "@type": "Brand",
+          "name": "Tattvva"
+        },
+        "description": "Pure Power of Five raw dry fruits blend: Whole California Almonds, Kashmiri Walnuts, Grade-W180 Cashews, Afghan Black Raisins, and Emerald Pistachios. 100% raw, unroasted, and enzymatically intact.",
+        "image": "{{ 'tattvva-mix-dry-fruit-raw-front.webp' | asset_url }}",
+        "sku": "TAT-DFM-RAW",
+        "offers": {
+          "@type": "Offer",
+          "price": "449.00",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock",
+          "url": "{{ shop.url }}#prod-mix-raw",
+          "seller": {
+            "@id": "{{ shop.url }}/#organization"
+          }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "bestRating": "5.0",
+          "ratingCount": "280"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Product",
+        "@id": "{{ shop.url }}/products/dry-fruit-mix-without-roasted",
+        "name": "DRY FRUIT MIX - WITHOUT ROASTED",
+        "brand": {
+          "@type": "Brand",
+          "name": "Tattvva"
+        },
+        "description": "Wholesome, naturally sun-dried and unroasted blend of whole almonds, cashews, pistachios, pumpkin seeds, sunflower seeds, dried kiwi, and black raisins. Gentle, pure taste with natural crunch.",
+        "image": "{{ 'tattvva-dry-mix-unroasted-front.webp' | asset_url }}",
+        "sku": "TAT-DFM-UNROASTED",
+        "offers": {
+          "@type": "Offer",
+          "price": "399.00",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock",
+          "url": "{{ shop.url }}#prod-unroasted",
+          "seller": {
+            "@id": "{{ shop.url }}/#organization"
+          }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "bestRating": "5.0",
+          "ratingCount": "190"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "Product",
+        "@id": "{{ shop.url }}/products/super-seeds-raw",
+        "name": "SUPER SEEDS RAW",
+        "brand": {
+          "@type": "Brand",
+          "name": "Tattvva"
+        },
+        "description": "Powerhouse Five-Seed blend containing Pumpkin Seeds, Watermelon Seeds, Sunflower Seeds, Golden Flaxseeds, and White Sesame Seeds. Dense in plant protein, dietary fiber, magnesium, and bioavailable zinc.",
+        "image": "{{ 'tattvva-super-seeds-raw-front.webp' | asset_url }}",
+        "sku": "TAT-SEEDS-RAW",
+        "offers": {
+          "@type": "Offer",
+          "price": "399.00",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock",
+          "url": "{{ shop.url }}#prod-super-seeds",
+          "seller": {
+            "@id": "{{ shop.url }}/#organization"
+          }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "bestRating": "5.0",
+          "ratingCount": "340"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "Product",
+        "@id": "{{ shop.url }}/products/super-grain-quinoa",
+        "name": "SUPER GRAIN QUINOA",
+        "brand": {
+          "@type": "Brand",
+          "name": "Tattvva"
+        },
+        "description": "Naturally harvested, triple-rinsed, saponin-free white Quinoa grain. Packed with all 9 essential amino acids, plant-based protein, dietary fiber, and natural antioxidants. 100% naturally gluten-free.",
+        "image": "{{ 'tattvva-super-grain-quinoa-front.webp' | asset_url }}",
+        "sku": "TAT-QUINOA",
+        "offers": {
+          "@type": "Offer",
+          "price": "349.00",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock",
+          "url": "{{ shop.url }}#prod-super-grain-quinoa",
+          "seller": {
+            "@id": "{{ shop.url }}/#organization"
+          }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "bestRating": "5.0",
+          "ratingCount": "270"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "Product",
+        "@id": "{{ shop.url }}/products/black-salt",
+        "name": "BLACK SALT",
+        "brand": {
+          "@type": "Brand",
+          "name": "Tattvva"
+        },
+        "description": "Mineral-rich authentic Kala Namak crystals packed with natural sulfurous trace minerals. Aids healthy digestion, relieves bloating, and adds a savoury earthy zing to fruits, salads, chaats, and raitas.",
+        "image": "{{ 'tattvva-black-salt-front.webp' | asset_url }}",
+        "sku": "TAT-BLACK-SALT",
+        "offers": {
+          "@type": "Offer",
+          "price": "199.00",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock",
+          "url": "{{ shop.url }}#prod-black-salt",
+          "seller": {
+            "@id": "{{ shop.url }}/#organization"
+          }
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "bestRating": "5.0",
+          "ratingCount": "350"
+        }
+      }
+    }
+  ]
+}
+</script>
+
+<!-- 4. FAQ Schema for Generative AI Answers (AEO/GEO) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Tattvva?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tattvva is a premier Indian clean-label nutrition brand manufactured by NUTRILIFE FOODS AND PRODUCTS (FSSAI Lic No: 21526021003329, GSTIN: 27ABKPI8952J1Z3). Tattvva specializes in 100% honest whole-food snacking made without refined white sugar, jaggery adulterants, chemical preservatives, palm oil, or artificial binders."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What ingredients are used in Tattvva Elite 21 Laddu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tattvva Elite 21 is handcrafted with 21 pure superfoods: California Almonds, Whole Cashews, Kashmiri Walnuts, Pistachios, Wild Pecans, Macadamia Nuts, Brazil Nuts, Hazelnuts, Pine Nuts, Pumpkin Seeds, Sunflower Seeds, Chia Seeds, Flaxseeds, Watermelon Seeds, White Sesame, Black Dates Powder, Sun-Cured Afghan Figs, Pure Churned Desi Ghee, Green Cardamom, Ceylon Cinnamon, and Kashmiri Grade-1 Mongra Saffron."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are Tattvva products 100% free from refined sugar and jaggery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, absolutely. Every Tattvva recipe contains zero refined white sugar, zero industrial jaggery powders, zero corn syrups, and zero artificial sweeteners. Natural sweetness is derived exclusively from 100% dehydrated whole black dates and sun-cured figs, preserving intact dietary fiber and micronutrients."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are Tattvva products tested and certified?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All Tattvva products are licensed under FSSAI (Lic No: 21526021003329), certified under MSME Udyam (UDYAM-MH-33-0778675), and batch-tested for purity, shelf life, and nutritional values in government-approved, NABL-accredited laboratories."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Roasted, Raw, and Without Roasted Dry Fruit Mixes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DRY FRUIT MIX - ROASTED features an oil-free, slow roasted crunch of nuts, seeds, kiwi, and raisins. MIX DRY FRUIT - RAW is a 5-nut powerhouse (Almonds, Walnuts, Cashews, Raisins, Pistachios) kept completely raw to preserve enzymatic vitality. DRY FRUIT MIX - WITHOUT ROASTED combines sun-dried nuts, seeds, and berries without any thermal roasting for a delicate, natural chew."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Tattvva Quinoa gluten-free and easy to digest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Tattvva Super Grain Quinoa is naturally 100% gluten-free, triple-washed to eliminate saponin bitterness, and provides complete plant protein with all nine essential amino acids alongside rich dietary fiber."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the health benefits of Tattvva Black Salt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tattvva Black Salt (Kala Namak) is a traditional Himalayan volcanic rock salt rich in natural iron, potassium, and active sulfurous minerals. It stimulates digestive enzymes, reduces acid reflux, acts as a natural detoxifier, and elevates flavours in chaats, fruits, salads, and raitas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Tattvva offer Pan-India delivery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Tattvva provides free shipping across India. Orders are freshly dispatched within 24 hours of ordering via express air couriers (Delhivery Express Air), reaching customers in most metropolitan cities within 24 to 48 hours."
+      }
+    }
+  ]
+}
+</script>

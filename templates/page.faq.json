@@ -1,0 +1,58 @@
+{
+ "sections": {
+  "s0": {
+   "type": "banner"
+  },
+  "s1": {
+   "type": "faq",
+   "blocks": {
+    "b0": {
+     "type": "q",
+     "settings": {
+      "q": "What makes Tattvva different?",
+      "a": "We focus on premium ingredients, quality and responsible manufacturing."
+     }
+    },
+    "b1": {
+     "type": "q",
+     "settings": {
+      "q": "Where are your products available?",
+      "a": "Through selected retail partners, distributors and online channels as they become available."
+     }
+    },
+    "b2": {
+     "type": "q",
+     "settings": {
+      "q": "How should products be stored?",
+      "a": "Store in a cool, dry place away from direct sunlight."
+     }
+    },
+    "b3": {
+     "type": "q",
+     "settings": {
+      "q": "Do you offer distributorships?",
+      "a": "Yes. Contact us through the Distributors page."
+     }
+    },
+    "b4": {
+     "type": "q",
+     "settings": {
+      "q": "Can I place bulk or corporate orders?",
+      "a": "Yes. Please contact our sales team at sales@tattvva.in."
+     }
+    }
+   },
+   "block_order": [
+    "b0",
+    "b1",
+    "b2",
+    "b3",
+    "b4"
+   ]
+  }
+ },
+ "order": [
+  "s0",
+  "s1"
+ ]
+}

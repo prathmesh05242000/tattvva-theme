@@ -1,0 +1,9 @@
+<section class="sec bg-{{ section.settings.bg }}"><div class="w">
+{% if section.settings.heading != blank %}<h2>{{ section.settings.heading }}</h2>{% endif %}{% if section.settings.text != blank %}<p class="lead">{{ section.settings.text }}</p>{% endif %}
+<div class="tags">{% assign items = section.settings.items | split: ',' %}{% for i in items %}<span>{{ i | strip }}</span>{% endfor %}</div></div></section>
+{% schema %}
+{"name":"Tag list","settings":[{"type":"text","id":"heading","label":"Heading"},{"type":"textarea","id":"text","label":"Text"},
+{"type":"textarea","id":"items","label":"Items (comma separated)","default":"Quality, Integrity, Innovation"},
+{"type":"select","id":"bg","label":"Background","default":"dark","options":[{"value":"light","label":"Cream"},{"value":"dark","label":"Plum"},{"value":"yellow","label":"Yellow"}]}],
+"presets":[{"name":"Tag list"}]}
+{% endschema %}

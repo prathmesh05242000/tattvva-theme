@@ -1,0 +1,98 @@
+{
+ "sections": {
+  "s0": {
+   "type": "banner",
+   "settings": {
+    "text": "We believe quality is not one step, it is a process."
+   }
+  },
+  "s1": {
+   "type": "steps",
+   "settings": {
+    "heading": "From ingredient to finished product",
+    "bg": "light"
+   },
+   "blocks": {
+    "b0": {
+     "type": "step",
+     "settings": {
+      "title": "Selection",
+      "text": "Sourced to defined requirements."
+     }
+    },
+    "b1": {
+     "type": "step",
+     "settings": {
+      "title": "Cleaning",
+      "text": "Sorting and preparation."
+     }
+    },
+    "b2": {
+     "type": "step",
+     "settings": {
+      "title": "Processing",
+      "text": "For taste and texture."
+     }
+    },
+    "b3": {
+     "type": "step",
+     "settings": {
+      "title": "Blending",
+      "text": "Controlled formulations."
+     }
+    },
+    "b4": {
+     "type": "step",
+     "settings": {
+      "title": "Forming",
+      "text": "Shaped into laddus."
+     }
+    },
+    "b5": {
+     "type": "step",
+     "settings": {
+      "title": "Quality check",
+      "text": "Before packing."
+     }
+    },
+    "b6": {
+     "type": "step",
+     "settings": {
+      "title": "Hygienic packing",
+      "text": "Food-grade packaging."
+     }
+    },
+    "b7": {
+     "type": "step",
+     "settings": {
+      "title": "Dispatch",
+      "text": "Stored and sent to you."
+     }
+    }
+   },
+   "block_order": [
+    "b0",
+    "b1",
+    "b2",
+    "b3",
+    "b4",
+    "b5",
+    "b6",
+    "b7"
+   ]
+  },
+  "s2": {
+   "type": "chips",
+   "settings": {
+    "heading": "Our commitments and registrations",
+    "items": "FSSAI-compliant manufacturing, Batch traceability, Food safety procedures, Quality inspections, FSSAI Lic. 21526021003329, GST 27ABKPI8953J1Z3, UDYAM-MH-33-0778675",
+    "bg": "yellow"
+   }
+  }
+ },
+ "order": [
+  "s0",
+  "s1",
+  "s2"
+ ]
+}

@@ -1,0 +1,12 @@
+<section class="ph"><div class="w"><h1>Your cart</h1></div></section>
+<section class="sec"><div class="w">
+{% if cart.item_count > 0 %}<form action="{{ routes.cart_url }}" method="post">
+<table class="ct"><tr><th>Product</th><th>Qty</th><th>Total</th></tr>
+{% for item in cart.items %}<tr><td><a href="{{ item.url }}"><b>{{ item.product.title }}</b></a>{% unless item.product.has_only_default_variant %}<br><small>{{ item.variant.title }}</small>{% endunless %}<br><small>{{ item.price | money }}</small></td><td><input type="number" name="updates[]" value="{{ item.quantity }}" min="0" aria-label="Quantity"></td><td>{{ item.line_price | money }}</td></tr>{% endfor %}</table>
+<p style="text-align:right;margin:18px 0;font-size:22px"><b>Subtotal: {{ cart.total_price | money }}</b></p>
+<p style="text-align:right;font-size:14px">{{ section.settings.note }}</p>
+<div class="cta" style="justify-content:flex-end;margin-top:14px"><button class="btn o" style="color:var(--plum);border-color:var(--plum)" type="submit" name="update">Update cart</button><button class="btn p" type="submit" name="checkout">Checkout</button></div></form>
+{% else %}<p class="lead">Your cart is empty.</p><a class="btn p" href="{{ routes.all_products_collection_url }}">Continue shopping</a>{% endif %}</div></section>
+{% schema %}
+{"name":"Cart","settings":[{"type":"text","id":"note","label":"Note under subtotal","default":"Shipping and taxes are calculated at checkout. Pay securely by UPI, cards or netbanking."}]}
+{% endschema %}

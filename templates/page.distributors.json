@@ -1,0 +1,61 @@
+{
+ "sections": {
+  "s0": {
+   "type": "banner",
+   "settings": {
+    "heading": "Partner with Tattvva",
+    "text": "We welcome distributors, wholesalers, supermarkets, modern trade and online retailers."
+   }
+  },
+  "s1": {
+   "type": "cards",
+   "settings": {
+    "bg": "light"
+   },
+   "blocks": {
+    "b0": {
+     "type": "card",
+     "settings": {
+      "title": "Retail partners",
+      "text": "Grocery, supermarkets, dry-fruit and wellness stores."
+     }
+    },
+    "b1": {
+     "type": "card",
+     "settings": {
+      "title": "Distributors & stockists",
+      "text": "Regional and city-level distribution."
+     }
+    },
+    "b2": {
+     "type": "card",
+     "settings": {
+      "title": "Corporate & bulk",
+      "text": "Gifting, events and institutions."
+     }
+    },
+    "b3": {
+     "type": "card",
+     "settings": {
+      "title": "Online & direct",
+      "text": "Website, social commerce, marketplaces."
+     }
+    }
+   },
+   "block_order": [
+    "b0",
+    "b1",
+    "b2",
+    "b3"
+   ]
+  },
+  "s2": {
+   "type": "distributor-form"
+  }
+ },
+ "order": [
+  "s0",
+  "s1",
+  "s2"
+ ]
+}
