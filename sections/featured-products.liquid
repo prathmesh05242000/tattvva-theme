@@ -1,4 +1,4 @@
-﻿﻿<section class="sec products-sec" id="products">
+﻿<section class="sec products-sec" id="products">
   <div class="products-glow" aria-hidden="true"></div>
   <div class="w">
     
@@ -75,7 +75,7 @@
     <div class="spotlight-products-container">
 
       <!-- 1. TATTVVA ELITE 21 -->
-      {% assign prod_handle = section.settings.product_handle | default: 'tattvva-elite-21' %}
+      {% assign prod_handle = section.settings.product_handle | default: 'premium-dry-fruit-laddu' %}
       {% assign elite_prod = all_products[prod_handle] %}
       <article class="spotlight-card is-active" id="prod-laddu">
         <!-- Left Media Showcase -->
@@ -297,7 +297,7 @@
       </article>
 
       <!-- 2. DRY FRUIT MIX - ROASTED -->
-      {% assign roasted_prod = all_products['dry-fruit-roasted'] %}
+      {% assign roasted_prod = all_products['dry-fruit-mix-roasted'] %}
       <article class="spotlight-card" id="prod-dry-fruit-roasted">
         <!-- Left Media Showcase -->
         <div class="spotlight-media-wrap">
@@ -730,7 +730,7 @@
       </article>
 
       <!-- 4. DRY FRUIT MIX - WITHOUT ROASTED -->
-      {% assign unroasted_prod = all_products['dry-mix-without-roasted'] %}
+      {% assign unroasted_prod = all_products['dry-fruit-mix-without-roasted'] %}
       <article class="spotlight-card" id="prod-dry-mix-unroasted">
         <!-- Left Media Showcase -->
         <div class="spotlight-media-wrap">
