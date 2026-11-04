@@ -21,7 +21,7 @@
 {% if section.settings.use_custom_menu %}
   <a href="{{ routes.root_url }}"{% if request.path == routes.root_url %} class="on"{% endif %}>Home</a>
   <a href="{{ routes.root_url }}#about">About Us</a>
-  <a href="{{ routes.root_url }}#products">Products</a>
+  <a href="{{ routes.root_url }}collections/all">Products</a>
   <a href="{{ routes.root_url }}#distributors">Business with us</a>
   <a href="/account">Track your Order</a>
   <a href="{{ routes.root_url }}#blogs">Blogs</a>
@@ -33,7 +33,7 @@
 {% else %}
   <a href="{{ routes.root_url }}"{% if request.path == routes.root_url %} class="on"{% endif %}>Home</a>
   <a href="{{ routes.root_url }}#about">About Us</a>
-  <a href="{{ routes.root_url }}#products">Products</a>
+  <a href="{{ routes.root_url }}collections/all">Products</a>
   <a href="{{ routes.root_url }}#distributors">Business with us</a>
   <a href="/account">Track your Order</a>
   <a href="{{ routes.root_url }}#blogs">Blogs</a>
