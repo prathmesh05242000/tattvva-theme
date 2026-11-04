@@ -91,29 +91,23 @@
                 {% for img in elite_prod.images %}
                   <div class="spotlight-slide{% if forloop.first %} is-active{% endif %}" data-index="{{ forloop.index0 }}" data-caption="View {{ forloop.index }} of {{ elite_prod.images.size }}" data-full="{{ img | image_url: width: 1600 }}">
                     <img src="{{ img | image_url: width: 800 }}" alt="{{ elite_prod.title }} - Shot {{ forloop.index }}" class="spotlight-slide-img" width="520" height="460"{% if forloop.first %} loading="eager"{% else %} loading="lazy"{% endif %}>
-                    <span class="spotlight-slide-caption">✦ View {{ forloop.index }} of {{ elite_prod.images.size }}</span>
                   </div>
                 {% endfor %}
               {% else %}
                 <div class="spotlight-slide is-active" data-index="0" data-caption="Signature Premium Packaging" data-full="{{ 'tattvva-elite-21-front.webp' | asset_url }}">
                   <img src="{{ 'tattvva-elite-21-front.webp' | asset_url }}" alt="TATTVVA ELITE 21 - Signature Premium Packaging" class="spotlight-slide-img" width="520" height="460" loading="eager">
-                  <span class="spotlight-slide-caption">✦ Signature Premium Packaging</span>
                 </div>
                 <div class="spotlight-slide" data-index="1" data-caption="Premium Nut & Dry Fruit Blend" data-full="{{ 'tattvva-elite-21-lifestyle.webp' | asset_url }}">
                   <img src="{{ 'tattvva-elite-21-lifestyle.webp' | asset_url }}" alt="TATTVVA ELITE 21 - Premium Nut & Dry Fruit Blend" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Premium Nut &amp; Dry Fruit Blend</span>
                 </div>
                 <div class="spotlight-slide" data-index="2" data-caption="Packaging & Nutrition Facts" data-full="{{ 'tattvva-elite-21-back.webp' | asset_url }}">
                   <img src="{{ 'tattvva-elite-21-back.webp' | asset_url }}" alt="TATTVVA ELITE 21 - Nutrition Facts & Jar Details" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Packaging &amp; Nutrition Facts</span>
                 </div>
                 <div class="spotlight-slide" data-index="3" data-caption="Certified NABL Nutritional Table" data-full="{{ 'tattvva-elite-21-nutrition.webp' | asset_url }}">
                   <img src="{{ 'tattvva-elite-21-nutrition.webp' | asset_url }}" alt="TATTVVA ELITE 21 - Certified Nutrition Chart" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Certified NABL Nutritional Table</span>
                 </div>
                 <div class="spotlight-slide" data-index="4" data-caption="Complete Product & Packaging Showcase" data-full="{{ 'tattvva-elite-21-showcase.webp' | asset_url }}">
                   <img src="{{ 'tattvva-elite-21-showcase.webp' | asset_url }}" alt="TATTVVA ELITE 21 - Complete Showcase" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Complete Product &amp; Packaging Showcase</span>
                 </div>
               {% endif %}
 
@@ -311,29 +305,23 @@
                 {% for img in roasted_prod.images %}
                   <div class="spotlight-slide{% if forloop.first %} is-active{% endif %}" data-index="{{ forloop.index0 }}" data-caption="View {{ forloop.index }} of {{ roasted_prod.images.size }}" data-full="{{ img | image_url: width: 1600 }}">
                     <img src="{{ img | image_url: width: 800 }}" alt="{{ roasted_prod.title }} - Shot {{ forloop.index }}" class="spotlight-slide-img" width="520" height="460"{% if forloop.first %} loading="eager"{% else %} loading="lazy"{% endif %}>
-                    <span class="spotlight-slide-caption">✦ View {{ forloop.index }} of {{ roasted_prod.images.size }}</span>
                   </div>
                 {% endfor %}
               {% else %}
                 <div class="spotlight-slide is-active" data-index="0" data-caption="Signature Premium Packaging" data-full="{{ 'tattvva-dry-fruit-roasted-front.webp' | asset_url }}">
                   <img src="{{ 'tattvva-dry-fruit-roasted-front.webp' | asset_url }}" alt="DRY FRUIT MIX - ROASTED - Signature Premium Packaging" class="spotlight-slide-img" width="520" height="460" loading="eager">
-                  <span class="spotlight-slide-caption">✦ Signature Premium Packaging</span>
                 </div>
                 <div class="spotlight-slide" data-index="1" data-caption="Roasted For A Crunchy Bite &middot; Lifestyle" data-full="{{ 'tattvva-dry-fruit-roasted-lifestyle.webp' | asset_url }}">
                   <img src="{{ 'tattvva-dry-fruit-roasted-lifestyle.webp' | asset_url }}" alt="DRY FRUIT MIX - ROASTED - Crunchy Lifestyle Snack" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Roasted For A Crunchy Bite &middot; Lifestyle</span>
                 </div>
                 <div class="spotlight-slide" data-index="2" data-caption="Packaging &amp; Label Details" data-full="{{ 'tattvva-dry-fruit-roasted-back.webp' | asset_url }}">
                   <img src="{{ 'tattvva-dry-fruit-roasted-back.webp' | asset_url }}" alt="DRY FRUIT MIX - ROASTED - Nutrition Facts &amp; Jar Details" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Packaging &amp; Label Details</span>
                 </div>
                 <div class="spotlight-slide" data-index="3" data-caption="Certified NABL Nutritional Table" data-full="{{ 'tattvva-dry-fruit-roasted-nutrition.webp' | asset_url }}">
                   <img src="{{ 'tattvva-dry-fruit-roasted-nutrition.webp' | asset_url }}" alt="DRY FRUIT MIX - ROASTED - Certified Nutritional Table" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Certified NABL Nutritional Table</span>
                 </div>
                 <div class="spotlight-slide" data-index="4" data-caption="Complete Product &amp; Packaging Showcase" data-full="{{ 'tattvva-dry-fruit-roasted-showcase.webp' | asset_url }}">
                   <img src="{{ 'tattvva-dry-fruit-roasted-showcase.webp' | asset_url }}" alt="DRY FRUIT MIX - ROASTED - Complete Showcase" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Complete Product &amp; Packaging Showcase</span>
                 </div>
               {% endif %}
 
@@ -529,29 +517,23 @@
                 {% for img in raw_mix_prod.images %}
                   <div class="spotlight-slide{% if forloop.first %} is-active{% endif %}" data-index="{{ forloop.index0 }}" data-caption="View {{ forloop.index }} of {{ raw_mix_prod.images.size }}" data-full="{{ img | image_url: width: 1600 }}">
                     <img src="{{ img | image_url: width: 800 }}" alt="{{ raw_mix_prod.title }} - Shot {{ forloop.index }}" class="spotlight-slide-img" width="520" height="460"{% if forloop.first %} loading="eager"{% else %} loading="lazy"{% endif %}>
-                    <span class="spotlight-slide-caption">✦ View {{ forloop.index }} of {{ raw_mix_prod.images.size }}</span>
                   </div>
                 {% endfor %}
               {% else %}
                 <div class="spotlight-slide is-active" data-index="0" data-caption="Signature Premium Packaging" data-full="{{ 'tattvva-mix-dry-fruit-raw-front.webp' | asset_url }}">
                   <img src="{{ 'tattvva-mix-dry-fruit-raw-front.webp' | asset_url }}" alt="MIX DRY FRUIT - RAW - Signature Premium Packaging" class="spotlight-slide-img" width="520" height="460" loading="eager">
-                  <span class="spotlight-slide-caption">✦ Signature Premium Packaging</span>
                 </div>
                 <div class="spotlight-slide" data-index="1" data-caption="Rich In Protein &amp; Fibre &middot; Lifestyle" data-full="{{ 'tattvva-mix-dry-fruit-raw-lifestyle.webp' | asset_url }}">
                   <img src="{{ 'tattvva-mix-dry-fruit-raw-lifestyle.webp' | asset_url }}" alt="MIX DRY FRUIT - RAW - Wholesome Lifestyle Snack" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Rich In Protein &amp; Fibre &middot; Lifestyle</span>
                 </div>
                 <div class="spotlight-slide" data-index="2" data-caption="Packaging &amp; Label Details" data-full="{{ 'tattvva-mix-dry-fruit-raw-back.webp' | asset_url }}">
                   <img src="{{ 'tattvva-mix-dry-fruit-raw-back.webp' | asset_url }}" alt="MIX DRY FRUIT - RAW - Packaging Details & Jar Back" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Packaging &amp; Label Details</span>
                 </div>
                 <div class="spotlight-slide" data-index="3" data-caption="Certified NABL Nutritional Table" data-full="{{ 'tattvva-mix-dry-fruit-raw-nutrition.webp' | asset_url }}">
                   <img src="{{ 'tattvva-mix-dry-fruit-raw-nutrition.webp' | asset_url }}" alt="MIX DRY FRUIT - RAW - Certified Nutritional Facts" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Certified NABL Nutritional Table</span>
                 </div>
                 <div class="spotlight-slide" data-index="4" data-caption="Complete Product &amp; Packaging Showcase" data-full="{{ 'tattvva-mix-dry-fruit-raw-showcase.webp' | asset_url }}">
                   <img src="{{ 'tattvva-mix-dry-fruit-raw-showcase.webp' | asset_url }}" alt="MIX DRY FRUIT - RAW - Complete Product Showcase" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Complete Product &amp; Packaging Showcase</span>
                 </div>
               {% endif %}
 
@@ -744,29 +726,23 @@
                 {% for img in unroasted_prod.images %}
                   <div class="spotlight-slide{% if forloop.first %} is-active{% endif %}" data-index="{{ forloop.index0 }}" data-caption="View {{ forloop.index }} of {{ unroasted_prod.images.size }}" data-full="{{ img | image_url: width: 1600 }}">
                     <img src="{{ img | image_url: width: 800 }}" alt="{{ unroasted_prod.title }} - Shot {{ forloop.index }}" class="spotlight-slide-img" width="520" height="460"{% if forloop.first %} loading="eager"{% else %} loading="lazy"{% endif %}>
-                    <span class="spotlight-slide-caption">✦ View {{ forloop.index }} of {{ unroasted_prod.images.size }}</span>
                   </div>
                 {% endfor %}
               {% else %}
                 <div class="spotlight-slide is-active" data-index="0" data-caption="Signature Premium Packaging" data-full="{{ 'tattvva-dry-mix-unroasted-front.webp' | asset_url }}">
                   <img src="{{ 'tattvva-dry-mix-unroasted-front.webp' | asset_url }}" alt="DRY FRUIT MIX - WITHOUT ROASTED - Signature Premium Packaging" class="spotlight-slide-img" width="520" height="460" loading="eager">
-                  <span class="spotlight-slide-caption">✦ Signature Premium Packaging</span>
                 </div>
                 <div class="spotlight-slide" data-index="1" data-caption="Nutrient-Rich Mix &middot; Lifestyle" data-full="{{ 'tattvva-dry-mix-unroasted-lifestyle.webp' | asset_url }}">
                   <img src="{{ 'tattvva-dry-mix-unroasted-lifestyle.webp' | asset_url }}" alt="DRY FRUIT MIX - WITHOUT ROASTED - Wholesome Lifestyle Snack" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Nutrient-Rich Mix &middot; Lifestyle</span>
                 </div>
                 <div class="spotlight-slide" data-index="2" data-caption="Packaging &amp; Label Details" data-full="{{ 'tattvva-dry-mix-unroasted-back.webp' | asset_url }}">
                   <img src="{{ 'tattvva-dry-mix-unroasted-back.webp' | asset_url }}" alt="DRY FRUIT MIX - WITHOUT ROASTED - Packaging Details &amp; Jar Back" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Packaging &amp; Label Details</span>
                 </div>
                 <div class="spotlight-slide" data-index="3" data-caption="Certified NABL Nutritional Table" data-full="{{ 'tattvva-dry-mix-unroasted-nutrition.webp' | asset_url }}">
                   <img src="{{ 'tattvva-dry-mix-unroasted-nutrition.webp' | asset_url }}" alt="DRY FRUIT MIX - WITHOUT ROASTED - Certified Nutritional Facts" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Certified NABL Nutritional Table</span>
                 </div>
                 <div class="spotlight-slide" data-index="4" data-caption="Complete Product &amp; Packaging Showcase" data-full="{{ 'tattvva-dry-mix-unroasted-showcase.webp' | asset_url }}">
                   <img src="{{ 'tattvva-dry-mix-unroasted-showcase.webp' | asset_url }}" alt="DRY FRUIT MIX - WITHOUT ROASTED - Complete Product Showcase" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Complete Product &amp; Packaging Showcase</span>
                 </div>
               {% endif %}
 
@@ -962,29 +938,23 @@
                 {% for img in seeds_prod.images %}
                   <div class="spotlight-slide{% if forloop.first %} is-active{% endif %}" data-index="{{ forloop.index0 }}" data-caption="View {{ forloop.index }} of {{ seeds_prod.images.size }}" data-full="{{ img | image_url: width: 1600 }}">
                     <img src="{{ img | image_url: width: 800 }}" alt="{{ seeds_prod.title }} - Shot {{ forloop.index }}" class="spotlight-slide-img" width="520" height="460"{% if forloop.first %} loading="eager"{% else %} loading="lazy"{% endif %}>
-                    <span class="spotlight-slide-caption">✦ View {{ forloop.index }} of {{ seeds_prod.images.size }}</span>
                   </div>
                 {% endfor %}
               {% else %}
                 <div class="spotlight-slide is-active" data-index="0" data-caption="Signature Premium Packaging" data-full="{{ 'tattvva-super-seeds-raw-front.webp' | asset_url }}">
                   <img src="{{ 'tattvva-super-seeds-raw-front.webp' | asset_url }}" alt="SUPER SEEDS RAW - Signature Premium Packaging" class="spotlight-slide-img" width="520" height="460" loading="eager">
-                  <span class="spotlight-slide-caption">✦ Signature Premium Packaging</span>
                 </div>
                 <div class="spotlight-slide" data-index="1" data-caption="Plant Protein &amp; Minerals &middot; Lifestyle" data-full="{{ 'tattvva-super-seeds-raw-lifestyle.webp' | asset_url }}">
                   <img src="{{ 'tattvva-super-seeds-raw-lifestyle.webp' | asset_url }}" alt="SUPER SEEDS RAW - Wholesome Lifestyle Presentation" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Plant Protein &amp; Minerals &middot; Lifestyle</span>
                 </div>
                 <div class="spotlight-slide" data-index="2" data-caption="Packaging &amp; Label Details" data-full="{{ 'tattvva-super-seeds-raw-back.webp' | asset_url }}">
                   <img src="{{ 'tattvva-super-seeds-raw-back.webp' | asset_url }}" alt="SUPER SEEDS RAW - Packaging Details &amp; Jar Back" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Packaging &amp; Label Details</span>
                 </div>
                 <div class="spotlight-slide" data-index="3" data-caption="Certified NABL Nutritional Table" data-full="{{ 'tattvva-super-seeds-raw-nutrition.webp' | asset_url }}">
                   <img src="{{ 'tattvva-super-seeds-raw-nutrition.webp' | asset_url }}" alt="SUPER SEEDS RAW - Certified Nutritional Facts" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Certified NABL Nutritional Table</span>
                 </div>
                 <div class="spotlight-slide" data-index="4" data-caption="Complete Product &amp; Packaging Showcase" data-full="{{ 'tattvva-super-seeds-raw-showcase.webp' | asset_url }}">
                   <img src="{{ 'tattvva-super-seeds-raw-showcase.webp' | asset_url }}" alt="SUPER SEEDS RAW - Complete Product Showcase" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Complete Product &amp; Packaging Showcase</span>
                 </div>
               {% endif %}
 
@@ -1177,29 +1147,23 @@
                 {% for img in quinoa_prod.images %}
                   <div class="spotlight-slide{% if forloop.first %} is-active{% endif %}" data-index="{{ forloop.index0 }}" data-caption="View {{ forloop.index }} of {{ quinoa_prod.images.size }}" data-full="{{ img | image_url: width: 1600 }}">
                     <img src="{{ img | image_url: width: 800 }}" alt="{{ quinoa_prod.title }} - Shot {{ forloop.index }}" class="spotlight-slide-img" width="520" height="460"{% if forloop.first %} loading="eager"{% else %} loading="lazy"{% endif %}>
-                    <span class="spotlight-slide-caption">✦ View {{ forloop.index }} of {{ quinoa_prod.images.size }}</span>
                   </div>
                 {% endfor %}
               {% else %}
                 <div class="spotlight-slide is-active" data-index="0" data-caption="Signature Premium Packaging" data-full="{{ 'tattvva-super-grain-quinoa-front.webp' | asset_url }}">
                   <img src="{{ 'tattvva-super-grain-quinoa-front.webp' | asset_url }}" alt="SUPER GRAIN QUINOA - Signature Premium Packaging" class="spotlight-slide-img" width="520" height="460" loading="eager">
-                  <span class="spotlight-slide-caption">✦ Signature Premium Packaging</span>
                 </div>
                 <div class="spotlight-slide" data-index="1" data-caption="Gluten-Free &amp; High Fibre &middot; Lifestyle" data-full="{{ 'tattvva-super-grain-quinoa-lifestyle.webp' | asset_url }}">
                   <img src="{{ 'tattvva-super-grain-quinoa-lifestyle.webp' | asset_url }}" alt="SUPER GRAIN QUINOA - Wholesome Lifestyle Presentation" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Gluten-Free &amp; High Fibre &middot; Lifestyle</span>
                 </div>
                 <div class="spotlight-slide" data-index="2" data-caption="Packaging &amp; Label Details" data-full="{{ 'tattvva-super-grain-quinoa-back.webp' | asset_url }}">
                   <img src="{{ 'tattvva-super-grain-quinoa-back.webp' | asset_url }}" alt="SUPER GRAIN QUINOA - Packaging Details &amp; Jar Back" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Packaging &amp; Label Details</span>
                 </div>
                 <div class="spotlight-slide" data-index="3" data-caption="Certified NABL Nutritional Table" data-full="{{ 'tattvva-super-grain-quinoa-nutrition.webp' | asset_url }}">
                   <img src="{{ 'tattvva-super-grain-quinoa-nutrition.webp' | asset_url }}" alt="SUPER GRAIN QUINOA - Certified Nutritional Facts" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Certified NABL Nutritional Table</span>
                 </div>
                 <div class="spotlight-slide" data-index="4" data-caption="Complete Product &amp; Packaging Showcase" data-full="{{ 'tattvva-super-grain-quinoa-showcase.webp' | asset_url }}">
                   <img src="{{ 'tattvva-super-grain-quinoa-showcase.webp' | asset_url }}" alt="SUPER GRAIN QUINOA - Complete Product Showcase" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Complete Product &amp; Packaging Showcase</span>
                 </div>
               {% endif %}
 
@@ -1387,29 +1351,23 @@
                 {% for img in salt_prod.images %}
                   <div class="spotlight-slide{% if forloop.first %} is-active{% endif %}" data-index="{{ forloop.index0 }}" data-caption="{{ img.alt | default: 'BLACK SALT View ' | append: forloop.index }}" data-full="{{ img | image_url: width: 1200 }}">
                     <img src="{{ img | image_url: width: 600 }}" alt="{{ img.alt | default: 'BLACK SALT View ' | append: forloop.index }}" class="spotlight-slide-img" width="520" height="460" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
-                    <span class="spotlight-slide-caption">✦ View {{ forloop.index }} of {{ salt_prod.images.size }}</span>
                   </div>
                 {% endfor %}
               {% else %}
                 <div class="spotlight-slide is-active" data-index="0" data-caption="Signature Premium Packaging" data-full="{{ 'tattvva-black-salt-front.webp' | asset_url }}">
                   <img src="{{ 'tattvva-black-salt-front.webp' | asset_url }}" alt="BLACK SALT - Signature Premium Packaging" class="spotlight-slide-img" width="520" height="460" loading="eager">
-                  <span class="spotlight-slide-caption">✦ Signature Premium Packaging</span>
                 </div>
                 <div class="spotlight-slide" data-index="1" data-caption="Natural Minerals &amp; Digestive Balance &middot; Lifestyle" data-full="{{ 'tattvva-black-salt-lifestyle.webp' | asset_url }}">
                   <img src="{{ 'tattvva-black-salt-lifestyle.webp' | asset_url }}" alt="BLACK SALT - Wholesome Lifestyle Presentation" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Natural Minerals &amp; Digestive Balance &middot; Lifestyle</span>
                 </div>
                 <div class="spotlight-slide" data-index="2" data-caption="Packaging &amp; Label Details" data-full="{{ 'tattvva-black-salt-back.webp' | asset_url }}">
                   <img src="{{ 'tattvva-black-salt-back.webp' | asset_url }}" alt="BLACK SALT - Packaging Details &amp; Jar Back" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Packaging &amp; Label Details</span>
                 </div>
                 <div class="spotlight-slide" data-index="3" data-caption="Certified NABL Nutritional Table" data-full="{{ 'tattvva-black-salt-nutrition.webp' | asset_url }}">
                   <img src="{{ 'tattvva-black-salt-nutrition.webp' | asset_url }}" alt="BLACK SALT - Certified Nutritional Facts" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Certified NABL Nutritional Table</span>
                 </div>
                 <div class="spotlight-slide" data-index="4" data-caption="Complete Product &amp; Packaging Showcase" data-full="{{ 'tattvva-black-salt-showcase.webp' | asset_url }}">
                   <img src="{{ 'tattvva-black-salt-showcase.webp' | asset_url }}" alt="BLACK SALT - Complete Product Showcase" class="spotlight-slide-img" width="520" height="460" loading="lazy">
-                  <span class="spotlight-slide-caption">✦ Complete Product &amp; Packaging Showcase</span>
                 </div>
               {% endif %}
 

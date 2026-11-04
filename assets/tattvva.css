@@ -879,7 +879,8 @@ form.f{display:grid;gap:12px;max-width:560px}
   transform: scale(1.04) translateY(-4px);
   filter: drop-shadow(0 26px 42px rgba(58,13,40,0.22)) drop-shadow(0 8px 18px rgba(201,151,43,0.25));
 }
-.spotlight-slide-caption {
+.spotlight-slide-caption { display: none !important; }
+.spotlight-slide-caption-old {
   margin-top: 10px;
   font-size: 12px;
   font-weight: 700;
@@ -897,7 +898,8 @@ form.f{display:grid;gap:12px;max-width:560px}
   align-items: center;
   gap: 6px;
 }
-.spotlight-slides-viewport:hover .spotlight-slide-caption {
+.spotlight-slides-viewport:hover .spotlight-slide-caption { display: none !important; }
+.spotlight-slide-caption-old {
   transform: translateY(-2px);
   border-color: var(--gold);
 }
