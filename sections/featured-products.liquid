@@ -1992,6 +1992,24 @@
   </div>
 </section>
 
+{%- comment -%} Sync Elite-21 size pills with the Add to Bag variant {%- endcomment -%}
+{%- if elite_prod != blank -%}
+<script>
+(function(){
+  var map = {
+    {%- for v in elite_prod.variants -%}
+      {{ v.title | json }}: {{ v.id }}{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  };
+  function input(){ return document.querySelector('#prod-laddu form[action*="/cart/add"] input[name="id"]'); }
+  function sync(pill){ var i = input(); if (i && pill && map[pill.dataset.size]) { i.value = map[pill.dataset.size]; } }
+  document.addEventListener('click', function(e){ var p = e.target.closest('#prod-laddu .variant-pill'); if (p) { sync(p); } });
+  function init(){ sync(document.querySelector('#prod-laddu .variant-pill.is-active')); }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); } else { init(); }
+})();
+</script>
+{%- endif -%}
+
 {% schema %}
 {
   "name": "Products & Categories",
