@@ -6,6 +6,8 @@
 <title>{{ page_title }}{% unless page_title contains shop.name %} – {{ shop.name }}{% endunless %}</title>
 {% if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
 <link rel="canonical" href="{{ canonical_url }}">
+<link rel="icon" type="image/webp" href="{{ 'tattvva-logo.webp' | asset_url }}">
+<link rel="apple-touch-icon" href="{{ 'tattvva-logo.webp' | asset_url }}">
 
 {% render 'seo-meta' %}
 {% render 'seo-schema' %}
