@@ -14,23 +14,15 @@
     <div class="ft-social-strip">
       {% if section.settings.instagram != blank %}
         <a href="{{ section.settings.instagram }}" target="_blank" rel="noopener" class="ft-social-btn" aria-label="Instagram">Instagram</a>
-      {% else %}
-        <a href="https://www.instagram.com" target="_blank" rel="noopener" class="ft-social-btn" aria-label="Instagram">Instagram</a>
       {% endif %}
       {% if section.settings.facebook != blank %}
         <a href="{{ section.settings.facebook }}" target="_blank" rel="noopener" class="ft-social-btn" aria-label="Facebook">Facebook</a>
-      {% else %}
-        <a href="https://www.facebook.com" target="_blank" rel="noopener" class="ft-social-btn" aria-label="Facebook">Facebook</a>
       {% endif %}
       {% if section.settings.linkedin != blank %}
         <a href="{{ section.settings.linkedin }}" target="_blank" rel="noopener" class="ft-social-btn" aria-label="LinkedIn">LinkedIn</a>
-      {% else %}
-        <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="ft-social-btn" aria-label="LinkedIn">LinkedIn</a>
       {% endif %}
       {% if section.settings.youtube != blank %}
         <a href="{{ section.settings.youtube }}" target="_blank" rel="noopener" class="ft-social-btn" aria-label="YouTube">YouTube</a>
-      {% else %}
-        <a href="https://www.youtube.com" target="_blank" rel="noopener" class="ft-social-btn" aria-label="YouTube">YouTube</a>
       {% endif %}
     </div>
   </div>
@@ -82,7 +74,7 @@
       </ul>
     </div>
 
-    <!-- Col 5: Our Esteemed Partners -->
+    {% comment %} Hidden until real marketplace store links are added {% endcomment %}{% comment %}<!-- Col 5: Our Esteemed Partners -->
     <div class="ft-nav-col">
       <h3>Our Esteemed Partners</h3>
       <ul>
@@ -93,7 +85,7 @@
         <li><a href="https://www.zeptonow.com" target="_blank" rel="noopener">Zepto</a></li>
         <li><a href="https://www.swiggy.com/instamart" target="_blank" rel="noopener">Swiggy</a></li>
       </ul>
-    </div>
+    </div>{% endcomment %}
   </div>
 
   <!-- Secondary Row Grid: Information, Customer Service, Registered Office & Manufacturing Facility -->
