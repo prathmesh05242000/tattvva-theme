@@ -25,7 +25,7 @@
   <a href="{{ routes.root_url }}#distributors">Business with us</a>
   <a href="#track-order">Tracker your Order</a>
   <a href="{{ routes.root_url }}#blogs">Blogs</a>
-  <a href="{{ routes.root_url }}#contact">Contact Us</a>
+  <a href="/pages/contact-us">Contact Us</a>
 {% elsif linklists[section.settings.menu].links.size > 0 %}
   {% for l in linklists[section.settings.menu].links %}
     <a href="{{ l.url }}"{% if l.active %} class="on"{% endif %}>{{ l.title }}</a>
@@ -37,7 +37,7 @@
   <a href="{{ routes.root_url }}#distributors">Business with us</a>
   <a href="#track-order">Tracker your Order</a>
   <a href="{{ routes.root_url }}#blogs">Blogs</a>
-  <a href="{{ routes.root_url }}#contact">Contact Us</a>
+  <a href="/pages/contact-us">Contact Us</a>
 {% endif %}
 </nav>
 <a class="cartl" href="{{ routes.cart_url }}">Cart ({{ cart.item_count }})</a>
