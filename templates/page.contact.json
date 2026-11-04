@@ -1,18 +1,33 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
- "sections": {
-  "s0": {
-   "type": "banner",
-   "settings": {
-    "heading": "Contact us",
-    "text": "Nutrilife Foods & Products · Brand: Tattvva"
-   }
+  "sections": {
+    "s0": {
+      "type": "banner",
+      "settings": {
+        "heading": "Contact us",
+        "text": "Nutrilife Foods & Products · Brand: Tattvva"
+      }
+    },
+    "s1": {
+      "type": "contact",
+      "settings": {
+        "address": "Nutrilife Foods & Products, 1502, Sarvoday Onyx, Kalyan-Sape Road, Kalyan 421301, Maharashtra",
+        "phone": "+91 76666 42122",
+        "hours": "Mon–Sat, 9:00 AM – 6:00 PM",
+        "emails": "General: info@tattvva.in\nSales: sales@tattvva.in\nDistributors: distributor@tattvva.in\nSupport: support@tattvva.in"
+      }
+    }
   },
-  "s1": {
-   "type": "contact"
-  }
- },
- "order": [
-  "s0",
-  "s1"
- ]
+  "order": [
+    "s0",
+    "s1"
+  ]
 }
