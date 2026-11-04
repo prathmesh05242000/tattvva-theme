@@ -1,4 +1,4 @@
-﻿<section class="quality-journey-sec" id="quality">
+<section class="quality-journey-sec" id="quality">
   <!-- Subtle Ambient Radial Glow -->
   <div class="qj-ambient-glow" aria-hidden="true"></div>
 
@@ -36,6 +36,26 @@
         </div>
       </div>
     </div>
+
+    {% if section.blocks.size > 0 %}
+      <!-- Dynamic Step Blocks (Rendered for templates like page.quality.json) -->
+      <div class="qj-blocks-container" style="margin: 40px 0;">
+        <div class="qj-blocks-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px;">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'step' %}
+                <div class="qj-block-card" {{ block.shopify_attributes }} style="background: #ffffff; border: 1px solid rgba(199, 157, 84, 0.28); border-radius: 16px; padding: 24px; box-shadow: 0 4px 18px rgba(0,0,0,0.04); display: flex; flex-direction: column; gap: 10px;">
+                  <div style="display: flex; align-items: center; gap: 12px;">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, #5C1024, #3B0B17); color: #E8C581; font-weight: 800; font-size: 0.9rem; border: 1px solid #C79D54;">{{ forloop.index }}</span>
+                    <h3 style="margin: 0; font-size: 1.15rem; font-weight: 700; color: #2D1E1E;">{{ block.settings.title | escape }}</h3>
+                  </div>
+                  <p style="margin: 0; font-size: 0.95rem; line-height: 1.55; color: #5B4848;">{{ block.settings.text | escape }}</p>
+                </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+      </div>
+    {% else %}
 
     <!-- INTERACTIVE 8-STEP HORIZONTAL PIPELINE TRACK -->
     <div class="qj-pipeline-wrap">
@@ -201,6 +221,7 @@
 
       </div>
     </div>
+    {% endif %}
 
     <!-- THE 5 STANDARDS & REGISTRATION CERTIFICATION RIBBON -->
     <div class="qj-standards-ribbon">
@@ -393,6 +414,7 @@
       var nodes = document.querySelectorAll('.qj-node-btn');
       var trackFill = document.getElementById('qjTrackFill');
       var theater = document.getElementById('qjTheater');
+      if (!nodes || nodes.length === 0 || !theater) return;
       
       var watermark = document.getElementById('qjWatermarkNum');
       var orb = document.getElementById('qjStageIconOrb');
@@ -517,11 +539,47 @@
       "id": "subheading",
       "label": "Subheading",
       "default": "We believe true quality is not an inspection step at the end—it is an unbroken chain of custody. Zero chemical processing, FSSAI-certified micro-batching, and uncompromising food safety standards."
+    },
+    {
+      "type": "select",
+      "id": "bg",
+      "label": "Background",
+      "options": [
+        { "value": "light", "label": "Light" },
+        { "value": "white", "label": "White" }
+      ],
+      "default": "light"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Step Title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Step description and details."
+        }
+      ]
     }
   ],
   "presets": [
     {
-      "name": "Quality Journey"
+      "name": "Quality Journey",
+      "blocks": [
+        { "type": "step" },
+        { "type": "step" },
+        { "type": "step" },
+        { "type": "step" }
+      ]
     }
   ]
 }
