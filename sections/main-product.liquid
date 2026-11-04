@@ -1,4 +1,4 @@
-﻿<section class="sec products-sec" style="padding-top:40px;">
+<section class="sec products-sec" style="padding-top:40px;">
   <div class="products-glow" aria-hidden="true"></div>
   <div class="w">
     
@@ -66,28 +66,22 @@
           </div>
         </div>
 
-        <!-- Micro Seals -->
+        {% if product.handle == 'premium-dry-fruit-laddu' %}<!-- Micro Seals -->
         <div class="spotlight-micro-seals">
           <div class="micro-seal"><span class="micro-seal-icon">&#x1F330;</span><span>21 Whole Nuts &amp; Seeds</span></div>
           <div class="micro-seal"><span class="micro-seal-icon">🍯</span><span>Pure Desi Ghee</span></div>
           <div class="micro-seal"><span class="micro-seal-icon">🌿</span><span>0% Added Sugar or Jaggery</span></div>
-        </div>
+        </div>{% endif %}
       </div>
 
       <!-- Right Product Details -->
       <div class="spotlight-details">
-        <div class="spotlight-rating-wrap">
-          <span class="spotlight-stars">★★★★★</span>
-          <span class="spotlight-verified">4.9 / 5.0</span>
-          <span>(500+ verified customer ratings)</span>
-        </div>
-
         <h1 class="spotlight-title" style="margin-top:0;">{{ product.title }}</h1>
         <span class="spotlight-sub-badge">Signature Artisanal Creation &middot; Premium Packaging</span>
 
-        <p class="spotlight-lead-copy">“Crafted using premium nuts, seeds, fruits, and traditional ingredients.”</p>
+        {% if product.handle == 'premium-dry-fruit-laddu' %}<p class="spotlight-lead-copy">“Crafted using premium nuts, seeds, fruits, and traditional ingredients.”</p>{% endif %}
 
-        <!-- Product Highlights -->
+        {% if product.handle == 'premium-dry-fruit-laddu' %}<!-- Product Highlights -->
         <div class="spotlight-highlights-label">Product Highlights</div>
         <div class="spotlight-highlights-grid">
           <div class="hl-card">
@@ -105,12 +99,12 @@
             <div class="hl-card-title">Premium ingredients</div>
             <p class="hl-card-desc">21 whole cold-selected superfoods slow-bound in pure Desi ghee with absolutely no palm oil.</p>
           </div>
-        </div>
+        </div>{% endif %}
 
         <!-- Shopify Cart Form with Weight Variant Selector & Quantity Stepper -->
         {% form 'product', product, class: 'spotlight-form' %}
           <!-- Size / Weight Selection (100g, 250g, 500g) -->
-          <div class="product-variant-selector">
+          <div class="product-variant-selector"{% if product.has_only_default_variant %} style="display:none"{% endif %}>
             <div class="variant-selector-header">
               <span class="variant-label">Select Net Weight:</span>
               <span class="variant-active-display">250g (Selected)</span>
@@ -142,38 +136,15 @@
               </div>
               <input type="hidden" name="id" id="mainProductVariantId" value="{{ product.selected_or_first_available_variant.id }}">
             {% else %}
-              <!-- Default 100g, 250g, 500g Luxury Selection -->
-              {% assign base_p = product.price | divided_by: 100 | default: 499 %}
-              {% if base_p == 0 %}{% assign base_p = 499 %}{% endif %}
-              {% assign p100 = base_p | times: 50 | divided_by: 100 %}
-              {% assign p250 = base_p %}
-              {% assign p500 = base_p | times: 190 | divided_by: 100 %}
-              <div class="variant-pill-group" role="radiogroup" aria-label="Select Weight">
-                <button type="button" class="variant-pill" data-size="100g" data-price="{{ p100 }}" data-mrp="{{ p100 | times: 120 | divided_by: 100 }}" data-discount="Save 17% OFF" data-pack="Net Wt: 100g (Trial / Snacking Size) &middot; Freshness Sealed &middot; Incl. of all taxes" role="radio" aria-checked="false">
-                  <span class="pill-weight">100g</span>
-                  <span class="pill-badge">Trial Pack</span>
-                  <span class="pill-price">₹{{ p100 }}</span>
-                </button>
-                <button type="button" class="variant-pill is-active" data-size="250g" data-price="{{ p250 }}" data-mrp="{{ p250 | times: 120 | divided_by: 100 }}" data-discount="Save 17% OFF" data-pack="Net Wt: 250g &middot; Sealed Freshness Premium Packaging &middot; Incl. of all taxes" role="radio" aria-checked="true">
-                  <span class="pill-weight">250g</span>
-                  <span class="pill-badge best-seller">Most Popular</span>
-                  <span class="pill-price">₹{{ p250 }}</span>
-                </button>
-                <button type="button" class="variant-pill" data-size="500g" data-price="{{ p500 }}" data-mrp="{{ p500 | times: 125 | divided_by: 100 }}" data-discount="Save 21% OFF" data-pack="Net Wt: 500g (Family Value Pack) &middot; Sealed Freshness &middot; Incl. of all taxes" role="radio" aria-checked="false">
-                  <span class="pill-weight">500g</span>
-                  <span class="pill-badge value-save">Save 21%</span>
-                  <span class="pill-price">₹{{ p500 }}</span>
-                </button>
-              </div>
-              <input type="hidden" name="id" id="mainProductVariantId" value="{{ product.selected_or_first_available_variant.id | default: '1' }}">
+              <input type="hidden" name="id" id="mainProductVariantId" value="{{ product.selected_or_first_available_variant.id }}">
             {% endif %}
           </div>
 
           <div class="spotlight-price-box">
             <span class="spotlight-current-price">{{ product.price | money | default: '₹499' }}</span>
-            <span class="spotlight-mrp">{% if product.compare_at_price > product.price %}{{ product.compare_at_price | money }}{% else %}₹599{% endif %}</span>
-            <span class="spotlight-discount-pill">Save 17% OFF</span>
-            <div class="spotlight-pack-info">Net Wt: 250g &middot; Sealed Freshness Premium Packaging &middot; Inclusive of all taxes</div>
+            <span class="spotlight-mrp">{% if product.compare_at_price > product.price %}{{ product.compare_at_price | money }}{% endif %}</span>
+            {% if product.compare_at_price > product.price %}<span class="spotlight-discount-pill">Save {{ product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price }}% OFF</span>{% endif %}
+            <div class="spotlight-pack-info">{% unless product.has_only_default_variant %}Net Wt: {{ product.selected_or_first_available_variant.title }} &middot; {% endunless %}Sealed Freshness Premium Packaging &middot; Inclusive of all taxes</div>
           </div>
 
           <!-- Quantity Stepper & Dynamic Total Subtotal -->
@@ -194,14 +165,14 @@
               </div>
               <div class="total-unit-breakdown">
                 <span class="breakdown-text">{{ product.price | money | default: '₹499' }} × 1</span>
-                <span class="total-savings-text">Save ₹100</span>
+                <span class="total-savings-text"></span>
               </div>
             </div>
           </div>
 
           <div class="spotlight-action-row">
             <button class="btn-spotlight-buy" type="submit"{% unless product.available %} disabled{% endunless %} style="flex:1;" data-base-title="Add to Bag">
-              {% if product.available %}Add to Bag &middot; 250g ({{ product.price | money | default: '₹499' }}) <span>→</span>{% else %}Sold Out{% endif %}
+              {% if product.available %}Add to Bag ({{ product.price | money | default: '₹499' }}) <span>→</span>{% else %}Sold Out{% endif %}
             </button>
           </div>
         {% endform %}
@@ -332,9 +303,9 @@
     var buyBtn = card.querySelector('.btn-spotlight-buy');
     var hiddenId = document.getElementById('mainProductVariantId');
 
-    var currentPrice = 499;
-    var currentMrp = 599;
-    var currentSize = '250g';
+    var currentPrice = {{ product.selected_or_first_available_variant.price | divided_by: 100.0 }};
+    var currentMrp = {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}{{ product.selected_or_first_available_variant.compare_at_price | divided_by: 100.0 }}{% else %}{{ product.selected_or_first_available_variant.price | divided_by: 100.0 }}{% endif %};
+    var currentSize = '';
     var quantity = 1;
 
     var activePill = card.querySelector('.variant-pill.is-active');
@@ -350,7 +321,7 @@
       var savings = totalMrp - subtotal;
 
       if (priceEl) priceEl.textContent = '₹' + currentPrice.toLocaleString('en-IN');
-      if (mrpEl) mrpEl.textContent = '₹' + currentMrp.toLocaleString('en-IN');
+      if (mrpEl) mrpEl.textContent = currentMrp > currentPrice ? '₹' + currentMrp.toLocaleString('en-IN') : '';
       if (qtyInput) qtyInput.value = quantity;
       if (totalEl) totalEl.textContent = '₹' + subtotal.toLocaleString('en-IN');
       if (breakdownEl) breakdownEl.textContent = '₹' + currentPrice.toLocaleString('en-IN') + ' × ' + quantity;
@@ -365,7 +336,7 @@
       if (activeDisplay) activeDisplay.textContent = currentSize + ' (Selected)';
 
       if (buyBtn) {
-        buyBtn.innerHTML = 'Add to Bag &middot; ' + currentSize + ' (' + (quantity > 1 ? quantity + ' × ' : '') + '₹' + subtotal.toLocaleString('en-IN') + ') <span>→</span>';
+        buyBtn.innerHTML = 'Add to Bag ' + (currentSize ? '&middot; ' + currentSize + ' ' : '') + '(' + (quantity > 1 ? quantity + ' × ' : '') + '₹' + subtotal.toLocaleString('en-IN') + ') <span>→</span>';
       }
     }
 
