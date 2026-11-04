@@ -1,4 +1,4 @@
-﻿<section class="sec products-sec" id="products">
+<section class="sec products-sec" id="products">
   <div class="products-glow" aria-hidden="true"></div>
   <div class="w">
     
@@ -1665,6 +1665,7 @@
           });
           tab.classList.add('is-active');
           tab.setAttribute('aria-selected', 'true');
+          try { tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' }); } catch(e) {}
 
           cards.forEach(function(card) {
             if (card.id === targetId) {
