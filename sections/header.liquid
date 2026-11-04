@@ -20,7 +20,7 @@
 <nav aria-label="Main navigation">
 {% if section.settings.use_custom_menu %}
   <a href="{{ routes.root_url }}"{% if request.path == routes.root_url %} class="on"{% endif %}>Home</a>
-  <a href="{{ routes.root_url }}#about">About Us</a>
+  <a href="{{ routes.root_url }}pages/about">About Us</a>
   <a href="{{ routes.root_url }}#products">Products</a>
   <a href="{{ routes.root_url }}#distributors">Business with us</a>
   <a href="#track-order">Tracker your Order</a>
@@ -32,7 +32,7 @@
   {% endfor %}
 {% else %}
   <a href="{{ routes.root_url }}"{% if request.path == routes.root_url %} class="on"{% endif %}>Home</a>
-  <a href="{{ routes.root_url }}#about">About Us</a>
+  <a href="{{ routes.root_url }}pages/about">About Us</a>
   <a href="{{ routes.root_url }}#products">Products</a>
   <a href="{{ routes.root_url }}#distributors">Business with us</a>
   <a href="#track-order">Tracker your Order</a>
