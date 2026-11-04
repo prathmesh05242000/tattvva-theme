@@ -3,11 +3,11 @@
     {% if section.settings.video != blank %}
       {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, playsinline: true, class: 'hero-bg-video is-active' }}
     {% elsif section.settings.video_url != blank %}
-      <video id="heroCinematicVideo" class="hero-bg-video is-active" autoplay muted loop playsinline preload="auto" data-speed="{{ section.settings.video_speed | default: 25 | divided_by: 100.0 }}">
+      <video id="heroCinematicVideo" class="hero-bg-video is-active" autoplay muted loop playsinline preload="auto" data-speed="{{ section.settings.video_speed | default: 100 | divided_by: 100.0 }}">
         <source src="{{ section.settings.video_url }}" type="video/mp4">
       </video>
     {% else %}
-      <video id="heroCinematicVideo" class="hero-bg-video is-active" autoplay muted loop playsinline preload="auto" poster="{{ 'hero-cinematic-poster.webp' | asset_url }}" data-speed="{{ section.settings.video_speed | default: 25 | divided_by: 100.0 }}">
+      <video id="heroCinematicVideo" class="hero-bg-video is-active" autoplay muted loop playsinline preload="auto" poster="{{ 'hero-cinematic-poster.webp' | asset_url }}" data-speed="{{ section.settings.video_speed | default: 100 | divided_by: 100.0 }}">
         <source src="{{ 'hero-cinematic.mp4' | asset_url }}" type="video/mp4">
       </video>
     {% endif %}
@@ -50,18 +50,23 @@
     (function(){
       var vid = document.querySelector('.hero-bg-video');
       if (!vid) return;
-      var rate = parseFloat(vid.getAttribute('data-speed')) || 0.25;
-      function applySlowMo() {
+      vid.muted = true;
+      vid.defaultMuted = true;
+      vid.volume = 0;
+      var rate = parseFloat(vid.getAttribute('data-speed')) || 1.0;
+      function applyVideoProps() {
         try {
+          if (!vid.muted) vid.muted = true;
+          if (vid.volume !== 0) vid.volume = 0;
           if (vid.defaultPlaybackRate !== rate) vid.defaultPlaybackRate = rate;
           if (vid.playbackRate !== rate) vid.playbackRate = rate;
         } catch(e) {}
       }
-      applySlowMo();
+      applyVideoProps();
       ['loadstart', 'loadedmetadata', 'canplay', 'play', 'playing', 'seeked', 'seeking', 'timeupdate', 'ratechange'].forEach(function(evt){
-        vid.addEventListener(evt, applySlowMo, { passive: true });
+        vid.addEventListener(evt, applyVideoProps, { passive: true });
       });
-      var enforceTimer = setInterval(applySlowMo, 100);
+      var enforceTimer = setInterval(applyVideoProps, 250);
       window.addEventListener('beforeunload', function(){ clearInterval(enforceTimer); });
     })();
   </script>
@@ -112,7 +117,7 @@
       "min": 10,
       "max": 100,
       "step": 5,
-      "default": 25
+      "default": 100
     },
     {
       "type": "range",
