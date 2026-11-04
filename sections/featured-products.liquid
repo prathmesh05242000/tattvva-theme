@@ -1623,7 +1623,16 @@
           });
           tab.classList.add('is-active');
           tab.setAttribute('aria-selected', 'true');
-          try { tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' }); } catch(e) {}
+          try {
+            var tabsContainer = tab.closest('.prod-selector-tabs');
+            if (tabsContainer) {
+              var scrollLeftTarget = tab.offsetLeft - (tabsContainer.clientWidth / 2) + (tab.clientWidth / 2);
+              tabsContainer.scrollTo({
+                left: Math.max(0, scrollLeftTarget),
+                behavior: 'smooth'
+              });
+            }
+          } catch(e) {}
 
           cards.forEach(function(card) {
             if (card.id === targetId) {

@@ -4,8 +4,8 @@
   --font-body:'Assistant','Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
 }
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;overflow-x:clip;width:100%;max-width:100%}
-body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:clip;width:100%;max-width:100%;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden!important;width:100%;max-width:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden!important;width:100%;max-width:100%;margin:0;padding:0}
 h1,h2,h3,h4,h5,h6{font-family:var(--font-heading)!important;font-weight:700;line-height:1.2;letter-spacing:-.02em;color:var(--plum-d)}
 a{color:inherit;text-decoration:none}img{max-width:100%;height:auto;display:block}
 .w{max-width:1120px;width:100%;margin:auto;padding:0 20px}
@@ -4057,7 +4057,7 @@ html.lenis, html.lenis body {
    GLOBAL RESPONSIVE ARCHITECTURE (Desktop, Tablet & Mobile)
    ============================================================ */
 html, body {
-  overflow-x: clip !important;
+  overflow-x: hidden !important;
   width: 100% !important;
   max-width: 100% !important;
   margin: 0;
@@ -4970,6 +4970,10 @@ html {
   .prod-selector-wrap {
     margin-bottom: 24px !important;
     position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
   }
   .prod-selector-tabs {
     display: flex !important;
@@ -4980,8 +4984,12 @@ html {
     -webkit-overflow-scrolling: touch !important;
     scroll-snap-type: x proximity !important;
     gap: 8px !important;
-    padding: 6px 16px 14px !important;
-    margin: 0 -14px !important;
+    padding: 6px 4px 14px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overscroll-behavior-x: contain !important;
     scrollbar-width: none !important;
     justify-content: flex-start !important;
   }
