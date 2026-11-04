@@ -532,3 +532,5 @@ var k="1.1.18";function w(r,t,e){return Math.max(r,Math.min(t,e))}function W(r,t
     initMotionSystem();
   }
 })();
+/* Mobile/tablet hamburger menu toggle (pairs with .tv-burger CSS in tattvva.css) */
+(function(){function tvInit(){var h=document.querySelector('header.hd'),n=h&&h.querySelector('.nav');if(!n||n.querySelector('.tv-burger'))return;var b=document.createElement('button');b.type='button';b.className='tv-burger';b.setAttribute('aria-label','Menu');b.setAttribute('aria-expanded','false');b.style.fontSize='22px';b.style.lineHeight='1';b.textContent='☰';n.appendChild(b);function t(o){h.classList.toggle('tv-open',o);b.setAttribute('aria-expanded',o?'true':'false');b.textContent=o?'✕':'☰';}b.addEventListener('click',function(e){e.stopPropagation();t(!h.classList.contains('tv-open'));});n.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click',function(){t(false);});});document.addEventListener('click',function(e){if(!h.contains(e.target))t(false);});}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',tvInit);}else{tvInit();}})();
